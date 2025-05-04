@@ -82,6 +82,11 @@ main {
   font-weight: var(--font-weight-semibold);
 }
 
+.hover-2:hover {
+  transform: scale(1.05);
+  font-weight: var(--font-weight-semibold);
+}
+
 /* Header */
 
 .desktop-header nav {
@@ -283,16 +288,39 @@ main {
 
 .filter-input {
   display: flex;
-  padding: 0rem 2rem 0rem 0rem;
 }
 
 .filter-search div {
   padding: 0rem 2rem 0rem 0rem;
 }
 
-.reset-button {
-  align-items: flex-end;
-  padding: 0rem 0rem 0rem 0rem;
+/* event detail page */
+
+.event-detail-page {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  grid-template-areas:
+    " . img img img img . tb tb tb . "
+    " . . . . . . . . . . ";
+}
+
+.title-bio {
+  grid-area: tb;
+}
+
+.detail-title {
+  margin: 0;
+}
+
+.event-detail-page img {
+  grid-area: img;
+  width: 100%;
+}
+
+.detail-bio {
+  grid-area: bio;
 }
 
 /* footer */
