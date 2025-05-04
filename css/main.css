@@ -172,7 +172,7 @@ main {
   font-size: 2rem;
 }
 
-/* responsive > 760 */
+/* event details media screen phone */
 
 /* recommended */
 
@@ -220,7 +220,11 @@ main {
     " ec ec ec ec ec ec ec ec";
 }
 
-/* all events */
+/* event details media screen phone */
+
+/* event details media screen phone */
+
+/* all events page */
 
 .all-events-page {
   display: grid;
@@ -246,7 +250,6 @@ main {
 }
 
 .event-container {
-  /* grid-column: span 2; */
   background: white;
   border-radius: var(--border-radius-box);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -293,6 +296,10 @@ main {
 .filter-search div {
   padding: 0rem 2rem 0rem 0rem;
 }
+
+/* event details media screen phone */
+
+/* event details media screen phone */
 
 /* event detail page */
 
@@ -380,6 +387,8 @@ main {
   height: 100%;
 }
 
+/* event details media screen phone */
+
 @media screen and (max-width: 979px) {
   .profile {
     grid-area: pr;
@@ -416,6 +425,8 @@ main {
     padding: var(--spacing-small);
   }
 }
+
+/* event details media screen phone */
 
 /* footer */
 
