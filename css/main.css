@@ -39,6 +39,12 @@ p {
   color: black;
 }
 
+.small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thin);
+  color: black;
+}
+
 main {
   margin: var(--standard-spacing) 0 var(--standard-spacing) 0;
 }
@@ -188,85 +194,58 @@ main {
 
 /* all events */
 
-.all-events-container {
+.all-events-page {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 300px);
+  grid-template-rows: 300px auto;
   gap: 10px;
   grid-template-areas:
-    ". slide slide slide slide slide slide slide slide ."
-    ". . . . . . . . . ."
-    "ec ec ec ec ec ec ec ec ec ec";
+    " . slide slide slide slide slide slide slide slide . "
+    " . . . . . . . . . . "
+    " ec ec ec ec ec ec ec ec ec ec ";
 }
 
-.event-bg {
+.all-events-container {
   grid-area: ec;
-  position: relative;
-  width: 100%;
-}
-
-.event-bg::before {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 10%;
-  width: 80%;
-  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
   padding: 20px;
-  transform: translateX(-20px);
-  background: var(--blue);
-  border-radius: 8px;
-  z-index: 0;
-  pointer-events: none;
 }
 
 .event-container {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(5, 36px);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  width: 100%;
-  height: 100%;
-  grid-template-areas:
-    " . img img img name name name . . . "
-    " . img img img det det det . . . "
-    " . img img img . . . . btn . "
-    " . img img img tag tag tag . ps . "
-    " . img img img tag tag tag . ps . ";
+  grid-column: span 2;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.event-container:hover {
+  transform: scale(1.02);
 }
 
 .event-img {
-  grid-area: img;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
-.event-name {
-  grid-area: name;
+.event-name,
+.event-details,
+.event-tags,
+.event-ps {
+  padding: 10px;
   margin: 0;
-}
-
-.event-details {
-  grid-area: det;
-  margin: 0;
-}
-
-.event-tags {
-  grid-area: tag;
-  margin: 0;
+  color: black;
 }
 
 .event-button {
-  grid-area: btn;
-}
-
-.event-ps {
-  grid-area: ps;
-  margin: 0;
+  margin: 10px;
+  align-self: flex-start;
 }
 /* footer */
 
