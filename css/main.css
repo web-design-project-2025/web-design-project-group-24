@@ -39,6 +39,12 @@ p {
   color: black;
 }
 
+.small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thin);
+  color: black;
+}
+
 main {
   margin: var(--standard-spacing) 0 var(--standard-spacing) 0;
 }
@@ -191,7 +197,7 @@ main {
 .all-events-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 300px);
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
   grid-template-areas:
     ". slide slide slide slide slide slide slide slide ."
@@ -199,10 +205,19 @@ main {
     "ec ec ec ec ec ec ec ec ec ec";
 }
 
+.event-container:hover {
+  transform: scale(1.005);
+}
+
+.event-bg:hover {
+  transform: scale(1.05);
+}
+
 .event-bg {
   grid-area: ec;
   position: relative;
   width: 100%;
+  transition: scale 0.3 ease;
 }
 
 .event-bg::before {
@@ -234,8 +249,10 @@ main {
     " . img img img name name name . . . "
     " . img img img det det det . . . "
     " . img img img . . . . btn . "
-    " . img img img tag tag tag . ps . "
+    " . img img img . . . . . . "
     " . img img img tag tag tag . ps . ";
+
+  transition: scale 0.3 ease;
 }
 
 .event-img {
@@ -253,6 +270,7 @@ main {
 .event-details {
   grid-area: det;
   margin: 0;
+  color: black;
 }
 
 .event-tags {
