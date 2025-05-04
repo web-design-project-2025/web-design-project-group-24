@@ -15,8 +15,12 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  --standard-spacing: 2rem;
+  --spacing-small: 1rem;
+  --spacing-standard: 2rem;
   --spacing-big: 5rem;
+
+  --border-radius-btn: 5px;
+  --border-radius-box: 10px;
 }
 
 * {
@@ -24,7 +28,7 @@
 }
 
 body {
-  margin: var(--standard-spacing) 0 0 0;
+  margin: var(--spacing-standard) 0 0 0;
 }
 
 h2 {
@@ -45,8 +49,28 @@ p {
   color: black;
 }
 
+.button-1 {
+  background-color: var(--green);
+  border-width: 0;
+  border-radius: var(--border-radius-btn);
+  width: 6rem;
+  height: 2rem;
+}
+
+.button-1:hover {
+  transform: scale(1.05);
+  font-weight: var(--font-weight-semibold);
+}
+
+.input-1 {
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-btn);
+  width: var(--spacing-big);
+}
+
 main {
-  margin: var(--standard-spacing) 0 var(--standard-spacing) 0;
+  margin: var(--spacing-standard) 0 var(--spacing-standard) 0;
 }
 
 .hover-1 {
@@ -99,7 +123,6 @@ main {
 
   grid-template-areas:
     ". slide slide slide slide slide slide slide slide ."
-    ". . . . . . . . . ."
     ". rec rec rec rec rec rec rec rec ."
     ". r r r r r r r r .";
 }
@@ -154,7 +177,7 @@ main {
   grid-template-columns: repeat(8, 1fr);
   gap: 10px;
   grid-column-gap: 10px;
-  margin-bottom: var(--standard-spacing);
+  margin-bottom: var(--spacing-standard);
   grid-template-areas:
     "title title title title title . . . "
     " ec ec ec ec ec ec ec ec";
@@ -186,7 +209,7 @@ main {
   grid-template-columns: repeat(8, 1fr);
   gap: 10px;
   grid-column-gap: 10px;
-  margin-bottom: var(--standard-spacing);
+  margin-bottom: var(--spacing-standard);
   grid-template-areas:
     "title title title title title . . . "
     " ec ec ec ec ec ec ec ec";
@@ -202,21 +225,25 @@ main {
   grid-template-areas:
     " . slide slide slide slide slide slide slide slide . "
     " . . . . . . . . . . "
-    " ec ec ec ec ec ec ec ec ec ec ";
+    " . filter filter filter filter filter filter filter filter . "
+    " . ec ec ec ec ec ec ec ec . ";
 }
 
 .all-events-container {
   grid-area: ec;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 event cards per row */
+  column-gap: 20px; /* 1-column space between cards */
+  row-gap: 20px;
   padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .event-container {
-  grid-column: span 2;
+  /* grid-column: span 2; */
   background: white;
-  border-radius: 10px;
+  border-radius: var(--border-radius-box);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   display: flex;
@@ -247,6 +274,27 @@ main {
   margin: 10px;
   align-self: flex-start;
 }
+
+.filter-search {
+  grid-area: filter;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-input {
+  display: flex;
+  padding: 0rem 2rem 0rem 0rem;
+}
+
+.filter-search div {
+  padding: 0rem 2rem 0rem 0rem;
+}
+
+.reset-button {
+  align-items: flex-end;
+  padding: 0rem 0rem 0rem 0rem;
+}
+
 /* footer */
 
 footer {
