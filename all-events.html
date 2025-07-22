@@ -23,7 +23,6 @@
           </li>
           <li><a href="all-events.html" class="hover-1">All events</a></li>
           <li><a href="create-event.html" class="hover-1">Create event</a></li>
-          <li><a href="feed.html" class="hover-1">Feed</a></li>
           <li>
             <a href="favorites.html" class="hover-1"
               ><i class="bi bi-heart"></i
@@ -36,53 +35,65 @@
           </li>
         </ul>
       </nav>
-      <hr />
     </header>
-    <main>
-      <section class="all-events-page">
-        <section class="slide-show">
-          <img src="img/Firefly board games event 413778.jpg" alt="" />
-          <div class="slide-buttons">
-            <button class="previous">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="next"><i class="bi bi-chevron-right"></i></button>
+    <header class="small-header">
+      <a href="home.html" class="hover-1"><img src="img/Logo.png" alt="" /></a>
+      <div class="right-cont">
+        <a href="favorites.html" class="hover-1 heart"
+          ><i class="bi bi-heart"></i
+        ></a>
+
+        <!-- /* this was found and used from *
+      https://codepen.io/designcouch/pen/ExvwPY */ -->
+        <div id="nav-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <main class="all-events-page">
+      <section class="slide-show">
+        <img src="img/Firefly board games event 413778.jpg" alt="" />
+        <div class="slide-buttons">
+          <button class="previous">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </section>
+      <section class="filter-search">
+        <div class="filter-input">
+          <div>
+            <input class="input-1" type="text" placeholder="Search..." />
           </div>
-        </section>
-        <section class="filter-search">
-          <div class="filter-input">
-            <div>
-              <input class="input-1" type="text" placeholder="Category..." />
-            </div>
-            <div>
-              <input class="input-1" type="text" placeholder="City..." />
-            </div>
-            <div>
-              <input class="input-1" type="text" placeholder="Date..." />
-              <!-- <a href="">Date</a> -->
-            </div>
-          </div>
-          <div class="reset-button">
-            <button class="button-1">Reset</button>
-          </div>
-        </section>
-        <!-- test -->
-        <section class="all-events-container">
-          <section class="event-container">
-            <img
-              class="event-img"
-              src="img/Firefly board games event 413778.jpg"
-              alt=""
-            />
-            <h3 class="event-name">Event name description title</h3>
-            <h2 class="event-details">Date, time, place</h2>
-            <p class="small event-tags">tags</p>
-            <button class="button-1 event-button">
-              Read more <i class="bi bi-chevron-right"></i>
-            </button>
-            <p class="small event-ps">x participant registered</p>
-          </section>
-        </section>
+          <!-- <div>
+            <input class="input-1" type="text" placeholder="City..." />
+          </div> -->
+          <!-- <div>
+            <input class="input-1" type="text" placeholder="Date..." />
+          </div> -->
+        </div>
+      </section>
+      <div class="reset-button">
+        <button class="button-1">Reset</button>
+      </div>
+      <section class="all-events-container">
+        <article class="event-container">
+          <img
+            class="event-img"
+            src="img/Firefly board games event 413778.jpg"
+            alt=""
+          />
+          <h3 class="event-name">Event name description title</h3>
+          <h2 class="event-details">Date, time, place</h2>
+          <p class="small event-tags">tags</p>
+          <a href="event-detail.html"
+            ><button class="button-1 event-button">
+              Read more
+              <i class="bi bi-chevron-right"></i></button
+          ></a>
+        </article>
       </section>
     </main>
     <footer>
@@ -90,10 +101,10 @@
       <nav>
         <ul>
           <li>
-            <a href="#" class="hover-1">About us</a>
+            <a href="#" class="hover-2">About us</a>
           </li>
-          <li><a href="#" class="hover-1">Contact</a></li>
-          <li><a href="#" class="hover-1">FAQ</a></li>
+          <li><a href="#" class="hover-2">Contact</a></li>
+          <li><a href="#" class="hover-2">FAQ</a></li>
         </ul>
       </nav>
     </footer>
