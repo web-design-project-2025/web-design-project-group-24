@@ -9,6 +9,7 @@
   --font-size-medium: 1rem; /* 16px */
   --font-size-large: 1.125rem; /* 18px */
   --font-size-Xlarge: 1.25rem; /* 20px */
+  --font-size-XXlarge: 1.5rem; /* 24px */
 
   --font-weight-thin: 100;
   --font-weight-regular: 400;
@@ -35,6 +36,13 @@ h2 {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-semibold);
   color: #3e405b;
+}
+
+h4 {
+  font-size: var(--font-size-XXlarge);
+  font-weight: var(--font-weight-bold);
+  color: #3e405b;
+  padding-bottom: var(--spacing-standard);
 }
 
 p {
@@ -504,6 +512,9 @@ header {
   }
 }
 
+@media screen and (max-width: 688px) {
+}
+
 @media screen and (max-width: 527px) {
   .event-container {
     height: auto;
@@ -531,26 +542,31 @@ header {
   grid-template-rows: auto;
   gap: 10px;
   grid-template-areas:
+    " . dt dt dt dt dt dt dt dt . "
     " . img img img img . tb tb tb . "
     " . . . . . . . . . . "
     " . det det det . . pr pr pr . ";
+}
+
+.detail-title-big {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-title-small {
+  display: none;
+  grid-area: dt;
+  margin: 0;
 }
 
 .title-bio {
   grid-area: tb;
 }
 
-.detail-title {
-  margin: 0;
-}
-
 .front-img {
   grid-area: img;
   width: 100%;
-}
-
-.detail-bio {
-  grid-area: bio;
 }
 
 .detail-details {
@@ -609,9 +625,47 @@ header {
   height: 100%;
 }
 
-/* event details media screen phone */
+/* event details tablet */
 
 @media screen and (max-width: 979px) {
+  .event-detail-page {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+      " . dt dt dt dt dt dt dt dt . "
+      " . img img img img img img img img . "
+      " . tb tb tb tb tb tb tb tb . "
+      " . . . . . . . . . . "
+      " . det det det . . pr pr pr . ";
+  }
+
+  .detail-title-big {
+    display: none;
+  }
+
+  .detail-title-small {
+    display: flex;
+    grid-area: dt;
+    margin: 0;
+  }
+
+  .title-bio {
+    grid-area: tb;
+    padding: var(--spacing-small);
+  }
+
+  .front-img {
+    grid-area: img;
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+  }
+
+  .detail-details {
+    grid-area: det;
+  }
   .profile {
     grid-area: pr;
     display: grid;
@@ -645,6 +699,24 @@ header {
     width: 100%;
     height: 100%;
     padding: var(--spacing-small);
+  }
+}
+
+/* event details phone */
+
+@media screen and (max-width: 635px) {
+  .event-detail-page {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+      " . dt dt dt dt dt dt dt dt . "
+      " . img img img img img img img img . "
+      " . tb tb tb tb tb tb tb tb . "
+      " . . . . . . . . . . "
+      " . det det det det det det det det . "
+      " . pr pr pr pr pr pr pr pr pr pr . ";
   }
 }
 
