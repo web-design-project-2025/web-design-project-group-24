@@ -102,6 +102,10 @@ main {
 
 /* Header Big */
 
+.small-header {
+  display: none;
+}
+
 header {
   margin-bottom: var(--spacing-big);
 }
@@ -136,7 +140,7 @@ header {
 
 /* header small */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 613px) {
   .desktop-header {
     display: none;
   }
@@ -144,27 +148,112 @@ header {
   .small-header {
     display: flex;
     align-items: center;
-  }
-
-  .Logo {
-    font-size: 40px;
-  }
-
-  .cart {
-    scale: 2;
-    color: black;
-    padding: 0px;
+    justify-content: space-between;
+    padding: 0 var(--spacing-small) 0em var(--spacing-small);
   }
 
   .right-cont {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+  }
+
+  .heart {
+    scale: 1.5;
+    color: black;
+  }
+
+  .small-header img {
+    width: 4rem;
+    padding-left: 2rem;
+  }
+
+  /* this was found and used from
+ * https://codepen.io/designcouch/pen/ExvwPY
+ */
+
+  #nav-icon1 {
+    scale: 0.4;
+    width: 60px;
+    height: 45px;
+    position: relative;
+    z-index: 1000;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #nav-icon1 span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon1 span:nth-child(1) {
+    top: 0px;
+  }
+
+  #nav-icon1 span:nth-child(2) {
+    top: 18px;
+  }
+
+  #nav-icon1 span:nth-child(3) {
+    top: 36px;
+  }
+
+  #nav-icon1.open span:nth-child(1) {
+    top: 18px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  #nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+
+  #nav-icon1.open span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+
+  .number-items {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* home page */
+/* home page laptop*/
 
 .home-container {
   display: grid;
@@ -218,8 +307,6 @@ header {
   opacity: 0.8;
   font-size: 2rem;
 }
-
-/* event details media screen phone */
 
 /* recommended */
 
@@ -277,7 +364,33 @@ header {
   margin: 0;
 }
 
-/* event details media screen phone */
+/* home page media screen phone */
+
+@media screen and (max-width: 768px) {
+  .event-card-title {
+    grid-area: title;
+    grid-column: span 4;
+  }
+
+  .event-card {
+    grid-area: ec;
+    grid-column: span 4;
+  }
+}
+
+@media screen and (max-width: 527px) {
+  .event-card-title {
+    grid-area: title;
+    grid-column: span 8;
+  }
+
+  .event-card {
+    grid-area: ec;
+    grid-column: span 8;
+  }
+
+  /* make this slideshow also for phone version */
+}
 
 /* event details media screen phone */
 
@@ -534,4 +647,34 @@ footer img {
   width: 8em;
   margin: var(--spacing-big);
   padding-left: var(--spacing-big);
+}
+
+@media screen and (max-width: 713px) {
+  footer {
+    margin-top: var(--spacing-big);
+  }
+
+  footer nav {
+    margin: 0 var(--spacing-small) 0 var(--spacing-small);
+    padding-right: var(--spacing-small);
+  }
+
+  footer ul {
+    padding-left: 0;
+    padding-right: var(--spacing-small);
+  }
+
+  footer a {
+    text-decoration: none;
+    font-weight: var(--font-weight-thin);
+    font-size: var(--font-size-small);
+    color: var(--green);
+    text-align: center;
+  }
+
+  footer img {
+    width: 4em;
+    margin: 0;
+    padding-left: var(--spacing-big);
+  }
 }
