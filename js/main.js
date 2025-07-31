@@ -25,6 +25,11 @@ function createEventContainer(event) {
   eventImg.src = event.event_image;
   eventContainerElement.appendChild(eventImg);
 
+  const eventName = document.createElement("h3");
+  eventName.classList.add("event-name");
+  eventName.textContent = event.event_name;
+  eventContainerElement.appendChild(eventName);
+
   return eventContainerElement;
 }
 
