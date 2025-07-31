@@ -1,0 +1,2 @@
+let events = [];
+let detailed = [];

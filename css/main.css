@@ -35,7 +35,7 @@ body {
 h2 {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-semibold);
-  color: #3e405b;
+  color: black;
 }
 
 h4 {
@@ -458,7 +458,7 @@ header {
 }
 
 .event-name,
-.event-details,
+.date-time-place,
 .event-tags,
 .event-ps {
   padding: 10px;
@@ -704,7 +704,7 @@ header {
 
 /* event details phone */
 
-@media screen and (max-width: 635px) {
+@media screen and (max-width: 705px) {
   .event-detail-page {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -716,7 +716,16 @@ header {
       " . tb tb tb tb tb tb tb tb . "
       " . . . . . . . . . . "
       " . det det det det det det det det . "
-      " . pr pr pr pr pr pr pr pr pr pr . ";
+      " . pr pr pr pr pr pr pr pr . ";
+  }
+
+  .detail-details {
+    padding: var(--spacing-small);
+    font-size: small;
+  }
+
+  .detail-bio {
+    font-size: small;
   }
 }
 
