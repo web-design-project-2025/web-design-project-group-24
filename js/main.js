@@ -15,7 +15,7 @@ async function loadData() {
 }
 
 function getEventById(id) {
-  return events.find((event) => event.id === id);
+  return events.find((event) => event.event_id === id);
 }
 
 function createEventContainer(event) {
@@ -51,7 +51,7 @@ function createEventContainer(event) {
   readMoreButton.appendChild(icon);
 
   readMoreButton.addEventListener("click", () => {
-    window.location.href = `event-detail.html?id=${event.id}`;
+    window.location.href = `event-detail.html?id=${event.event_id}`;
   });
 
   eventContainerElement.appendChild(readMoreButton);
@@ -63,7 +63,7 @@ function renderContent() {
   allEventsContainerElement.innerHTML = "";
 
   for (let event of events) {
-    const eventDetails = getEventById(event.id);
+    const eventDetails = getEventById(event.event_id);
     const eventContainerElement = createEventContainer(eventDetails);
     allEventsContainerElement.appendChild(eventContainerElement);
   }
