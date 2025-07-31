@@ -1,10 +1,11 @@
 {
   "events": [
     {
-      "image": "/Users/kajsagranstrom/Documents/GitHub/web-design-project-group-24/img/Firefly board games event 413778.jpg",
-      "event-name": "Chess games",
-      "date-time-place": "June 4th, 15.00 at Rio, JU",
-      "event-tags": ["chess", "games", "board games"]
+      "event_id": "1",
+      "event_image": "img/Firefly board games event 413778.jpg",
+      "event_name": "Chess games",
+      "date_time_place": "June 4th, 15.00 at Rio, JU",
+      "event_tags": ["chess", "games", "board games"]
     }
   ]
 }

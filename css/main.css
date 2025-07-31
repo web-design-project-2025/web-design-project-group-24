@@ -424,7 +424,7 @@ header {
     " . ec ec ec ec ec ec ec ec . ";
 }
 
-.all-events-container {
+#all-events-container {
   grid-area: ec;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
