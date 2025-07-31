@@ -40,6 +40,20 @@ function createEventContainer(event) {
   eventTags.textContent = event.event_tags;
   eventContainerElement.appendChild(eventTags);
 
+  const readMoreButton = document.createElement("button");
+  readMoreButton.classList.add("button-1", "event-button");
+  readMoreButton.textContent = "read more";
+
+  const icon = document.createElement("i");
+  icon.classList.add("bi", "bi-chevron-right");
+  readMoreButton.appendChild(icon);
+
+  readMoreButton.addEventListener("click", () => {
+    window.location.href = `event-detail.html?id=${event.id}`;
+  });
+
+  eventContainerElement.appendChild(readMoreButton);
+
   return eventContainerElement;
 }
 
