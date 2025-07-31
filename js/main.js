@@ -30,6 +30,16 @@ function createEventContainer(event) {
   eventName.textContent = event.event_name;
   eventContainerElement.appendChild(eventName);
 
+  const eventDate = document.createElement("h2");
+  eventDate.classList.add("date-time-place");
+  eventDate.textContent = event.date_time_place;
+  eventContainerElement.appendChild(eventDate);
+
+  const eventTags = document.createElement("p");
+  eventTags.classList.add("event-tags");
+  eventTags.textContent = event.event_tags;
+  eventContainerElement.appendChild(eventTags);
+
   return eventContainerElement;
 }
 
