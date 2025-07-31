@@ -3,8 +3,7 @@ let detailed = [];
 const allEventsContainerElement = document.getElementById(
   "all-events-container"
 );
-// const filterInput = document.getElementById("filter-input");
-// const filterResult = document.getElementById("filter-result");
+const filterInput = document.getElementById("filter-input");
 
 async function loadData() {
   const eventResponse = await fetch("data/events.json");
@@ -39,7 +38,7 @@ function createEventContainer(event) {
 
   const eventTags = document.createElement("p");
   eventTags.classList.add("event-tags");
-  eventTags.textContent = event.event_tags;
+  eventTags.textContent = event.event_tags.join(", ");
   eventContainerElement.appendChild(eventTags);
 
   const readMoreButton = document.createElement("button");
@@ -59,10 +58,10 @@ function createEventContainer(event) {
   return eventContainerElement;
 }
 
-function renderContent() {
+function renderContent(eventsToRender) {
   allEventsContainerElement.innerHTML = "";
 
-  for (let event of events) {
+  for (let event of eventsToRender) {
     const eventDetails = getEventById(event.event_id);
     const eventContainerElement = createEventContainer(eventDetails);
     allEventsContainerElement.appendChild(eventContainerElement);
@@ -70,31 +69,17 @@ function renderContent() {
 }
 
 // Function to filter and display the results
-// filterInput.addEventListener("input", function () {
-//   const query = filterInput.value.toLowerCase();
+filterInput.addEventListener("input", function () {
+  const query = filterInput.value.toLowerCase();
 
-//   const filteredData = eventData.filter((event) => {
-//     return (
-//       event.event_name.toLowerCase().includes(query) ||
-//       event.event_tags.some((tag) => tag.toLowerCase().includes(query))
-//     );
-//   });
+  const filteredData = events.filter((event) => {
+    return (
+      event.event_name.toLowerCase().includes(query) ||
+      event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+    );
+  });
 
-//   // Display filtered results
-//   filteredResults.innerHTML = filteredData
-//     .map(
-//       (event) => `
-//         <div>
-//             <h3>${event.event_name}</h3>
-//             <p>${event.date_time_place}</p>
-//             <img src="${event.event_image}" alt="${
-//         event.event_name
-//       }" style="width:100px;height:auto;">
-//             <p>Tags: ${event.event_tags.join(", ")}</p>
-//         </div>
-//     `
-//     )
-//     .join("");
-// });
+  renderContent(filteredData); // Update displayed events with filtered data
+});
 
 loadData();
