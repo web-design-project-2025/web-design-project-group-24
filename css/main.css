@@ -421,6 +421,7 @@ header {
     " . slide slide slide slide slide slide slide slide . "
     " . . . . . . . . . . "
     " . filter filter filter filter filter filter filter filter . "
+    " . ec ec ec ec ec ec ec ec . "
     " . ec ec ec ec ec ec ec ec . ";
 }
 
@@ -431,13 +432,9 @@ header {
   gap: 10px;
   grid-column-gap: 2rem;
   margin-bottom: var(--spacing-standard);
-  grid-template-areas:
-    "title title title title title . . . "
-    " ec ec ec ec ec ec ec ec";
 }
 
 .event-container {
-  grid-area: ec;
   grid-column: span 2;
   padding: 0.8rem;
   padding-bottom: 1.5rem;
