@@ -503,9 +503,14 @@ header {
 /* all events media screen phone */
 
 @media screen and (max-width: 768px) {
-  .event-container {
-    grid-area: ec;
-    grid-column: span 4;
+  #all-events-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "slide slide slide slide"
+      "filter filter filter filter"
+      "ec ec ec ec";
+
+    font-size: small;
   }
 }
 
@@ -513,11 +518,12 @@ header {
 }
 
 @media screen and (max-width: 527px) {
-  .event-container {
-    height: auto;
-    padding: var(--spacing-small);
-    grid-area: ec;
-    grid-column: span 8;
+  #all-events-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "slide"
+      "filter"
+      "ec";
   }
 
   .event-container img {
