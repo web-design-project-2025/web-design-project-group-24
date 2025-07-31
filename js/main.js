@@ -3,17 +3,18 @@ let detailed = [];
 const allEventsContainerElement = document.getElementById(
   "all-events-container"
 );
+const filterInput = document.getElementById("filter-input");
 
 async function loadData() {
   const eventResponse = await fetch("data/events.json");
   const eventJSON = await eventResponse.json();
   events = eventJSON.events;
 
-  renderContent();
+  renderContent(events);
 }
 
 function getEventById(id) {
-  return events.find((event) => event.id === id);
+  return events.find((event) => event.event_id === id);
 }
 
 function createEventContainer(event) {
@@ -37,7 +38,7 @@ function createEventContainer(event) {
 
   const eventTags = document.createElement("p");
   eventTags.classList.add("event-tags");
-  eventTags.textContent = event.event_tags;
+  eventTags.textContent = event.event_tags.join(", ");
   eventContainerElement.appendChild(eventTags);
 
   const readMoreButton = document.createElement("button");
@@ -49,7 +50,7 @@ function createEventContainer(event) {
   readMoreButton.appendChild(icon);
 
   readMoreButton.addEventListener("click", () => {
-    window.location.href = `event-detail.html?id=${event.id}`;
+    window.location.href = `event-detail.html?id=${event.event_id}`;
   });
 
   eventContainerElement.appendChild(readMoreButton);
@@ -57,14 +58,30 @@ function createEventContainer(event) {
   return eventContainerElement;
 }
 
-function renderContent() {
+function renderContent(eventsToRender) {
   allEventsContainerElement.innerHTML = "";
 
-  for (let event of events) {
-    const eventDetails = getEventById(event.id);
+  for (let event of eventsToRender) {
+    const eventDetails = getEventById(event.event_id);
     const eventContainerElement = createEventContainer(eventDetails);
     allEventsContainerElement.appendChild(eventContainerElement);
   }
 }
 
-loadData();
+// Load data and set up event listeners
+loadData().then(() => {
+  // Function to filter and display the results
+  filterInput.addEventListener("input", function () {
+    const query = filterInput.value.toLowerCase();
+
+    const filteredData = events.filter((event) => {
+      return (
+        event.event_name.toLowerCase().includes(query) ||
+        event.date_time_place.toLowerCase().includes(query) ||
+        event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+      );
+    });
+
+    renderContent(filteredData); // Update displayed events with filtered data
+  });
+});

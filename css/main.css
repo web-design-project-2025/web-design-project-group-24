@@ -420,7 +420,7 @@ header {
   grid-template-areas:
     " . slide slide slide slide slide slide slide slide . "
     " . . . . . . . . . . "
-    " . filter filter filter filter filter filter filter filter . "
+    " . filter filter filter filter filter . . . . "
     " . ec ec ec ec ec ec ec ec . "
     " . ec ec ec ec ec ec ec ec . ";
 }
@@ -455,9 +455,15 @@ header {
 }
 
 .event-name,
-.date-time-place,
 .event-tags,
 .event-ps {
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: black;
+}
+
+.date-time-place {
   padding: 10px;
   margin: 0;
   color: black;
@@ -472,6 +478,7 @@ header {
   width: 100%;
   height: auto;
   object-fit: cover;
+  margin: 0;
 }
 
 .event-container p {
@@ -480,16 +487,19 @@ header {
 
 .filter-search {
   grid-area: filter;
-  display: flex;
-  justify-content: space-between;
 }
 
-.filter-input {
-  display: flex;
+#filter-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  position: relative;
+  z-index: 100;
 }
 
 .filter-search div {
-  padding: 0rem 2rem 0rem 0rem;
+  padding-right: 2rem;
+  width: 100%;
 }
 
 .reset-button {
