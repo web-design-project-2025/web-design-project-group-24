@@ -10,7 +10,7 @@ async function loadData() {
   const eventJSON = await eventResponse.json();
   events = eventJSON.events;
 
-  renderContent();
+  renderContent(events);
 }
 
 function getEventById(id) {
