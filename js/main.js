@@ -68,19 +68,20 @@ function renderContent(eventsToRender) {
   }
 }
 
-// Function to filter and display the results
-filterInput.addEventListener("input", function () {
-  const query = filterInput.value.toLowerCase();
+// Load data and set up event listeners
+loadData().then(() => {
+  // Function to filter and display the results
+  filterInput.addEventListener("input", function () {
+    const query = filterInput.value.toLowerCase();
 
-  const filteredData = events.filter((event) => {
-    return (
-      event.event_name.toLowerCase().includes(query) ||
-      event.date_time_place.toLowerCase().includes(query) ||
-      event.event_tags.some((tag) => tag.toLowerCase().includes(query))
-    );
+    const filteredData = events.filter((event) => {
+      return (
+        event.event_name.toLowerCase().includes(query) ||
+        event.date_time_place.toLowerCase().includes(query) ||
+        event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+      );
+    });
+
+    renderContent(filteredData); // Update displayed events with filtered data
   });
-
-  renderContent(filteredData); // Update displayed events with filtered data
 });
-
-loadData();
