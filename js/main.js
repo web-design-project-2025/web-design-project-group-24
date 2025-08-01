@@ -1,20 +1,54 @@
 let events = [];
 let detailed = [];
-const allEventsContainerElement = document.getElementById(
-  "all-events-container"
-);
-const filterInput = document.getElementById("filter-input");
 
-async function loadData() {
+document.addEventListener("DOMContentLoaded", () => {
+  const allEventsContainerElement =
+    document.getElementById("all-events-container") ||
+    document.getElementById("recently-viewed");
+
+  const filterInput = document.getElementById("filter-input");
+
+  loadData(allEventsContainerElement).then(() => {
+    if (filterInput) {
+      filterInput.addEventListener("input", function () {
+        const query = filterInput.value.toLowerCase();
+        const filteredData = events.filter((event) => {
+          return (
+            event.event_name.toLowerCase().includes(query) ||
+            event.date_time_place.toLowerCase().includes(query) ||
+            event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+          );
+        });
+        renderContent(filteredData, allEventsContainerElement);
+      });
+    }
+  });
+});
+
+async function loadData(container) {
   const eventResponse = await fetch("data/events.json");
   const eventJSON = await eventResponse.json();
   events = eventJSON.events;
 
-  renderContent(events);
+  if (container?.id === "recently-viewed") {
+    renderContent(events.slice(0, 4), container); // Show only 4 events
+  } else {
+    renderContent(events, container); // Show all events
+  }
 }
 
 function getEventById(id) {
   return events.find((event) => event.event_id === id);
+}
+
+function renderContent(eventsToRender, container) {
+  if (!container) return;
+  container.innerHTML = "";
+  for (let event of eventsToRender) {
+    const eventDetails = getEventById(event.event_id);
+    const eventContainerElement = createEventContainer(eventDetails);
+    container.appendChild(eventContainerElement);
+  }
 }
 
 function createEventContainer(event) {
@@ -57,31 +91,3 @@ function createEventContainer(event) {
 
   return eventContainerElement;
 }
-
-function renderContent(eventsToRender) {
-  allEventsContainerElement.innerHTML = "";
-
-  for (let event of eventsToRender) {
-    const eventDetails = getEventById(event.event_id);
-    const eventContainerElement = createEventContainer(eventDetails);
-    allEventsContainerElement.appendChild(eventContainerElement);
-  }
-}
-
-// Load data and set up event listeners
-loadData().then(() => {
-  // Function to filter and display the results
-  filterInput.addEventListener("input", function () {
-    const query = filterInput.value.toLowerCase();
-
-    const filteredData = events.filter((event) => {
-      return (
-        event.event_name.toLowerCase().includes(query) ||
-        event.date_time_place.toLowerCase().includes(query) ||
-        event.event_tags.some((tag) => tag.toLowerCase().includes(query))
-      );
-    });
-
-    renderContent(filteredData); // Update displayed events with filtered data
-  });
-});
