@@ -346,14 +346,16 @@ header {
 /* home page media screen phone */
 
 @media screen and (max-width: 768px) {
-  .event-card-title {
-    grid-area: title;
-    grid-column: span 4;
-  }
-
-  .event-card {
-    grid-area: ec;
-    grid-column: span 4;
+  .home-page {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 300px auto;
+    gap: 10px;
+    grid-template-areas:
+      " . slide slide slide slide slide slide slide slide . "
+      " . . . . . . . . . . "
+      " . ht ht ht ht ht ht ht ht . "
+      " . rec rec rec rec rec rec rec rec . ";
   }
 }
 
