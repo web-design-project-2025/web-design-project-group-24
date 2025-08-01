@@ -346,34 +346,24 @@ header {
 /* home page media screen phone */
 
 @media screen and (max-width: 768px) {
-  .event-card-title {
-    grid-area: title;
-    grid-column: span 4;
-  }
-
-  .event-card {
-    grid-area: ec;
-    grid-column: span 4;
+  #recently-viewed {
+    grid-area: rec;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-column-gap: 2rem;
+    margin-bottom: var(--spacing-standard);
   }
 }
 
 @media screen and (max-width: 527px) {
-  .event-card-title {
-    grid-area: title;
-    grid-column: span 8;
-  }
-
-  .event-card {
-    height: auto;
-    padding: var(--spacing-small);
-    grid-area: ec;
-    grid-column: span 8;
-  }
-
-  .event-card img {
-    width: 100%;
-    height: 8em;
-    object-fit: cover;
+  #recently-viewed {
+    grid-area: rec;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    grid-column-gap: 2rem;
+    margin-bottom: var(--spacing-standard);
   }
 
   /* make this slideshow also for phone version */
