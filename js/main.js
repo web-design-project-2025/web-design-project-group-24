@@ -31,7 +31,13 @@ async function loadData(container) {
   events = eventJSON.events;
 
   if (container?.id === "recently-viewed") {
-    renderContent(events.slice(0, 4), container); // Show only 4 events
+    const viewedIds = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+    const recentEvents = viewedIds
+      .map((id) => events.find((e) => e.event_id === id))
+      .filter((e) => e);
+
+    renderContent(recentEvents, container);
   } else {
     renderContent(events, container); // Show all events
   }
@@ -84,10 +90,24 @@ function createEventContainer(event) {
   readMoreButton.appendChild(icon);
 
   readMoreButton.addEventListener("click", () => {
+    addToRecentlyViewed(event.event_id);
     window.location.href = `event-detail.html?id=${event.event_id}`;
   });
 
   eventContainerElement.appendChild(readMoreButton);
 
   return eventContainerElement;
+}
+
+function addToRecentlyViewed(eventId) {
+  let viewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+  viewed = viewed.filter((id) => id !== eventId);
+  viewed.unshift(eventId);
+
+  if (viewed.length > 4) {
+    viewed = viewed.slice(0, 4);
+  }
+
+  localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
 }
