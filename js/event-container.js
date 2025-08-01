@@ -31,6 +31,7 @@ function createEventContainer(event) {
   readMoreButton.appendChild(icon);
 
   readMoreButton.addEventListener("click", () => {
+    addToRecentlyViewed(event);
     window.location.href = `event-detail.html?id=${event.event_id}`;
   });
 
