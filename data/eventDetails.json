@@ -4,8 +4,19 @@
       "event_id": "1",
       "detail_image": "img/Firefly board games event 413778.jpg",
       "detail_event_name": "Chess games",
-      "detail_date_time_place": "June 4th, 15.00 at Rio, JU",
-      "detail_event_tags": ["chess", "games", "board games"]
+
+      "detail_event_bio": "Chess games hola hola bandola",
+      "detail_city": "Rio, JU",
+      "detail_meeting_place": "Rio, JU",
+      "detail_date": "June 4th",
+      "detail_time": "15.00",
+      "detail_participants": "5",
+      "detail_event_tags": ["chess", "games", "board games"],
+
+      "detail_organizer_profile_img": "img/Firefly board games event 413778.jpg",
+      "detail_organizer_name": "kajsa granström",
+      "detail_organizer_email": "granström@mupp",
+      "detail_organizer_rating": "5"
     }
   ]
 }
