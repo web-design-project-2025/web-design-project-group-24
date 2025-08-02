@@ -74,7 +74,7 @@ function createDetailPage(event) {
   detailDetails.appendChild(participants);
 
   const tags = document.createElement("p");
-  tags.textContent = `Tags: ${event.event_tags}`;
+  tags.textContent = `Tags: ${event.detail_event_tags.join(", ")}`;
   detailDetails.appendChild(tags);
 
   const organizer = document.createElement("section");
