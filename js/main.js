@@ -1,5 +1,4 @@
 let events = [];
-let detailed = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainerElement =

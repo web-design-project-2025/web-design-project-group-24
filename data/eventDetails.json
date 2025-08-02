@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "1",
+      "detail_image": "img/Firefly board games event 413778.jpg",
+      "detail_event_name": "Chess games",
+      "detail_date_time_place": "June 4th, 15.00 at Rio, JU",
+      "detail_event_tags": ["chess", "games", "board games"]
+    }
+  ]
+}
