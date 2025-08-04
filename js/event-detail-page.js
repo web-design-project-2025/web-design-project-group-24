@@ -58,7 +58,7 @@ function createDetailPage(event) {
   detailDetails.appendChild(city);
 
   const meetingPlace = document.createElement("p");
-  meetingPlace.textContent = `Meeting Place:${event.detail_meeting_place}`;
+  meetingPlace.textContent = `Meeting Place: ${event.detail_meeting_place}`;
   detailDetails.appendChild(meetingPlace);
 
   const date = document.createElement("p");
