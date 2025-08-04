@@ -54,7 +54,7 @@ function createDetailPage(event) {
   detailDetails.appendChild(heading);
 
   const city = document.createElement("p");
-  city.textContent = `City:${event.detail_city}`;
+  city.textContent = `City: ${event.detail_city}`;
   detailDetails.appendChild(city);
 
   const meetingPlace = document.createElement("p");
@@ -123,7 +123,7 @@ function createDetailPage(event) {
 
   organizer.appendChild(organizerDetails);
 
-  organizerDetails.appendChild(organizerEmail);
+  // organizerDetails.appendChild(organizerEmail); // Moved above for consistent order
   organizer.appendChild(ratings);
 
   organizer.appendChild(signMeUp);
