@@ -123,7 +123,7 @@ function createDetailPage(event) {
 
   organizer.appendChild(organizerDetails);
 
-  organizerDetails.appendChild(organizerEmail);
+  // organizerDetails.appendChild(organizerEmail); // Moved above for consistent order
   organizer.appendChild(ratings);
 
   organizer.appendChild(signMeUp);
