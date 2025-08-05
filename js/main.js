@@ -110,3 +110,32 @@ function addToRecentlyViewed(eventId) {
 
   localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function showSlide(index) {
+    slides.forEach((slide) => {
+      slide.style.display = "none";
+    });
+
+    slides[index].style.display = "block";
+  }
+
+  function changeSlide(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  prevBtn.addEventListener("click", () => changeSlide(-1));
+  nextBtn.addEventListener("click", () => changeSlide(1));
+
+  //   // Auto-play
+  //   setInterval(() => changeSlide(1), 4000);
+
+  // Initial show
+  showSlide(slideIndex);
+});
