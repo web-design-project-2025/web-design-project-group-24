@@ -2,9 +2,9 @@
   "events": [
     {
       "event_id": "1",
-      "detail_image": "img/chess_event.jpg",
+      "detail_image": "img/Firefly board games event 413778.jpg",
       "detail_event_name": "Chess games",
-      "detail_event_bio": "Join us for Chess Masters Showdown 2025, a dynamic celebration of strategy, skill, and community. This event welcomes players of all levels—from beginners to grandmasters—for a weekend packed with intense matches, learning opportunities, and engaging activities. The event features classical, rapid, and blitz tournaments, as well as simultaneous exhibitions and workshops led by top players. Spectators can enjoy live commentary, Q&A sessions, and the chance to meet chess personalities from around the world. Special youth programs, beginner-friendly tutorials, and fun mini-games make it a family-friendly experience. Whether you're playing to win or soaking up the atmosphere, this is your chance to connect with the chess community, sharpen your skills, and be part of something extraordinary. Make your move—register now and be part of the action at Chess Masters Showdown 2025!",
+      "detail_event_bio": "Join us for Chess Masters Showdown 2025, a weekend of strategy, skill, and community! Open to all levels, the event features classical, rapid, and blitz tournaments, plus exhibitions and workshops with top players. Enjoy live commentary, Q&As, youth programs, and fun mini-games. Whether you're competing or just watching, it's a family-friendly celebration of chess you won't want to miss. Register now and make your move!",
       "detail_city": "Stockholm",
       "detail_meeting_place": "Cafe Rio",
       "detail_date": "June 4th",
@@ -18,7 +18,7 @@
     },
     {
       "event_id": "2",
-      "detail_image": "img/Open mic poetry night 11723.jpg",
+      "detail_image": "img/pexels open mic.jpg",
       "detail_event_name": "Open Mic Night",
       "detail_event_bio": "Step into the spotlight at Luna Cafe’s Open Mic Night—a vibrant gathering of poets, musicians, and storytellers from across the city. Whether you're here to perform or just to listen, this night celebrates self-expression in all its forms. Expect heartfelt poetry, acoustic jams, spoken word, and surprise guest performances. The cozy ambiance and supportive audience make it the perfect place to debut your latest piece or connect with fellow creatives.",
       "detail_city": "Barcelona",
@@ -34,7 +34,7 @@
     },
     {
       "event_id": "3",
-      "detail_image": "img/Film screening event 229178.jpg",
+      "detail_image": "img/Firefly Classic Film Screeningjpg.jpg",
       "detail_event_name": "Classic Film Screening",
       "detail_event_bio": "Step back in time and enjoy a curated screening of timeless cinematic masterpieces. Held in the cozy Green Room in Berlin, this event invites film lovers to rediscover black-and-white classics, vintage foreign films, and hidden gems of the past. The evening includes a brief intro to the film’s context and a casual post-screening discussion.",
       "detail_city": "Berlin",
@@ -50,7 +50,7 @@
     },
     {
       "event_id": "4",
-      "detail_image": "img/Indie band concert 548132.jpg",
+      "detail_image": "img/Pexels indie band.jpg",
       "detail_event_name": "Indie Band Live",
       "detail_event_bio": "Experience the raw energy of local indie music live at Sky Hall, Stockholm. This concert night features up-and-coming bands with unique sounds—from dream pop to gritty garage rock. Expect craft drinks, a friendly crowd, and unforgettable live sets in an intimate venue.",
       "detail_city": "Stockholm",
@@ -66,7 +66,7 @@
     },
     {
       "event_id": "5",
-      "detail_image": "img/K-pop dance workshop 901231.jpg",
+      "detail_image": "img/pexels kpop dance.jpg",
       "detail_event_name": "K-Pop Dance Workshop",
       "detail_event_bio": "Learn iconic K-Pop choreography from a professional dancer in this energetic Paris workshop. From BTS to BLACKPINK, this session covers popular routines and movement techniques. No dance experience needed—just comfy clothes and your love for K-Pop!",
       "detail_city": "Paris",
@@ -82,7 +82,7 @@
     },
     {
       "event_id": "6",
-      "detail_image": "img/Anime trivia night 912837.jpg",
+      "detail_image": "img/Firefly anime trivia night.jpg",
       "detail_event_name": "Anime Trivia Night",
       "detail_event_bio": "Think you know everything about anime? Prove it at Otaku Lounge’s trivia night in Milan! This event covers everything from classic series to the latest hits. Compete solo or in teams for themed prizes, meet fellow fans, and enjoy anime-themed drinks and snacks.",
       "detail_city": "Milan",
@@ -98,7 +98,7 @@
     },
     {
       "event_id": "7",
-      "detail_image": "img/Outdoor movie night 112738.jpg",
+      "detail_image": "img/pexels outdoor movie.jpg",
       "detail_event_name": "Outdoor Movie Night",
       "detail_event_bio": "Relax under the stars at Central Park in Prague with a cozy community screening of a crowd-favorite film. Bring a blanket, your favorite snacks, and friends. This free event is open to all and perfect for winding down the week with good vibes and good company.",
       "detail_city": "Prague",
@@ -114,7 +114,7 @@
     },
     {
       "event_id": "8",
-      "detail_image": "img/Creative writing workshop 442829.jpg",
+      "detail_image": "img/Firefly creative writing workshopjpg.jpg",
       "detail_event_name": "Creative Writing Workshop",
       "detail_event_bio": "Unleash your inner storyteller at Writers' Corner in Edinburgh. This workshop provides a nurturing space to explore fiction, poetry, and narrative techniques through guided prompts and group feedback. Whether you're a beginner or seasoned writer, you'll leave with fresh inspiration and new ideas.",
       "detail_city": "Edinburgh",
@@ -130,7 +130,7 @@
     },
     {
       "event_id": "9",
-      "detail_image": "img/Karaoke party 834827.jpg",
+      "detail_image": "img/pexels karaoke party.jpg",
       "detail_event_name": "Karaoke Party",
       "detail_event_bio": "Grab the mic and let loose at Echo Room’s Karaoke Party in Warsaw! From pop hits to guilty pleasures, this is your moment to shine. A night of singing, laughter, and good vibes awaits. Bring your friends or meet new ones over a shared love of music.",
       "detail_city": "Warsaw",
@@ -146,7 +146,7 @@
     },
     {
       "event_id": "10",
-      "detail_image": "img/Board game night 374891.jpg",
+      "detail_image": "img/pexels board game night.jpg",
       "detail_event_name": "Board Game Night",
       "detail_event_bio": "Unplug and reconnect at Vienna’s Game Hub with a fun-filled evening of board games! From quick party games to strategic challenges, there’s something for every player level. A welcoming community atmosphere and game masters on site ensure everyone has a great time.",
       "detail_city": "Vienna",
@@ -162,7 +162,7 @@
     },
     {
       "event_id": "11",
-      "detail_image": "img/Photography walk 192738.jpg",
+      "detail_image": "img/Firefly photography walk.jpg",
       "detail_event_name": "Photography Walk",
       "detail_event_bio": "Explore the urban beauty of Oslo through your lens in this guided photography walk. Whether you're a beginner or a seasoned photographer, you'll enjoy capturing cityscapes, street life, and hidden corners. Bring your camera or phone and connect with fellow photography lovers.",
       "detail_city": "Oslo",
@@ -178,7 +178,7 @@
     },
     {
       "event_id": "12",
-      "detail_image": "img/Art exhibition opening 293847.jpg",
+      "detail_image": "img/pexels Art Exhibition Opening.jpg",
       "detail_event_name": "Art Exhibition Opening",
       "detail_event_bio": "Celebrate the launch of a bold new exhibition at ArtHouse in Tallinn. This gallery opening showcases contemporary works from local and international artists. Enjoy a glass of wine, meet the creators, and immerse yourself in modern visual expression.",
       "detail_city": "Tallinn",
@@ -194,7 +194,7 @@
     },
     {
       "event_id": "13",
-      "detail_image": "img/Live painting show 385728.jpg",
+      "detail_image": "img/pexels live painting.jpg",
       "detail_event_name": "Live Painting Show",
       "detail_event_bio": "Watch creativity come to life before your eyes as talented artists paint live on stage. This dynamic show blends performance and visual art in a celebration of color and expression. Hosted at Canvas Hall in Dublin—come early to grab a front-row seat!",
       "detail_city": "Dublin",
@@ -210,7 +210,7 @@
     },
     {
       "event_id": "14",
-      "detail_image": "img/Street food fest 573829.jpg",
+      "detail_image": "img/pexels street food festival.jpg",
       "detail_event_name": "Street Food Festival",
       "detail_event_bio": "Taste your way around the world at Budapest’s Street Food Festival! Sample bites from dozens of vendors offering everything from Korean BBQ to Hungarian classics. Live music, local brews, and a family-friendly vibe make this a can't-miss summer event.",
       "detail_city": "Budapest",
@@ -226,7 +226,7 @@
     },
     {
       "event_id": "15",
-      "detail_image": "img/Sustainability panel 193847.jpg",
+      "detail_image": "img/pexels panel talk.jpg",
       "detail_event_name": "Sustainability Panel Talk",
       "detail_event_bio": "Join industry experts and changemakers at Lecture Hall A in Helsinki for a forward-thinking discussion on sustainable living and climate action. This panel will cover innovations, policy trends, and everyday eco-conscious choices. Q&A and networking follow.",
       "detail_city": "Helsinki",
@@ -242,7 +242,7 @@
     },
     {
       "event_id": "16",
-      "detail_image": "img/Digital art class 374857.jpg",
+      "detail_image": "img/pexels digital art.jpg",
       "detail_event_name": "Intro to Digital Art",
       "detail_event_bio": "Learn how to create digital illustrations using tools like Procreate and Adobe Fresco. This beginner-friendly workshop at Media Lab, Amsterdam is perfect for anyone interested in visual storytelling and digital creativity. Tablets provided if you don’t have your own.",
       "detail_city": "Amsterdam",
@@ -258,7 +258,7 @@
     },
     {
       "event_id": "17",
-      "detail_image": "img/Game dev workshop 472839.jpg",
+      "detail_image": "img/pexels game development.jpg",
       "detail_event_name": "Game Dev Basics Workshop",
       "detail_event_bio": "Curious about making your own games? Learn the basics of game development—from design to simple coding—in this hands-on workshop at Coding Lab, Brussels. Perfect for beginners with no prior experience. Bring a laptop or use one of ours.",
       "detail_city": "Brussels",
@@ -274,7 +274,7 @@
     },
     {
       "event_id": "18",
-      "detail_image": "img/Tea ceremony 182736.jpg",
+      "detail_image": "img/pexels japanease tea cermony.jpg",
       "detail_event_name": "Japanese Tea Ceremony",
       "detail_event_bio": "Step into a moment of calm and culture with a traditional Japanese tea ceremony at the Culture Room in Ljubljana. Learn about the art, history, and etiquette behind this serene ritual. Includes tasting of seasonal wagashi (sweets).",
       "detail_city": "Ljubljana",
@@ -290,7 +290,7 @@
     },
     {
       "event_id": "19",
-      "detail_image": "img/Calligraphy night 475829.jpg",
+      "detail_image": "img/pexels Calligraphy Night.jpg",
       "detail_event_name": "Calligraphy Night",
       "detail_event_bio": "Slow down and reconnect with the beauty of handwriting. At Studio Ink in Zagreb, this guided evening session will introduce you to brush lettering and elegant scripts. Supplies are provided and beginners are warmly welcomed.",
       "detail_city": "Zagreb",
@@ -306,7 +306,7 @@
     },
     {
       "event_id": "20",
-      "detail_image": "img/DIY crafts workshop 384750.jpg",
+      "detail_image": "img/pexels crafting.jpg",
       "detail_event_name": "DIY Crafts Workshop",
       "detail_event_bio": "Get creative with your hands at MakerSpace Munich! This DIY session focuses on simple but stylish home and lifestyle crafts using upcycled materials. All tools and supplies are included. Great for all ages and skill levels.",
       "detail_city": "Munich",
@@ -322,7 +322,7 @@
     },
     {
       "event_id": "21",
-      "detail_image": "img/Knitting club 384750.jpg",
+      "detail_image": "img/pexels knitting.jpg",
       "detail_event_name": "Knitting Club Meetup",
       "detail_event_bio": "Grab your yarn and join us for a relaxing afternoon of knitting and conversation. Whether you're a beginner or a seasoned stitcher, you'll find friendly faces and cozy vibes at Lounge C in Florence. Patterns and needles available for newcomers.",
       "detail_city": "Florence",
@@ -338,7 +338,7 @@
     },
     {
       "event_id": "22",
-      "detail_image": "img/Bonsai intro class 293847.jpg",
+      "detail_image": "img/pexels bonsai.jpg",
       "detail_event_name": "Bonsai Basics Class",
       "detail_event_bio": "Discover the ancient art of bonsai in this hands-on beginner class at Greenhouse, Sofia. Learn pruning techniques, styling principles, and how to care for your own miniature tree. All tools and starter bonsai provided.",
       "detail_city": "Sofia",
@@ -354,7 +354,7 @@
     },
     {
       "event_id": "23",
-      "detail_image": "img/Foreign film club 582749.jpg",
+      "detail_image": "img/pexels foregin film.jpg",
       "detail_event_name": "Foreign Film Club",
       "detail_event_bio": "Explore international cinema with fellow film fans at Room 9B, Bucharest. This month’s screening features a thought-provoking drama from South Korea. Discussion follows with tea, snacks, and subtitles provided.",
       "detail_city": "Bucharest",
@@ -370,7 +370,7 @@
     },
     {
       "event_id": "24",
-      "detail_image": "img/Beat making lab 109384.jpg",
+      "detail_image": "img/pexels beat making.jpg",
       "detail_event_name": "Beat-Making Lab",
       "detail_event_bio": "Drop some beats and explore digital music creation in this hands-on session at Sound Lab, Riga. Use professional software to build your first loop or polish an existing track. No experience required—just your passion for rhythm.",
       "detail_city": "Riga",
@@ -386,7 +386,7 @@
     },
     {
       "event_id": "25",
-      "detail_image": "img/Lofi chill party 829173.jpg",
+      "detail_image": "img/pexels lounge.jpg",
       "detail_event_name": "Lofi Chill Lounge",
       "detail_event_bio": "Unwind with mellow beats and a cozy atmosphere at Chill Room in Bratislava. Sip on herbal tea or coffee while DJs spin chilled-out lofi tracks. Ideal for relaxing, sketching, journaling, or just vibing with friends.",
       "detail_city": "Bratislava",
@@ -402,7 +402,7 @@
     },
     {
       "event_id": "26",
-      "detail_image": "img/Book club meetup 192837.jpg",
+      "detail_image": "img/pexels book club.jpg",
       "detail_event_name": "Book Club Meetup",
       "detail_event_bio": "Join fellow book lovers at Library Nook in Geneva for a lively discussion of this month’s title: a contemporary literary fiction pick. Bring your thoughts, your annotations, and your love for storytelling!",
       "detail_city": "Geneva",
@@ -418,7 +418,7 @@
     },
     {
       "event_id": "27",
-      "detail_image": "img/Language exchange 384857.jpg",
+      "detail_image": "img/pexels language cafe.jpg",
       "detail_event_name": "Language Exchange Cafe",
       "detail_event_bio": "Practice your language skills in a relaxed, multilingual setting at Global Lounge in Krakow. Rotate tables, meet new people, and chat in languages like English, Spanish, French, and more. No pressure—just friendly, global vibes.",
       "detail_city": "Krakow",
@@ -434,7 +434,7 @@
     },
     {
       "event_id": "28",
-      "detail_image": "img/Modern dance class 837492.jpg",
+      "detail_image": "img/pexels modern dance.jpg",
       "detail_event_name": "Modern Dance Class",
       "detail_event_bio": "Express yourself through movement at this beginner-friendly modern dance class at Studio 4, Valencia. Guided by an experienced choreographer, you’ll explore rhythm, balance, and flow in a supportive and energetic space.",
       "detail_city": "Valencia",
@@ -450,7 +450,7 @@
     },
     {
       "event_id": "29",
-      "detail_image": "img/3D printing intro 748291.jpg",
+      "detail_image": "img/pexels 3d printing.jpg",
       "detail_event_name": "Intro to 3D Printing",
       "detail_event_bio": "Curious about 3D printing? Join this introductory workshop at TechLab in Luxembourg City. You’ll learn how to design simple objects and bring them to life with a 3D printer. All materials and laptops provided.",
       "detail_city": "Luxembourg City",
@@ -466,7 +466,7 @@
     },
     {
       "event_id": "30",
-      "detail_image": "img/Skate meet 473829.jpg",
+      "detail_image": "img/pexels skating.jpg",
       "detail_event_name": "Campus Skate Meetup",
       "detail_event_bio": "Join skaters of all levels for an afternoon of tricks, tunes, and community at Skate Park, Tallinn. Whether you're working on ollies or just cruising, this chill meetup is about sharing the pavement and good vibes.",
       "detail_city": "Tallinn",
@@ -482,7 +482,7 @@
     },
     {
       "event_id": "31",
-      "detail_image": "img/Cosplay showcase 192837.jpg",
+      "detail_image": "img/pexels cosplay.jpg",
       "detail_event_name": "Cosplay Showcase",
       "detail_event_bio": "Show off your craftsmanship and creativity at Marseille’s biggest cosplay showcase! Whether you're dressing as your favorite anime character or a video game hero, this event at Hall Z is your moment to shine. Catwalks, contests, and photo ops included!",
       "detail_city": "Marseille",
@@ -498,7 +498,7 @@
     },
     {
       "event_id": "32",
-      "detail_image": "img/Meditation session 385748.jpg",
+      "detail_image": "img/pexels meditation.jpg",
       "detail_event_name": "Guided Meditation",
       "detail_event_bio": "Start your day with a peaceful mind at Zen Room in Copenhagen. This guided meditation session focuses on breathing, presence, and awareness. Perfect for beginners and seasoned practitioners alike. Mats provided.",
       "detail_city": "Copenhagen",
@@ -514,7 +514,7 @@
     },
     {
       "event_id": "33",
-      "detail_image": "img/Indie zine fair 847293.jpg",
+      "detail_image": "img/pexels indie zine fair.jpg",
       "detail_event_name": "Indie Zine Fair",
       "detail_event_bio": "Celebrate self-publishing culture at the Indie Zine Fair in Antwerp. Browse zines from over 50 indie creators, attend micro-talks, and trade your own! A must-attend for creatives, writers, and print lovers.",
       "detail_city": "Antwerp",
@@ -530,7 +530,7 @@
     },
     {
       "event_id": "34",
-      "detail_image": "img/Tarot and tea 374829.jpg",
+      "detail_image": "img/pexels tarot.jpg",
       "detail_event_name": "Tarot & Tea",
       "detail_event_bio": "Enjoy an evening of introspection and connection at Mystic Nook in Bergen. Learn the basics of tarot reading while sipping curated teas. Ideal for anyone interested in spirituality, symbolism, or relaxing vibes.",
       "detail_city": "Bergen",
@@ -546,7 +546,7 @@
     },
     {
       "event_id": "35",
-      "detail_image": "img/Street fashion walk 847192.jpg",
+      "detail_image": "img/pexels street fashion.jpg",
       "detail_event_name": "Street Fashion Walk",
       "detail_event_bio": "Hit the streets of Porto in style! This fashion walk showcases local designers, influencers, and photographers capturing authentic streetwear and bold looks. Join the parade or simply soak up inspiration.",
       "detail_city": "Porto",
@@ -562,7 +562,7 @@
     },
     {
       "event_id": "36",
-      "detail_image": "img/Pop culture quiz night 123984.jpg",
+      "detail_image": "img/firefly pop quiz.jpg",
       "detail_event_name": "Pop Culture Quiz",
       "detail_event_bio": "Test your trivia chops at Lounge A in Belgrade with a fast-paced quiz covering movies, TV, memes, music, and internet moments. Prizes for the top teams and themed drinks available at the bar!",
       "detail_city": "Belgrade",
@@ -578,7 +578,7 @@
     },
     {
       "event_id": "37",
-      "detail_image": "img/Comedy night 847293.jpg",
+      "detail_image": "img/pexels stand up.jpg",
       "detail_event_name": "Stand-Up Comedy Night",
       "detail_event_bio": "Laugh out loud with a lineup of sharp and witty stand-up comedians at the Laugh Club in Sarajevo. A great night out whether you're coming solo or with friends. Drinks and snacks served throughout the night.",
       "detail_city": "Sarajevo",
@@ -594,7 +594,7 @@
     },
     {
       "event_id": "38",
-      "detail_image": "img/Coding jam 938471.jpg",
+      "detail_image": "img/pexels code jam.jpg",
       "detail_event_name": "Coding Jam",
       "detail_event_bio": "Jump into a day of rapid development and collaboration at Tech Hub, Vilnius. Whether you're a programmer, designer, or curious beginner, this jam is a space for building fun, fast prototypes together. Bring a laptop and ideas!",
       "detail_city": "Vilnius",
@@ -610,7 +610,7 @@
     },
     {
       "event_id": "39",
-      "detail_image": "img/Fitness bootcamp 847392.jpg",
+      "detail_image": "img/pexels fitness.jpg",
       "detail_event_name": "Fitness Bootcamp",
       "detail_event_bio": "Start your morning with an energizing bootcamp at Gym A in Thessaloniki. Circuit training, cardio bursts, and motivation in a small group setting. All fitness levels welcome. Bring water and a towel!",
       "detail_city": "Thessaloniki",
@@ -626,7 +626,7 @@
     },
     {
       "event_id": "40",
-      "detail_image": "img/Startup pitch night 384829.jpg",
+      "detail_image": "img/pexels start up pitch.jpg",
       "detail_event_name": "Startup Pitch Night",
       "detail_event_bio": "Watch tomorrow’s innovators pitch their ideas live at Venture Hall in Hamburg. This event features early-stage founders showcasing their startups in front of a panel of investors, mentors, and a live audience. Drinks and networking to follow.",
       "detail_city": "Hamburg",
