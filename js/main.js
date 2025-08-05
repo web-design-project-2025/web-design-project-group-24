@@ -111,32 +111,6 @@ function addToRecentlyViewed(eventId) {
   localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
 }
 
-<<<<<<< HEAD
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-
-function plusSlides(n) {
-  slideIndex += n;
-  showSlides();
-}
-
-function showSlides() {
-  if (!slides.length) return;
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex = (slideIndex + slides.length) % slides.length;
-  slides[slideIndex].style.display = "block";
-}
-
-// // Auto slideshow
-// setInterval(() => {
-//   plusSlides(1);
-// }, 4000);
-
-// Initial display
-document.addEventListener("DOMContentLoaded", showSlides);
-=======
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
   const slides = document.querySelectorAll(".slide");
@@ -165,4 +139,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial show
   showSlide(slideIndex);
 });
->>>>>>> main
