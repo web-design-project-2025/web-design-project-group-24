@@ -65,14 +65,19 @@ function createEventContainer(event) {
   eventImg.src = event.event_image;
   eventContainerElement.appendChild(eventImg);
 
-  const eventName = document.createElement("h3");
+  const eventName = document.createElement("h1");
   eventName.classList.add("event-name");
   eventName.textContent = event.event_name;
   eventContainerElement.appendChild(eventName);
 
+  const eventPlace = document.createElement("h2");
+  eventPlace.classList.add("place");
+  eventPlace.textContent = event.event_place;
+  eventContainerElement.appendChild(eventPlace);
+
   const eventDate = document.createElement("h2");
   eventDate.classList.add("date-time-place");
-  eventDate.textContent = event.date_time_place;
+  eventDate.textContent = event.event_date_time;
   eventContainerElement.appendChild(eventDate);
 
   const eventTags = document.createElement("p");
@@ -82,7 +87,7 @@ function createEventContainer(event) {
 
   const readMoreButton = document.createElement("button");
   readMoreButton.classList.add("button-1", "event-button");
-  readMoreButton.textContent = "read more";
+  readMoreButton.textContent = "Read more";
 
   const icon = document.createElement("i");
   icon.classList.add("bi", "bi-chevron-right");
