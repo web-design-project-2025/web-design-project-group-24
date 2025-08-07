@@ -763,24 +763,17 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
   transform: translateY(2px);
 }
 
 .favorite-btn i.bi-heart {
   color: var(--blue);
   font-size: 2rem;
-  transition: transform 0.2s ease;
 }
 
 .favorite-btn i.bi-heart-fill {
   color: var(--red);
   font-size: 1.5rem;
-  transition: transform 0.2s ease;
-}
-
-.favorite-btn:hover i {
-  transform: scale(1.2);
 }
 
 /* footer */
