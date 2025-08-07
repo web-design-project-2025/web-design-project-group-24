@@ -292,6 +292,7 @@ header {
   grid-area: slide;
   height: 80%;
   position: relative;
+  overflow: hidden;
 }
 
 .slide-show > img {
@@ -306,7 +307,6 @@ header {
 .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background-color: transparent;
   border: none;
   z-index: 10;
