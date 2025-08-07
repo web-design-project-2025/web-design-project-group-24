@@ -1,13 +1,14 @@
 let events = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const allEventsContainerElement =
+  const EventsContainerElement =
     document.getElementById("all-events-container") ||
-    document.getElementById("recently-viewed");
+    document.getElementById("recently-viewed") ||
+    document.getElementById("favorite-events-container");
 
   const filterInput = document.getElementById("filter-input");
 
-  loadData(allEventsContainerElement).then(() => {
+  loadData(EventsContainerElement).then(() => {
     if (filterInput) {
       filterInput.addEventListener("input", function () {
         const query = filterInput.value.toLowerCase();
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.event_tags.some((tag) => tag.toLowerCase().includes(query))
           );
         });
-        renderContent(filteredData, allEventsContainerElement);
+        renderContent(filteredData, EventsContainerElement);
       });
     }
   });
@@ -37,6 +38,14 @@ async function loadData(container) {
       .filter((e) => e);
 
     renderContent(recentEvents, container);
+  } else if (container?.id === "favorite-events-container") {
+    const viewedIds = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    const favoriteEvents = favoriteIds
+      .map((id) => events.find((e) => e.event_id === id))
+      .filter((e) => e);
+
+    renderContent(favoriteEvents, container);
   } else {
     renderContent(events, container); // Show all events
   }
@@ -65,14 +74,24 @@ function createEventContainer(event) {
   eventImg.src = event.event_image;
   eventContainerElement.appendChild(eventImg);
 
-  const eventName = document.createElement("h3");
+  const eventName = document.createElement("h1");
   eventName.classList.add("event-name");
   eventName.textContent = event.event_name;
   eventContainerElement.appendChild(eventName);
 
+  const favoriteBtn = document.createElement("button");
+  favoriteBtn.classList.add("favorite-btn");
+  favoriteBtn.textContent = event.event_name;
+  eventContainerElement.appendChild(favoriteBtn);
+
+  const eventPlace = document.createElement("h2");
+  eventPlace.classList.add("place");
+  eventPlace.textContent = event.event_place;
+  eventContainerElement.appendChild(eventPlace);
+
   const eventDate = document.createElement("h2");
   eventDate.classList.add("date-time-place");
-  eventDate.textContent = event.date_time_place;
+  eventDate.textContent = event.event_date_time;
   eventContainerElement.appendChild(eventDate);
 
   const eventTags = document.createElement("p");
@@ -82,7 +101,7 @@ function createEventContainer(event) {
 
   const readMoreButton = document.createElement("button");
   readMoreButton.classList.add("button-1", "event-button");
-  readMoreButton.textContent = "read more";
+  readMoreButton.textContent = "Read more";
 
   const icon = document.createElement("i");
   icon.classList.add("bi", "bi-chevron-right");

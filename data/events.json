@@ -4,27 +4,34 @@
       "event_id": "1",
       "event_image": "img/Firefly board games event 413778.jpg",
       "event_name": "Chess games",
-      "date_time_place": "June 4th, 15.00 at Rio, Lisbon",
+      "event_date_time": "Fri, June 4th • 15.00 PM",
+      "event_place": "Rio, Lisbon",
       "event_tags": ["chess", "games", "board games"]
     },
     {
       "event_id": "2",
       "event_image": "img/pexels open mic.jpg",
       "event_name": "Open Mic Night",
-      "date_time_place": "June 6th, 19.00 at Luna Cafe, Barcelona",
+      "event_date_time": "June 6th • 19.00 PM",
+      "event_place": "Luna Cafe, Barcelona",
       "event_tags": ["poetry", "music", "performance"]
     },
     {
       "event_id": "3",
       "event_image": "img/Firefly Classic Film Screeningjpg.jpg",
       "event_name": "Classic Film Screening",
-      "date_time_place": "June 8th, 20.00 at Green Room, Berlin",
+      "event_date_time": "June 8th • 20.00",
+      "event_place": "Green Room, Berlin",
       "event_tags": ["film", "cinema", "screening"]
     },
     {
       "event_id": "4",
       "event_image": "img/Pexels indie band.jpg",
       "event_name": "Indie Band Live",
+
+      "event_date_time": "",
+      "event_place": "",
+
       "date_time_place": "June 10th, 18.30 at Sky Hall, Stockholm",
       "event_tags": ["music", "concert", "indie"]
     },
@@ -32,6 +39,10 @@
       "event_id": "5",
       "event_image": "img/pexels kpop dance.jpg",
       "event_name": "K-Pop Dance Workshop",
+
+      "event_date_time": "",
+      "event_place": "",
+
       "date_time_place": "June 12th, 17.00 at Studio 8, Paris",
       "event_tags": ["dance", "k-pop", "workshop"]
     },
@@ -39,6 +50,8 @@
       "event_id": "6",
       "event_image": "img/Firefly anime trivia night.jpg",
       "event_name": "Anime Trivia Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 14th, 16.00 at Otaku Lounge, Milan",
       "event_tags": ["anime", "trivia", "fun"]
     },
@@ -46,6 +59,8 @@
       "event_id": "7",
       "event_image": "img/pexels outdoor movie.jpg",
       "event_name": "Outdoor Movie Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 16th, 21.00 at Central Park, Prague",
       "event_tags": ["movie", "outdoor", "community"]
     },
@@ -53,6 +68,8 @@
       "event_id": "8",
       "event_image": "img/Firefly creative writing workshopjpg.jpg",
       "event_name": "Creative Writing Workshop",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 17th, 13.00 at Writers' Corner, Edinburgh",
       "event_tags": ["writing", "workshop", "creative"]
     },
@@ -60,6 +77,8 @@
       "event_id": "9",
       "event_image": "img/pexels karaoke party.jpg",
       "event_name": "Karaoke Party",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 18th, 19.00 at Echo Room, Warsaw",
       "event_tags": ["karaoke", "music", "singing"]
     },
@@ -67,6 +86,8 @@
       "event_id": "10",
       "event_image": "img/pexels board game night.jpg",
       "event_name": "Board Game Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 20th, 18.00 at Game Hub, Vienna",
       "event_tags": ["games", "fun", "board games"]
     },
@@ -74,6 +95,8 @@
       "event_id": "11",
       "event_image": "img/Firefly photography walk.jpg",
       "event_name": "Photography Walk",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 22nd, 10.00 at City Gate, Oslo",
       "event_tags": ["photography", "walk", "art"]
     },
@@ -81,6 +104,8 @@
       "event_id": "12",
       "event_image": "img/pexels Art Exhibition Opening.jpg",
       "event_name": "Art Exhibition Opening",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 23rd, 17.00 at ArtHouse, Tallinn",
       "event_tags": ["art", "exhibition", "gallery"]
     },
@@ -88,6 +113,8 @@
       "event_id": "13",
       "event_image": "img/pexels live painting.jpg",
       "event_name": "Live Painting Show",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 24th, 15.30 at Canvas Hall, Dublin",
       "event_tags": ["painting", "art", "live show"]
     },
@@ -95,6 +122,8 @@
       "event_id": "14",
       "event_image": "img/pexels street food festival.jpg",
       "event_name": "Street Food Festival",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 26th, 12.00 at Main Square, Budapest",
       "event_tags": ["food", "festival", "street food"]
     },
@@ -102,6 +131,8 @@
       "event_id": "15",
       "event_image": "img/pexels panel talk.jpg",
       "event_name": "Sustainability Panel Talk",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 28th, 14.00 at Lecture Hall A, Helsinki",
       "event_tags": ["eco", "panel", "discussion"]
     },
@@ -109,6 +140,8 @@
       "event_id": "16",
       "event_image": "img/pexels digital art.jpg",
       "event_name": "Intro to Digital Art",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 29th, 11.00 at Media Lab, Amsterdam",
       "event_tags": ["digital art", "class", "creativity"]
     },
@@ -116,6 +149,8 @@
       "event_id": "17",
       "event_image": "img/pexels game development.jpg",
       "event_name": "Game Dev Basics Workshop",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "June 30th, 10.00 at Coding Lab, Brussels",
       "event_tags": ["game dev", "coding", "workshop"]
     },
@@ -123,6 +158,8 @@
       "event_id": "18",
       "event_image": "img/pexels japanease tea cermony.jpg",
       "event_name": "Japanese Tea Ceremony",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 2nd, 16.00 at Culture Room, Ljubljana",
       "event_tags": ["tea", "culture", "ceremony"]
     },
@@ -130,6 +167,8 @@
       "event_id": "19",
       "event_image": "img/pexels Calligraphy Night.jpg",
       "event_name": "Calligraphy Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 3rd, 18.00 at Studio Ink, Zagreb",
       "event_tags": ["calligraphy", "writing", "art"]
     },
@@ -137,6 +176,8 @@
       "event_id": "20",
       "event_image": "img/pexels crafting.jpg",
       "event_name": "DIY Crafts Workshop",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 5th, 13.00 at MakerSpace, Munich",
       "event_tags": ["crafts", "diy", "creative"]
     },
@@ -144,6 +185,8 @@
       "event_id": "21",
       "event_image": "img/pexels knitting.jpg",
       "event_name": "Knitting Club Meetup",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 6th, 15.00 at Lounge C, Florence",
       "event_tags": ["knitting", "crafts", "relax"]
     },
@@ -151,6 +194,8 @@
       "event_id": "22",
       "event_image": "img/pexels bonsai.jpg",
       "event_name": "Bonsai Basics Class",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 8th, 14.00 at Greenhouse, Sofia",
       "event_tags": ["bonsai", "plants", "class"]
     },
@@ -158,6 +203,8 @@
       "event_id": "23",
       "event_image": "img/pexels foregin film.jpg",
       "event_name": "Foreign Film Club",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 10th, 18.30 at Room 9B, Bucharest",
       "event_tags": ["film", "international", "cinema"]
     },
@@ -165,6 +212,8 @@
       "event_id": "24",
       "event_image": "img/pexels beat making.jpg",
       "event_name": "Beat-Making Lab",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 12th, 17.00 at Sound Lab, Riga",
       "event_tags": ["music", "production", "beats"]
     },
@@ -172,6 +221,8 @@
       "event_id": "25",
       "event_image": "img/pexels lounge.jpg",
       "event_name": "Lofi Chill Lounge",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 13th, 19.00 at Chill Room, Bratislava",
       "event_tags": ["lofi", "music", "chill"]
     },
@@ -179,6 +230,8 @@
       "event_id": "26",
       "event_image": "img/pexels book club.jpg",
       "event_name": "Book Club Meetup",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 15th, 16.00 at Library Nook, Geneva",
       "event_tags": ["books", "reading", "discussion"]
     },
@@ -186,6 +239,8 @@
       "event_id": "27",
       "event_image": "img/pexels language cafe.jpg",
       "event_name": "Language Exchange Cafe",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 16th, 14.00 at Global Lounge, Krakow",
       "event_tags": ["language", "exchange", "culture"]
     },
@@ -193,6 +248,8 @@
       "event_id": "28",
       "event_image": "img/pexels modern dance.jpg",
       "event_name": "Modern Dance Class",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 17th, 18.00 at Studio 4, Valencia",
       "event_tags": ["dance", "modern", "movement"]
     },
@@ -200,6 +257,8 @@
       "event_id": "29",
       "event_image": "img/pexels 3d printing.jpg",
       "event_name": "Intro to 3D Printing",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 19th, 11.00 at TechLab, Luxembourg City",
       "event_tags": ["3d printing", "tech", "workshop"]
     },
@@ -207,6 +266,8 @@
       "event_id": "30",
       "event_image": "img/pexels skating.jpg",
       "event_name": "Campus Skate Meetup",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 20th, 15.00 at Skate Park, Tallinn",
       "event_tags": ["skate", "outdoor", "sports"]
     },
@@ -214,6 +275,8 @@
       "event_id": "31",
       "event_image": "img/pexels cosplay.jpg",
       "event_name": "Cosplay Showcase",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 21st, 17.00 at Hall Z, Marseille",
       "event_tags": ["cosplay", "costumes", "anime"]
     },
@@ -221,6 +284,8 @@
       "event_id": "32",
       "event_image": "img/pexels meditation.jpg",
       "event_name": "Guided Meditation",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 23rd, 10.00 at Zen Room, Copenhagen",
       "event_tags": ["meditation", "wellness", "mindfulness"]
     },
@@ -228,6 +293,8 @@
       "event_id": "33",
       "event_image": "img/pexels indie zine fair.jpg",
       "event_name": "Indie Zine Fair",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 24th, 13.00 at Indie Hall, Antwerp",
       "event_tags": ["zines", "publishing", "indie"]
     },
@@ -235,6 +302,8 @@
       "event_id": "34",
       "event_image": "img/pexels tarot.jpg",
       "event_name": "Tarot & Tea",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 25th, 16.00 at Mystic Nook, Bergen",
       "event_tags": ["tarot", "spirituality", "relax"]
     },
@@ -242,6 +311,8 @@
       "event_id": "35",
       "event_image": "img/pexels street fashion.jpg",
       "event_name": "Street Fashion Walk",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 27th, 15.00 at Fashion Alley, Porto",
       "event_tags": ["fashion", "walk", "streetwear"]
     },
@@ -249,6 +320,8 @@
       "event_id": "36",
       "event_image": "img/firefly pop quiz.jpg",
       "event_name": "Pop Culture Quiz",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 28th, 20.00 at Lounge A, Belgrade",
       "event_tags": ["quiz", "pop culture", "fun"]
     },
@@ -256,6 +329,8 @@
       "event_id": "37",
       "event_image": "img/pexels stand up.jpg",
       "event_name": "Stand-Up Comedy Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 29th, 18.30 at Laugh Club, Sarajevo",
       "event_tags": ["comedy", "stand-up", "fun"]
     },
@@ -263,6 +338,8 @@
       "event_id": "38",
       "event_image": "img/pexels code jam.jpg",
       "event_name": "Coding Jam",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "July 30th, 09.00 at Tech Hub, Vilnius",
       "event_tags": ["coding", "jam", "hackathon"]
     },
@@ -270,6 +347,8 @@
       "event_id": "39",
       "event_image": "img/pexels fitness.jpg",
       "event_name": "Fitness Bootcamp",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "August 1st, 07.30 at Gym A, Thessaloniki",
       "event_tags": ["fitness", "exercise", "health"]
     },
@@ -277,6 +356,8 @@
       "event_id": "40",
       "event_image": "img/pexels start up pitch.jpg",
       "event_name": "Startup Pitch Night",
+      "event_date_time": "",
+      "event_place": "",
       "date_time_place": "August 2nd, 17.00 at Venture Hall, Hamburg",
       "event_tags": ["startup", "business", "pitch"]
     }
