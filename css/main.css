@@ -734,6 +734,55 @@ header {
   margin-bottom: var(--spacing-standard);
 }
 
+.event-wrapper-heart {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.favorite-btn i {
+  font-size: 1.6rem;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  transform: translateY(2px);
+}
+
+.favorite-btn i.bi-heart {
+  color: var(--blue);
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn i.bi-heart-fill {
+  color: var(--red);
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn:hover i {
+  transform: scale(1.2);
+}
+
 /* footer */
 
 footer {
