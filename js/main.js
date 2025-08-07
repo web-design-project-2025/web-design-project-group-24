@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const filteredData = events.filter((event) => {
           return (
             event.event_name.toLowerCase().includes(query) ||
-            event.date_time_place.toLowerCase().includes(query) ||
+            event.event_date_time.toLowerCase().includes(query) ||
+            event.event_place.toLowerCase().includes(query) ||
             event.event_tags.some((tag) => tag.toLowerCase().includes(query))
           );
         });
