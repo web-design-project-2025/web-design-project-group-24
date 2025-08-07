@@ -3,8 +3,8 @@ let events = [];
 document.addEventListener("DOMContentLoaded", () => {
   const EventsContainerElement =
     document.getElementById("all-events-container") ||
-    document.getElementById("recently-viewed");
-  document.getElementById("favorite-events-container");
+    document.getElementById("recently-viewed") ||
+    document.getElementById("favorite-events-container");
 
   const filterInput = document.getElementById("filter-input");
 
@@ -46,7 +46,12 @@ async function loadData(container) {
       .map((id) => events.find((e) => e.event_id === id))
       .filter((e) => e);
 
-    renderContent(favoriteEvents, container);
+    // Make sure to only render if there are any favorite events
+    if (favoriteEvents.length > 0) {
+      renderContent(favoriteEvents, container);
+    } else {
+      container.innerHTML = "<p>No favorite events yet!</p>"; // Provide feedback if no favorites
+    }
   } else {
     renderContent(events, container); // Show all events
   }
@@ -81,15 +86,26 @@ function createEventContainer(event) {
 
   const favoriteBtn = document.createElement("button");
   favoriteBtn.classList.add("favorite-btn");
-  favoriteBtn.innerHTML = `<i class="bi bi-heart"></i>`;
+
+  // Check if the event is favorited
+  const isAlreadyFavorited = isFavorited(event.event_id);
+  favoriteBtn.innerHTML = `<i class="bi ${
+    isAlreadyFavorited ? "bi-heart-fill" : "bi-heart"
+  }"></i>`;
 
   favoriteBtn.addEventListener("click", () => {
+    // Toggle the favorite state on click
     addToFavorites(event.event_id);
 
+    // Update the heart icon after adding/removing from favorites
     const isNowFavorited = isFavorited(event.event_id);
     favoriteBtn.innerHTML = `<i class="bi ${
       isNowFavorited ? "bi-heart-fill" : "bi-heart"
     }"></i>`;
+
+    if (window.location.pathname.includes("favorites.html")) {
+      window.location.reload();
+    }
   });
 
   wrapperHeart.appendChild(favoriteBtn);
@@ -153,7 +169,7 @@ function addToFavorites(eventId) {
     favorites = favorites.filter((id) => id !== eventId);
   } else {
     // Add to favorites
-    favorites.push(eventId);
+    favorites.unshift(eventId);
   }
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
