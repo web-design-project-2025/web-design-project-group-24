@@ -715,14 +715,23 @@ header {
 
 /* favorites page */
 
-.favorites-page {
+.favorite-page {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 300px auto;
   gap: 10px;
   grid-template-areas:
-    " . filter filter filter filter filter filter filter filter . "
+    " . ec ec ec ec ec ec ec ec . "
     " . ec ec ec ec ec ec ec ec . ";
+}
+
+#favorite-events-container {
+  grid-area: ec;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  grid-column-gap: 2rem;
+  margin-bottom: var(--spacing-standard);
 }
 
 /* footer */
