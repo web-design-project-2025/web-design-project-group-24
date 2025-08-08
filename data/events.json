@@ -164,7 +164,7 @@
       "event_id": "21",
       "event_image": "img/pexels knitting.jpg",
       "event_name": "Knitting Club Meetup",
-      "event_date_time": "July 6th • 15.00",
+      "event_date_time": "Sun, Aug 6th • 15.00",
       "event_place": "Lounge C, Florence",
       "event_tags": ["knitting", "crafts", "relax"]
     },
@@ -172,7 +172,7 @@
       "event_id": "22",
       "event_image": "img/pexels bonsai.jpg",
       "event_name": "Bonsai Basics Class",
-      "event_date_time": "July 8th • 14.00",
+      "event_date_time": "Thur, May 8th • 14.00",
       "event_place": "Greenhouse, Sofia",
       "event_tags": ["bonsai", "plants", "class"]
     },
@@ -180,7 +180,7 @@
       "event_id": "23",
       "event_image": "img/pexels foregin film.jpg",
       "event_name": "Foreign Film Club",
-      "event_date_time": "July 10th • 18.30",
+      "event_date_time": "Sat, Apr 10th • 18.30",
       "event_place": "Room 9B, Bucharest",
       "event_tags": ["film", "international", "cinema"]
     },
@@ -188,7 +188,7 @@
       "event_id": "24",
       "event_image": "img/pexels beat making.jpg",
       "event_name": "Beat-Making Lab",
-      "event_date_time": "July 12th • 17.00",
+      "event_date_time": "Fri, Oct 12th • 17.00",
       "event_place": "Sound Lab, Riga",
       "event_tags": ["music", "production", "beats"]
     },
@@ -196,7 +196,7 @@
       "event_id": "25",
       "event_image": "img/pexels lounge.jpg",
       "event_name": "Lofi Chill Lounge",
-      "event_date_time": "July 13th • 19.00",
+      "event_date_time": "Tue, July 13th • 19.00",
       "event_place": "Chill Room, Bratislava",
       "event_tags": ["lofi", "music", "chill"]
     },
@@ -204,7 +204,7 @@
       "event_id": "26",
       "event_image": "img/pexels book club.jpg",
       "event_name": "Book Club Meetup",
-      "event_date_time": "July 15th • 16.00",
+      "event_date_time": "Wed, Feb 15th • 16.00",
       "event_place": "Library Nook, Geneva",
       "event_tags": ["books", "reading", "discussion"]
     },
@@ -212,7 +212,7 @@
       "event_id": "27",
       "event_image": "img/pexels language cafe.jpg",
       "event_name": "Language Exchange Cafe",
-      "event_date_time": "July 16th • 14.00",
+      "event_date_time": "Sun, Sept 16th • 14.00",
       "event_place": "Global Lounge, Krakow",
       "event_tags": ["language", "exchange", "culture"]
     },
@@ -220,7 +220,7 @@
       "event_id": "28",
       "event_image": "img/pexels modern dance.jpg",
       "event_name": "Modern Dance Class",
-      "event_date_time": "July 17th • 18.00",
+      "event_date_time": "Tue, March 17th • 18.00",
       "event_place": "Studio 4, Valencia",
       "event_tags": ["dance", "modern", "movement"]
     },
@@ -228,7 +228,7 @@
       "event_id": "29",
       "event_image": "img/pexels 3d printing.jpg",
       "event_name": "Intro to 3D Printing",
-      "event_date_time": "July 19th • 11.00",
+      "event_date_time": "Thur, July 19th • 11.00",
       "event_place": "TechLab, Luxembourg City",
       "event_tags": ["3d printing", "tech", "workshop"]
     },
@@ -236,7 +236,7 @@
       "event_id": "30",
       "event_image": "img/pexels skating.jpg",
       "event_name": "Campus Skate Meetup",
-      "event_date_time": "July 20th • 15.00",
+      "event_date_time": "Sun, May 20th • 15.00",
       "event_place": "Skate Park, Tallinn",
       "event_tags": ["skate", "outdoor", "sports"]
     },
@@ -244,7 +244,7 @@
       "event_id": "31",
       "event_image": "img/pexels cosplay.jpg",
       "event_name": "Cosplay Showcase",
-      "event_date_time": "July 21st • 17.00",
+      "event_date_time": "Sat, May 21st • 17.00",
       "event_place": "Hall Z, Marseille",
       "event_tags": ["cosplay", "costumes", "anime"]
     },
@@ -252,7 +252,7 @@
       "event_id": "32",
       "event_image": "img/pexels meditation.jpg",
       "event_name": "Guided Meditation",
-      "event_date_time": "July 23rd • 10.00",
+      "event_date_time": "Tue, Aug 23rd • 10.00",
       "event_place": "Zen Room, Copenhagen",
       "event_tags": ["meditation", "wellness", "mindfulness"]
     },
@@ -260,7 +260,7 @@
       "event_id": "33",
       "event_image": "img/pexels indie zine fair.jpg",
       "event_name": "Indie Zine Fair",
-      "event_date_time": "July 24th • 13.00",
+      "event_date_time": "Sat ,Nov 24th • 13.00",
       "event_place": "Indie Hall, Antwerp",
       "event_tags": ["zines", "publishing", "indie"]
     },
@@ -268,7 +268,7 @@
       "event_id": "34",
       "event_image": "img/pexels tarot.jpg",
       "event_name": "Tarot & Tea",
-      "event_date_time": "July 25th • 16.00",
+      "event_date_time": "Wed, Feb 5th • 16.00",
       "event_place": "Mystic Nook, Bergen",
       "event_tags": ["tarot", "spirituality", "relax"]
     },
@@ -276,7 +276,7 @@
       "event_id": "35",
       "event_image": "img/pexels street fashion.jpg",
       "event_name": "Street Fashion Walk",
-      "event_date_time": "July 27th • 15.00",
+      "event_date_time": "Sat, July 27th • 15.00",
       "event_place": "Fashion Alley, Porto",
       "event_tags": ["fashion", "walk", "streetwear"]
     },
@@ -284,7 +284,7 @@
       "event_id": "36",
       "event_image": "img/firefly pop quiz.jpg",
       "event_name": "Pop Culture Quiz",
-      "event_date_time": "July 28th • 20.00",
+      "event_date_time": "Tue, Feb 8th • 20.00",
       "event_place": "Lounge A, Belgrade",
       "event_tags": ["quiz", "pop culture", "fun"]
     },
@@ -292,7 +292,7 @@
       "event_id": "37",
       "event_image": "img/pexels stand up.jpg",
       "event_name": "Stand-Up Comedy Night",
-      "event_date_time": "July 29th • 18.30",
+      "event_date_time": "Fri, Nov 9th • 18.30",
       "event_place": "Laugh Club, Sarajevo",
       "event_tags": ["comedy", "stand-up", "fun"]
     },
@@ -300,7 +300,7 @@
       "event_id": "38",
       "event_image": "img/pexels code jam.jpg",
       "event_name": "Coding Jam",
-      "event_date_time": "July 30th • 09.00",
+      "event_date_time": "Wed, Oct 10th • 09.00",
       "event_place": "Tech Hub, Vilnius",
       "event_tags": ["coding", "jam", "hackathon"]
     },
@@ -308,7 +308,7 @@
       "event_id": "39",
       "event_image": "img/pexels fitness.jpg",
       "event_name": "Fitness Bootcamp",
-      "event_date_time": "August 1st • 07.30",
+      "event_date_time": "Tue, Aug 1st • 07.30",
       "event_place": "Gym A, Thessaloniki",
       "event_tags": ["fitness", "exercise", "health"]
     },
@@ -316,7 +316,7 @@
       "event_id": "40",
       "event_image": "img/pexels start up pitch.jpg",
       "event_name": "Startup Pitch Night",
-      "event_date_time": "August 2nd • 17.00",
+      "event_date_time": "Mon, Aug 2nd • 17.00",
       "event_place": "Venture Hall, Hamburg",
       "event_tags": ["startup", "business", "pitch"]
     }
