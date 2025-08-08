@@ -858,8 +858,15 @@ footer img {
   padding: var(--spacing-small);
   background-color: white;
 
-  width: 30rem;
-  height: 40rem;
+  width: 30em;
+  height: auto;
   border-radius: var(--border-radius-box);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 713px) {
+  .log-In {
+    width: 70%;
+    height: auto;
+  }
 }
