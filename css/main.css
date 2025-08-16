@@ -187,7 +187,7 @@ header {
   }
 
   .small-header img {
-    width: 4rem;
+    width: 6rem;
     padding-left: 2rem;
   }
 
@@ -364,7 +364,7 @@ header {
   grid-column: span 2;
   padding: 0.8rem;
   padding-bottom: 1.5rem;
-
+  margin-bottom: 1.5rem;
   background: white;
   border-radius: var(--border-radius-box);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -491,7 +491,8 @@ header {
     " . dt dt dt dt dt dt dt dt . "
     " . img img img img . tb tb tb . "
     " . . . . . . . . . . "
-    " . det det det . . pr pr pr . ";
+    " . det det det . . pr pr pr . "
+    " . rec rec rec rec rec rec rec rec . ";
 }
 
 .detail-title-big {
@@ -585,7 +586,8 @@ header {
       " . img img img img img img img img . "
       " . tb tb tb tb tb tb tb tb . "
       " . . . . . . . . . . "
-      " . det det det . . pr pr pr . ";
+      " . det det det . . pr pr pr . "
+      " . rec rec rec rec rec rec rec rec . ";
   }
 
   .detail-title-big {
@@ -663,7 +665,8 @@ header {
       " . tb tb tb tb tb tb tb tb . "
       " . . . . . . . . . . "
       " . det det det det det det det det . "
-      " . pr pr pr pr pr pr pr pr . ";
+      " . pr pr pr pr pr pr pr pr . "
+      " . rec rec rec rec rec rec rec rec . ";
   }
 
   .detail-details {
@@ -687,7 +690,8 @@ header {
   gap: 10px;
   grid-template-areas:
     " . ec ec ec ec ec ec ec ec . "
-    " . ec ec ec ec ec ec ec ec . ";
+    " . ec ec ec ec ec ec ec ec . "
+    " . rec rec rec rec rec rec rec rec . ";
 }
 
 #favorite-events-container {
@@ -739,6 +743,27 @@ header {
 .favorite-btn i.bi-heart-fill {
   color: var(--red);
   font-size: 1.5rem;
+}
+
+/* favorites media tablet screen */
+@media screen and (max-width: 769px) {
+  #favorite-events-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "ec ec ec ec"
+      "ec ec ec ec"
+      "rec rec rec rec";
+  }
+}
+
+@media screen and (max-width: 527px) {
+  #favorite-events-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "ec ec"
+      "ec ec"
+      "rec rec";
+  }
 }
 
 /* recently viewed */
