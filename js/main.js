@@ -1,15 +1,64 @@
 let events = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const EventsContainerElement =
-    document.getElementById("all-events-container") ||
-    document.getElementById("recently-viewed") ||
-    document.getElementById("favorite-events-container");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const EventsContainerElement =
+//     document.getElementById("all-events-container") ||
+//     document.getElementById("recently-viewed") ||
+//     document.getElementById("favorite-events-container");
 
+//   const filterInput = document.getElementById("filter-input");
+
+//   loadData(EventsContainerElement).then(() => {
+//     if (filterInput) {
+//       filterInput.addEventListener("input", function () {
+//         const query = filterInput.value.toLowerCase();
+//         const filteredData = events.filter((event) => {
+//           return (
+//             event.event_name.toLowerCase().includes(query) ||
+//             event.event_date_time.toLowerCase().includes(query) ||
+//             event.event_place.toLowerCase().includes(query) ||
+//             event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+//           );
+//         });
+//         renderContent(filteredData, EventsContainerElement);
+//       });
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const allEventsContainer = document.getElementById("all-events-container");
+  const recentlyViewed = document.getElementById("recently-viewed");
+  const favoriteEvents = document.getElementById("favorite-events-container");
   const filterInput = document.getElementById("filter-input");
 
-  loadData(EventsContainerElement).then(() => {
-    if (filterInput) {
+  loadData().then(() => {
+    if (allEventsContainer) {
+      renderContent(events, allEventsContainer);
+    }
+
+    if (recentlyViewed) {
+      const viewedIds =
+        JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+      const recentEvents = viewedIds
+        .map((id) => events.find((e) => e.event_id === id))
+        .filter((e) => e);
+
+      renderContent(recentEvents, recentlyViewed);
+    }
+
+    if (favoriteEvents) {
+      const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      const favoriteEventsList = favoriteIds
+        .map((id) => events.find((e) => e.event_id === id))
+        .filter((e) => e);
+
+      renderContent(favoriteEventsList, favoriteEvents);
+    }
+
+    if (filterInput && allEventsContainer) {
       filterInput.addEventListener("input", function () {
         const query = filterInput.value.toLowerCase();
         const filteredData = events.filter((event) => {
@@ -24,6 +73,23 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // loadData(EventsContainerElement).then(() => {
+  //   if (filterInput) {
+  //     filterInput.addEventListener("input", function () {
+  //       const query = filterInput.value.toLowerCase();
+  //       const filteredData = events.filter((event) => {
+  //         return (
+  //           event.event_name.toLowerCase().includes(query) ||
+  //           event.event_date_time.toLowerCase().includes(query) ||
+  //           event.event_place.toLowerCase().includes(query) ||
+  //           event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+  //         );
+  //       });
+  //       renderContent(filteredData, EventsContainerElement);
+  //     });
+  //   }
+  // });
 });
 
 async function loadData(container) {
