@@ -154,8 +154,8 @@ function addToRecentlyViewed(eventId) {
   viewed = viewed.filter((id) => id !== eventId);
   viewed.unshift(eventId);
 
-  if (viewed.length > 4) {
-    viewed = viewed.slice(0, 4);
+  if (viewed.length > 12) {
+    viewed = viewed.slice(0, 12);
   }
 
   localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
@@ -210,5 +210,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initial show
     showSlide(slideIndex);
+  }
+
+  const rvContainer = document.getElementById("recently-viewed");
+  const rvPrev = document.querySelector(".rv-prev");
+  const rvNext = document.querySelector(".rv-next");
+
+  if (rvContainer && rvPrev && rvNext) {
+    rvPrev.addEventListener("click", () => {
+      rvContainer.scrollBy({
+        left: -rvContainer.offsetWidth,
+        behavior: "smooth",
+      });
+    });
+
+    rvNext.addEventListener("click", () => {
+      rvContainer.scrollBy({
+        left: rvContainer.offsetWidth,
+        behavior: "smooth",
+      });
+    });
   }
 });
