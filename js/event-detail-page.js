@@ -1,3 +1,6 @@
+// js/event-detail-page.js
+import { createEventContainer, addToRecentlyViewed } from "./functions.js";
+
 function getEventIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
@@ -6,17 +9,18 @@ function getEventIdFromURL() {
 document.addEventListener("DOMContentLoaded", async () => {
   const eventId = getEventIdFromURL();
 
-  const eventResponse = await fetch("data/eventDetails.json");
-  const data = await eventResponse.json();
-  const events = data.events;
+  const res = await fetch("data/eventDetails.json");
+  const data = await res.json();
+  const events = data.events || [];
 
   const event = events.find((e) => e.event_id === eventId);
+  if (!event) return;
 
-  if (event) {
-    const detailPage = createDetailPage(event);
-    const main = document.querySelector("main");
-    main.appendChild(detailPage);
-  }
+  const main = document.querySelector("main");
+  main.prepend(createDetailPage(event));
+
+  addToRecentlyViewed(event.event_id);
+  renderRecentlyViewed(events, eventId);
 });
 
 function createDetailPage(event) {
@@ -107,11 +111,10 @@ function createDetailPage(event) {
 
   const ratings = document.createElement("section");
   ratings.classList.add("ratings");
-
   for (let i = 0; i < 5; i++) {
     const star = document.createElement("span");
     star.classList.add("star");
-    star.innerHTML = "&#9734;"; // empty star, use &#9733; for filled
+    star.innerHTML = "&#9734;";
     ratings.appendChild(star);
   }
 
@@ -122,11 +125,33 @@ function createDetailPage(event) {
   eventDetailPage.appendChild(organizer);
 
   organizer.appendChild(organizerDetails);
-
-  // organizerDetails.appendChild(organizerEmail); // Moved above for consistent order
   organizer.appendChild(ratings);
-
   organizer.appendChild(signMeUp);
 
   return eventDetailPage;
+}
+
+function renderRecentlyViewed(allEvents, currentId) {
+  const container = document.getElementById("recently-viewed");
+  if (!container) return;
+
+  let ids = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+  ids = ids.filter((id) => id && id !== currentId);
+
+  container.innerHTML = "";
+  ids.forEach((id) => {
+    const ev = allEvents.find((e) => e.event_id === id);
+    if (!ev) return;
+
+    const listEvent = {
+      event_id: ev.event_id,
+      event_image: ev.detail_image,
+      event_name: ev.detail_event_name,
+      event_place: ev.detail_city,
+      event_date_time: ev.detail_date,
+      event_tags: ev.detail_event_tags || [],
+    };
+
+    container.appendChild(createEventContainer(listEvent));
+  });
 }
