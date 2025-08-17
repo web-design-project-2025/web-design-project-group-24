@@ -102,11 +102,13 @@ export function createFavoriteButton(eventId) {
 
   // Toggle the favorite state on click
   favoriteBtn.addEventListener("click", () => {
+    const wasFav = isFavorited(eventId); // was it in favorites before toggle?
     addToFavorites(eventId);
     setIcon();
 
-    if (window.location.pathname.includes("favorites.html")) {
-      window.location.reload();
+    if (window.location.pathname.includes("favorites.html") && wasFav) {
+      const card = favoriteBtn.closest(".event-container");
+      if (card) card.remove();
     }
   });
 
