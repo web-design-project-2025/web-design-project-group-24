@@ -1,5 +1,9 @@
 // js/event-detail-page.js
-import { createEventContainer, addToRecentlyViewed } from "./functions.js";
+import {
+  createEventContainer,
+  addToRecentlyViewed,
+  recentlyViewedButtons,
+} from "./functions.js";
 
 function getEventIdFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -21,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   addToRecentlyViewed(event.event_id);
   renderRecentlyViewed(events, eventId);
+  recentlyViewedButtons();
 });
 
 function createDetailPage(event) {

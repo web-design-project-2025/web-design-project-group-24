@@ -1,9 +1,4 @@
-import {
-  createEventContainer,
-  addToFavorites,
-  isFavorited,
-  addToRecentlyViewed,
-} from "./functions.js";
+import { createEventContainer, recentlyViewedButtons } from "./functions.js";
 
 let events = [];
 
@@ -27,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter((e) => e);
 
       renderContent(recentEvents, recentlyViewed);
+      recentlyViewedButtons();
     }
 
     if (favoriteEvents) {
@@ -50,27 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
             event.event_tags.some((tag) => tag.toLowerCase().includes(query))
           );
         });
-        renderContent(filteredData, EventsContainerElement);
+        renderContent(filteredData, allEventsContainer);
       });
     }
   });
-
-  // loadData(EventsContainerElement).then(() => {
-  //   if (filterInput) {
-  //     filterInput.addEventListener("input", function () {
-  //       const query = filterInput.value.toLowerCase();
-  //       const filteredData = events.filter((event) => {
-  //         return (
-  //           event.event_name.toLowerCase().includes(query) ||
-  //           event.event_date_time.toLowerCase().includes(query) ||
-  //           event.event_place.toLowerCase().includes(query) ||
-  //           event.event_tags.some((tag) => tag.toLowerCase().includes(query))
-  //         );
-  //       });
-  //       renderContent(filteredData, EventsContainerElement);
-  //     });
-  //   }
-  // });
 });
 
 async function loadData(container) {
@@ -148,25 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initial show
     showSlide(slideIndex);
-  }
-
-  const rvContainer = document.getElementById("recently-viewed");
-  const rvPrev = document.querySelector(".rv-prev");
-  const rvNext = document.querySelector(".rv-next");
-
-  if (rvContainer && rvPrev && rvNext) {
-    rvPrev.addEventListener("click", () => {
-      rvContainer.scrollBy({
-        left: -rvContainer.offsetWidth,
-        behavior: "smooth",
-      });
-    });
-
-    rvNext.addEventListener("click", () => {
-      rvContainer.scrollBy({
-        left: rvContainer.offsetWidth,
-        behavior: "smooth",
-      });
-    });
   }
 });

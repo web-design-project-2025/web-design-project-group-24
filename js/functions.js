@@ -11,30 +11,7 @@ export function createEventContainer(event) {
   eventImg.src = event.event_image;
   wrapperHeart.appendChild(eventImg);
 
-  const favoriteBtn = document.createElement("button");
-  favoriteBtn.classList.add("favorite-btn");
-
-  // Check if the event is favorited
-  const isAlreadyFavorited = isFavorited(event.event_id);
-  favoriteBtn.innerHTML = `<i class="bi ${
-    isAlreadyFavorited ? "bi-heart-fill" : "bi-heart"
-  }"></i>`;
-
-  favoriteBtn.addEventListener("click", () => {
-    // Toggle the favorite state on click
-    addToFavorites(event.event_id);
-
-    // Update the heart icon after adding/removing from favorites
-    const isNowFavorited = isFavorited(event.event_id);
-    favoriteBtn.innerHTML = `<i class="bi ${
-      isNowFavorited ? "bi-heart-fill" : "bi-heart"
-    }"></i>`;
-
-    if (window.location.pathname.includes("favorites.html")) {
-      window.location.reload();
-    }
-  });
-
+  const favoriteBtn = createFavoriteButton(event.event_id);
   wrapperHeart.appendChild(favoriteBtn);
 
   const eventName = document.createElement("h1");
@@ -86,6 +63,54 @@ export function addToRecentlyViewed(eventId) {
   }
 
   localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
+}
+
+export function recentlyViewedButtons() {
+  const rvContainer = document.getElementById("recently-viewed");
+  const rvPrev = document.querySelector(".rv-prev");
+  const rvNext = document.querySelector(".rv-next");
+
+  if (rvContainer && rvPrev && rvNext) {
+    rvPrev.addEventListener("click", () => {
+      rvContainer.scrollBy({
+        left: -rvContainer.offsetWidth,
+        behavior: "smooth",
+      });
+    });
+
+    rvNext.addEventListener("click", () => {
+      rvContainer.scrollBy({
+        left: rvContainer.offsetWidth,
+        behavior: "smooth",
+      });
+    });
+  }
+}
+
+export function createFavoriteButton(eventId) {
+  const favoriteBtn = document.createElement("button");
+  favoriteBtn.classList.add("favorite-btn");
+
+  const setIcon = () => {
+    const fav = isFavorited(eventId);
+    favoriteBtn.innerHTML = `<i class="bi ${
+      fav ? "bi-heart-fill" : "bi-heart"
+    }"></i>`;
+  };
+
+  setIcon();
+
+  // Toggle the favorite state on click
+  favoriteBtn.addEventListener("click", () => {
+    addToFavorites(eventId);
+    setIcon();
+
+    if (window.location.pathname.includes("favorites.html")) {
+      window.location.reload();
+    }
+  });
+
+  return favoriteBtn;
 }
 
 export function addToFavorites(eventId) {
