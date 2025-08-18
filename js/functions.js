@@ -101,7 +101,7 @@ export function createFavoriteButton(eventId) {
   setIcon();
 
   // Toggle the favorite state on click
-  favoriteBtn.addEventListener("click", () => {
+  favoriteBtn.addEventListener("click", async () => {
     const wasFav = isFavorited(eventId); // was it in favorites before toggle?
     addToFavorites(eventId);
     setIcon();
@@ -109,6 +109,16 @@ export function createFavoriteButton(eventId) {
     if (window.location.pathname.includes("favorites.html") && wasFav) {
       const card = favoriteBtn.closest(".event-container");
       if (card) card.remove();
+    } else if (window.location.pathname.includes("favorites.html") && !wasFav) {
+      const list = document.getElementById("favorite-events-container");
+      if (list) {
+        const res = await fetch("data/events.json");
+        const { events = [] } = await res.json();
+        const ev = events.find((e) => e.event_id === eventId);
+        if (ev) {
+          list.prepend(createEventContainer(ev));
+        }
+      }
     }
   });
 
