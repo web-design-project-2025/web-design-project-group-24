@@ -1,6 +1,7 @@
 export function createEventContainer(event) {
   const eventContainerElement = document.createElement("article");
   eventContainerElement.classList.add("event-container");
+  eventContainerElement.dataset.eventId = event.event_id;
 
   const wrapperHeart = document.createElement("div");
   wrapperHeart.classList.add("event-wrapper-heart");
@@ -106,18 +107,22 @@ export function createFavoriteButton(eventId) {
     addToFavorites(eventId);
     setIcon();
 
-    if (window.location.pathname.includes("favorites.html") && wasFav) {
-      const card = favoriteBtn.closest(".event-container");
-      if (card) card.remove();
-    } else if (window.location.pathname.includes("favorites.html") && !wasFav) {
-      const list = document.getElementById("favorite-events-container");
-      if (list) {
-        const res = await fetch("data/events.json");
-        const { events = [] } = await res.json();
-        const ev = events.find((e) => e.event_id === eventId);
-        if (ev) {
-          list.prepend(createEventContainer(ev));
-        }
+    if (!window.location.pathname.includes("favorites.html")) return;
+
+    const list = document.getElementById("favorite-events-container");
+    if (!list) return;
+
+    if (wasFav) {
+      const favCard = list.querySelector(
+        `.event-container[data-event-id="${eventId}"]`
+      );
+      if (favCard) favCard.remove();
+    } else if (list) {
+      const res = await fetch("data/events.json");
+      const { events = [] } = await res.json();
+      const ev = events.find((e) => e.event_id === eventId);
+      if (ev) {
+        list.prepend(createEventContainer(ev));
       }
     }
   });
