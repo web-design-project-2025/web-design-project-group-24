@@ -91,21 +91,23 @@ export function recentlyViewedButtons() {
 export function createFavoriteButton(eventId) {
   const favoriteBtn = document.createElement("button");
   favoriteBtn.classList.add("favorite-btn");
+  favoriteBtn.dataset.eventId = eventId;
 
-  const setIcon = () => {
+  const setIcon = (btn = favoriteBtn) => {
     const fav = isFavorited(eventId);
-    favoriteBtn.innerHTML = `<i class="bi ${
-      fav ? "bi-heart-fill" : "bi-heart"
-    }"></i>`;
+    btn.innerHTML = `<i class="bi ${fav ? "bi-heart-fill" : "bi-heart"}"></i>`;
   };
 
   setIcon();
 
-  // Toggle the favorite state on click
   favoriteBtn.addEventListener("click", async () => {
-    const wasFav = isFavorited(eventId); // was it in favorites before toggle?
+    const wasFav = isFavorited(eventId);
     addToFavorites(eventId);
     setIcon();
+
+    document
+      .querySelectorAll(`.favorite-btn[data-event-id="${eventId}"]`)
+      .forEach((btn) => setIcon(btn));
 
     if (!window.location.pathname.includes("favorites.html")) return;
 
