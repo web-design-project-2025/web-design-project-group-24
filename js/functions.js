@@ -152,16 +152,14 @@ export function isFavorited(eventId) {
 }
 
 export async function tagDropdown() {
-  const tagFilter = document.getElementById("tag-filter");
-  const tagList = document.querySelector(".tag-list");
-  const wrapper = document.querySelector(".tag-filter-list");
+  const tagFilter = document.getElementById("tag-filter-btn");
+  const tagList = document.getElementById("tag-list");
 
-  if (!tagFilter || !tagList || !wrapper) return;
+  if (!tagFilter || !tagList) return;
 
   const res = await fetch("data/events.json");
   const data = await res.json();
   const set = new Set();
-
   data.events.forEach((e) => (e.event_tags || []).forEach((t) => set.add(t)));
   const tags = ["All", ...set];
 
@@ -171,11 +169,8 @@ export async function tagDropdown() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.className = "tag-option";
-    checkbox.dataset.value = tag === "All " ? "all" : tag.toLowerCase();
-
+    checkbox.dataset.value = tag === "All" ? "all" : tag.toLowerCase();
     if (tag === "All") checkbox.checked = true;
-    checkbox.dataset.value = "all";
-    checkbox.checked = true;
 
     label.appendChild(checkbox);
     label.append(" " + tag);
@@ -183,22 +178,21 @@ export async function tagDropdown() {
   });
 
   tagFilter.addEventListener("click", (e) => {
+    e.preventDefault();
     tagList.hidden = !tagList.hidden;
-    wrapper.classList.toggle("open");
   });
 
   tagList.addEventListener("change", (e) => {
     if (!e.target.classList.contains("tag-option")) return;
 
-    const checkedTags = [...tagList.querySelectorAll("tag-option:checked")].map(
-      (el) => el.dataset.value
-    );
+    const checkedTags = [
+      ...tagList.querySelectorAll("input.tag-option:checked"),
+    ].map((el) => el.dataset.value);
 
     tagFilter.querySelector("span").textContent =
       e.target.dataset.value === "all"
         ? "Filter by tags"
         : e.target.textContent;
-    tagList.hidden = true;
     console.log("Selected tag:", e.target.dataset.value); // hook filter here
   });
 }

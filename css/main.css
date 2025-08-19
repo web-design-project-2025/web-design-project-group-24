@@ -423,20 +423,6 @@ header {
   /* display: flex; */
 }
 
-#search-filter,
-#tag-filter,
-#reset-filter {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  position: relative;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
 .filter {
   width: 100%;
 
@@ -455,7 +441,27 @@ header {
   height: 100%;
 }
 
+#search-filter,
+#tag-filter-btn,
+#reset-filter {
+  display: flex;
+
+  min-width: 0;
+  padding: var(--spacing-small);
+  margin: 0;
+  font-size: var(--font-size-medium);
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .tag-filter-list {
+  position: relative;
   grid-area: tags;
   min-width: 0;
   height: 100%;
@@ -464,24 +470,49 @@ header {
   align-items: center;
 }
 
-#tag-list {
-  position: absolute;
-  margin-top: 4px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+#tag-list[hidden] {
+  display: none !important;
 }
 
-.tag-option {
-  display: block;
-  padding: 0.5rem 1rem;
-  width: 100%;
-  background: none;
-  border: 0;
-  text-align: left;
+#tag-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: var(--spacing-standard);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  width: min(420px, 80vw);
+  max-height: 300px;
+  overflow-y: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+#tag-list label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0.5rem;
+  background-color: var(--green);
+  color: white;
+  border-radius: var(--border-radius-btn);
   cursor: pointer;
+}
+
+#tag-list input.tag-option {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#tag-list input[type="checkbox"] {
+  accent-color: var(--blue);
+  width: 1rem;
+  height: 1rem;
 }
 
 .tag-filter-list .bi-chevron-down {
@@ -517,6 +548,22 @@ header {
 
     grid-template-areas: "search tags . reset ";
   }
+
+  #tag-list {
+    width: min(420px, 50vw);
+    max-height: 400px;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #search-filter,
+  #tag-filter-btn,
+  #reset-filter {
+    display: flex;
+
+    padding: var(--spacing-small);
+    font-size: var(--font-size-small);
+  }
 }
 
 @media screen and (max-width: 527px) {
@@ -542,6 +589,15 @@ header {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "search tags . reset ";
     gap: 5px;
+  }
+
+  /* ev change phone version for tag list */
+
+  #tag-list {
+    width: min(300px, 50vw);
+    max-height: 400px;
+
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
