@@ -165,33 +165,35 @@ export async function tagDropdown() {
   data.events.forEach((e) => (e.event_tags || []).forEach((t) => set.add(t)));
   const tags = ["All", ...set];
 
-  tagList.innerHTML = ""; // Clear existing tags
+  tagList.innerHTML = "";
   tags.forEach((tag) => {
-    const button = document.createElement("button");
-    button.className = "tag-option";
-    button.textContent = tag;
-    tagList.appendChild(button);
-  });
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "tag-option";
+    checkbox.dataset.value = tag === "All " ? "all" : tag.toLowerCase();
 
-  const openMenu = () => {
-    tagList.hidden = !tagList.hidden;
-    wrapper.classList.add("open");
-  };
-  const closeMenu = () => {
-    tagList.hidden = true;
-    wrapper.classList.remove("open");
-  };
+    if (tag === "All") checkbox.checked = true;
+    checkbox.dataset.value = "all";
+    checkbox.checked = true;
+
+    label.appendChild(checkbox);
+    label.append(" " + tag);
+    tagList.appendChild(label);
+  });
 
   tagFilter.addEventListener("click", (e) => {
-    if (wrapper.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    tagList.hidden = !tagList.hidden;
+    wrapper.classList.toggle("open");
   });
 
-  tagList.addEventListener("click", (e) => {
+  tagList.addEventListener("change", (e) => {
     if (!e.target.classList.contains("tag-option")) return;
+
+    const checkedTags = [...tagList.querySelectorAll("tag-option:checked")].map(
+      (el) => el.dataset.value
+    );
+
     tagFilter.querySelector("span").textContent =
       e.target.dataset.value === "all"
         ? "Filter by tags"
