@@ -150,3 +150,57 @@ export function isFavorited(eventId) {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   return favorites.includes(eventId);
 }
+
+export async function tagDropdown() {
+  const tagFilter = document.getElementById("tag-filter");
+  const tagList = document.querySelector(".tag-list");
+  const wrapper = document.querySelector(".tag-filter-list");
+
+  if (!tagFilter || !tagList || !wrapper) return;
+
+  const res = await fetch("data/events.json");
+  const data = await res.json();
+  const set = new Set();
+
+  data.events.forEach((e) => (e.event_tags || []).forEach((t) => set.add(t)));
+  const tags = ["All", ...set];
+
+  tagList.innerHTML = ""; // Clear existing tags
+  tags.forEach((tag) => {
+    const button = document.createElement("button");
+    button.className = "tag-option";
+    button.textContent = tag;
+    tagList.appendChild(button);
+  });
+
+  const openMenu = () => {
+    tagList.hidden = !tagList.hidden;
+    wrapper.classList.add("open");
+  };
+  const closeMenu = () => {
+    tagList.hidden = true;
+    wrapper.classList.remove("open");
+  };
+
+  tagFilter.addEventListener("click", (e) => {
+    if (wrapper.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  tagList.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("tag-option")) return;
+    tagFilter.querySelector("span").textContent =
+      e.target.dataset.value === "all"
+        ? "Filter by tags"
+        : e.target.textContent;
+    tagList.hidden = true;
+    console.log("Selected tag:", e.target.dataset.value); // hook filter here
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  tagDropdown();
+});
