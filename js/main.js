@@ -104,8 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next");
 
   if (slides.length > 0 && prevBtn && nextBtn) {
-    let slideIndex = 0;
-
     function showSlide(index) {
       slides.forEach((slide) => {
         slide.style.display = "none";
