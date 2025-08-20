@@ -114,6 +114,15 @@ function createDetailPage(event) {
   signMeUp.classList.add("button-1");
   signMeUp.textContent = "Sign me up";
 
+  signMeUp.addEventListener("click", () => {
+    // alert("Please log in to sign up for events.");
+    // save current page before redirecting
+    localStorage.setItem("redirectAfterLogin", window.location.href);
+
+    // go to login page
+    window.location.href = "profile-page.html";
+  });
+
   const ratings = document.createElement("section");
   ratings.classList.add("ratings");
   for (let i = 0; i < 5; i++) {

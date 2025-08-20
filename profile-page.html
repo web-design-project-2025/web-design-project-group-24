@@ -3,21 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-     <link rel="stylesheet" href="css/main.css" />
+    <title>Login</title>
+
+    <!-- your CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- vanilla JS (not a module), loaded after DOM -->
+    <script src="js/log-in.js" defer></script>
   </head>
-  <body class="profile-page">
+  <body>
+    <main class="profile-page">
+      <div id="log-in">
+        <h2>Log in</h2>
 
-        <div class="log-In">
-        <h2>Log in</h2>    
-        <h2>whats your email?</h2>
-        <input type="email" placeholder="Email" />
-        <h2>whats your password?</h2>
-        <input type="password" placeholder="Password" />
-        <button>Log in</button>
-        </div>
-        </h2>
-        </div>
+        <form id="login-form" autocomplete="on">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email"
+            class="input-1"
+            required
+            autocomplete="email"
+          />
 
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            class="input-1"
+            required
+            autocomplete="current-password"
+          />
+
+          <button id="log-in-btn" type="submit" class="button-1 hover-2">
+            Log in
+          </button>
+        </form>
+
+        <p id="login-msg" class="small"></p>
+      </div>
+    </main>
   </body>
 </html>

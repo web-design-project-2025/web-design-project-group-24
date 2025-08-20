@@ -519,15 +519,8 @@ header {
 
 .tag-filter-list .bi-chevron-down {
   margin-left: var(--spacing-standard);
-  font-size: 1rem; /* adjust arrow size */
+  font-size: 1rem;
 }
-
-/* .tag-filter-list.open #tag-filter-btn,
-.tag-filter-list.open #tag-filter-btn:hover {
-  transform: none !important;
-  pointer-events: none; 
-  z-index: 0; 
-} */
 
 .reset-button {
   grid-area: reset;
@@ -1050,22 +1043,52 @@ footer img {
 
 .profile-page {
   display: grid;
-  place-items: center;
-  min-height: 100vh;
-  background-color: var(--cream);
+  margin: 0;
+  justify-items: end;
+  height: 100vh;
+
+  background: #3e405b;
+  background: linear-gradient(
+    90deg,
+    rgba(62, 64, 91, 1) 4%,
+    rgba(225, 122, 95, 1) 39%,
+    rgba(128, 178, 153, 1) 60%
+  );
+  /* background-image: url("/img/Firefly background.jpg"); */
 }
 
-.log-In {
+#log-in {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: var(--spacing-small);
-  background-color: white;
+  background-color: var(--green);
 
-  width: 30em;
-  height: auto;
-  border-radius: var(--border-radius-box);
+  width: 30%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--spacing-small);
+  background-color: var(--green);
+
+  align-items: center;
+  justify-content: center;
+}
+
+#log-in-btn {
+  background-color: var(--cream);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page input {
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 713px) {
