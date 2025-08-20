@@ -184,6 +184,21 @@ export async function tagDropdown(events) {
     tagList.hidden = !tagList.hidden;
   });
 
+  document.addEventListener("click", (e) => {
+    if (!tagList.hidden) {
+      if (!tagList.contains(e.target) && !tagFilter.contains(e.target)) {
+        tagList.hidden = true;
+      }
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !tagList.hidden) {
+      tagList.hidden = true;
+      tagFilter.focus(); // optional: return focus to button
+    }
+  });
+
   const updateAndFilter = () => {
     const allCheckbox = tagList.querySelector(
       "input.tag-option[data-value='all']"
@@ -202,9 +217,18 @@ export async function tagDropdown(events) {
       if (allCheckbox) allCheckbox.checked = true;
     }
 
-    tagFilter.querySelector("span").textContent = selectedTags.includes("all")
-      ? "Filter by tags"
-      : selectedTags.join(",");
+    let labelText = "Filter by tags";
+    if (!selectedTags.includes("all")) {
+      if (selectedTags.length === 1) {
+        labelText = selectedTags[0];
+      } else if (selectedTags.length === 2) {
+        labelText = selectedTags.join(", ");
+      } else {
+        labelText = `${selectedTags.length} tags selected`;
+      }
+    }
+
+    tagFilter.querySelector("span").textContent = labelText;
 
     window.dispatchEvent(
       new CustomEvent("tagsChanged", {
