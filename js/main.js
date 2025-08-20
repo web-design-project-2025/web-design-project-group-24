@@ -1,4 +1,8 @@
-import { createEventContainer, recentlyViewedButtons } from "./functions.js";
+import {
+  createEventContainer,
+  recentlyViewedButtons,
+  tagDropdown,
+} from "./functions.js";
 
 let events = [];
 
@@ -6,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainer = document.getElementById("all-events-container");
   const recentlyViewed = document.getElementById("recently-viewed");
   const favoriteEvents = document.getElementById("favorite-events-container");
-  const filterInput = document.getElementById("filter-input");
+  const filterInput = document.getElementById("search-filter");
 
   loadData().then(() => {
     if (allEventsContainer) {
@@ -49,6 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
         renderContent(filteredData, allEventsContainer);
       });
     }
+
+    tagDropdown(events);
+  });
+
+  window.addEventListener("tagsChanged", (e) => {
+    if (!allEventsContainer) return;
+    const selectedTags = e.detail.selectedTags || [];
+
+    const filteredEvents = selectedTags.includes("all")
+      ? events
+      : events.filter((ev) =>
+          (ev.event_tags || []).some((tag) =>
+            selectedTags.includes(tag.toLowerCase())
+          )
+        );
+
+    renderContent(filteredEvents, allEventsContainer);
   });
 });
 
@@ -91,8 +112,7 @@ function renderContent(eventsToRender, container) {
   if (!container) return;
   container.innerHTML = "";
   for (let event of eventsToRender) {
-    const eventDetails = getEventById(event.event_id);
-    const eventContainerElement = createEventContainer(eventDetails);
+    const eventContainerElement = createEventContainer(event);
     container.appendChild(eventContainerElement);
   }
 }
@@ -104,8 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next");
 
   if (slides.length > 0 && prevBtn && nextBtn) {
-    let slideIndex = 0;
-
     function showSlide(index) {
       slides.forEach((slide) => {
         slide.style.display = "none";

@@ -481,7 +481,7 @@ header {
   background: #fff;
   padding: var(--spacing-standard);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 10000;
 
   width: min(420px, 80vw);
   max-height: 300px;
@@ -490,6 +490,8 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+
+  /* pointer-events: auto; */
 }
 
 #tag-list label {
@@ -519,6 +521,13 @@ header {
   margin-left: var(--spacing-standard);
   font-size: 1rem; /* adjust arrow size */
 }
+
+/* .tag-filter-list.open #tag-filter-btn,
+.tag-filter-list.open #tag-filter-btn:hover {
+  transform: none !important;
+  pointer-events: none; 
+  z-index: 0; 
+} */
 
 .reset-button {
   grid-area: reset;

@@ -32,7 +32,7 @@ export function createEventContainer(event) {
 
   const eventTags = document.createElement("p");
   eventTags.classList.add("event-tags");
-  eventTags.textContent = event.event_tags.join(", ");
+  eventTags.textContent = (event.event_tags || []).join(", ");
   eventContainerElement.appendChild(eventTags);
 
   const readMoreButton = document.createElement("button");
@@ -151,17 +151,16 @@ export function isFavorited(eventId) {
   return favorites.includes(eventId);
 }
 
-export async function tagDropdown() {
+export async function tagDropdown(events) {
   const tagFilter = document.getElementById("tag-filter-btn");
   const tagList = document.getElementById("tag-list");
-
   if (!tagFilter || !tagList) return;
 
-  const res = await fetch("data/events.json");
-  const data = await res.json();
   const set = new Set();
-  data.events.forEach((e) => (e.event_tags || []).forEach((t) => set.add(t)));
-  const tags = ["All", ...set];
+  (events || []).forEach((e) =>
+    (e.event_tags || []).forEach((tag) => set.add(tag))
+  );
+  const tags = ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
 
   tagList.innerHTML = "";
   tags.forEach((tag) => {
@@ -172,8 +171,11 @@ export async function tagDropdown() {
     checkbox.dataset.value = tag === "All" ? "all" : tag.toLowerCase();
     if (tag === "All") checkbox.checked = true;
 
+    const text = document.createElement("span");
+    text.textContent = tag;
+
     label.appendChild(checkbox);
-    label.append(" " + tag);
+    label.appendChild(text);
     tagList.appendChild(label);
   });
 
@@ -182,21 +184,46 @@ export async function tagDropdown() {
     tagList.hidden = !tagList.hidden;
   });
 
-  tagList.addEventListener("change", (e) => {
-    if (!e.target.classList.contains("tag-option")) return;
-
-    const checkedTags = [
+  const updateAndFilter = () => {
+    const allCheckbox = tagList.querySelector(
+      "input.tag-option[data-value='all']"
+    );
+    let selectedTags = [
       ...tagList.querySelectorAll("input.tag-option:checked"),
     ].map((el) => el.dataset.value);
 
-    tagFilter.querySelector("span").textContent =
-      e.target.dataset.value === "all"
-        ? "Filter by tags"
-        : e.target.textContent;
-    console.log("Selected tag:", e.target.dataset.value); // hook filter here
+    if (selectedTags.includes("all") && selectedTags.length > 1) {
+      if (allCheckbox) allCheckbox.checked = false;
+      selectedTags = selectedTags.filter((tag) => tag !== "all");
+    }
+
+    if (selectedTags.length === 0) {
+      selectedTags = ["all"];
+      if (allCheckbox) allCheckbox.checked = true;
+    }
+
+    tagFilter.querySelector("span").textContent = selectedTags.includes("all")
+      ? "Filter by tags"
+      : selectedTags.join(",");
+
+    window.dispatchEvent(
+      new CustomEvent("tagsChanged", {
+        detail: { selectedTags },
+      })
+    );
+  };
+
+  tagList.addEventListener("change", (e) => {
+    const input = e.target;
+    if (!(input instanceof HTMLInputElement)) return;
+    if (!input.classList.contains("tag-option")) return;
+
+    if (input.dataset.value === "all" && input.checked) {
+      tagList
+        .querySelectorAll("input.tag-option:not([data-value='all'])")
+        .forEach((checkbox) => (checkbox.checked = false));
+    }
+
+    updateAndFilter();
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  tagDropdown();
-});
