@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const recentlyViewed = document.getElementById("recently-viewed");
   const favoriteEvents = document.getElementById("favorite-events-container");
   const filterInput = document.getElementById("search-filter");
+  const resetFilterButton = document.getElementById("reset-filter");
 
   loadData().then(() => {
     if (allEventsContainer) {
@@ -55,6 +56,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     tagDropdown(events);
+
+    if (resetFilterButton && allEventsContainer) {
+      resetFilterButton.addEventListener("click", () => {
+        const filterInput = document.getElementById("search-filter");
+        if (filterInput) filterInput.value = "";
+
+        const allCheckbox = document.querySelector(
+          "#tag-list input[data-value='all']"
+        );
+        if (allCheckbox) allCheckbox.checked = true;
+
+        document
+          .querySelectorAll(
+            "#tag-list input.tag-option:not([data-value='all'])"
+          )
+          .forEach((checkbox) => (checkbox.checked = false));
+
+        const tagBtnLabel = document.querySelector("#tag-filter-btn span");
+        if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+
+        window.dispatchEvent(
+          new CustomEvent("tagsChanged", { detail: { selectedTags: ["all"] } })
+        );
+
+        renderContent(events, allEventsContainer);
+      });
+    }
   });
 
   window.addEventListener("tagsChanged", (e) => {
@@ -104,10 +132,6 @@ async function loadData(container) {
   }
 }
 
-function getEventById(id) {
-  return events.find((event) => event.event_id === id);
-}
-
 function renderContent(eventsToRender, container) {
   if (!container) return;
   container.innerHTML = "";
@@ -116,6 +140,8 @@ function renderContent(eventsToRender, container) {
     container.appendChild(eventContainerElement);
   }
 }
+
+// Slideshow functionality
 
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
