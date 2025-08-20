@@ -66,15 +66,24 @@
       </section>
       <section class="filter-search">
         <div class="filter">
-          <div>
-            <input type="text" placeholder="Search..." id="filter-input" />
+          <div class="search">
+            <input type="text" placeholder="Search..." id="search-filter" />
+          </div>
+          <div class="tag-filter-list">
+            <button id="tag-filter-btn" class="button-1">
+              <span>Filter by tags</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div id="tag-list" class="tag-list" hidden></div>
+          </div>
+          <div class="reset-button">
+            <button id="reset-filter" class="button-1">Reset</button>
           </div>
         </div>
-        <div id="filter-results"></div>
+
+        <!-- <div id="filter-results"></div> -->
       </section>
-      <div class="reset-button">
-        <button class="button-1">Reset</button>
-      </div>
+
       <div id="all-events-container">
         <article class="event-container"></article>
       </div>

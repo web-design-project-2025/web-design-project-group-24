@@ -1,4 +1,8 @@
-import { createEventContainer, recentlyViewedButtons } from "./functions.js";
+import {
+  createEventContainer,
+  recentlyViewedButtons,
+  tagDropdown,
+} from "./functions.js";
 
 let events = [];
 
@@ -6,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainer = document.getElementById("all-events-container");
   const recentlyViewed = document.getElementById("recently-viewed");
   const favoriteEvents = document.getElementById("favorite-events-container");
-  const filterInput = document.getElementById("filter-input");
+  const filterInput = document.getElementById("search-filter");
+  const resetFilterButton = document.getElementById("reset-filter");
 
   loadData().then(() => {
     if (allEventsContainer) {
@@ -49,6 +54,49 @@ document.addEventListener("DOMContentLoaded", () => {
         renderContent(filteredData, allEventsContainer);
       });
     }
+
+    tagDropdown(events);
+
+    if (resetFilterButton && allEventsContainer) {
+      resetFilterButton.addEventListener("click", () => {
+        if (filterInput) filterInput.value = "";
+
+        const allCheckbox = document.querySelector(
+          "#tag-list input[data-value='all']"
+        );
+        if (allCheckbox) allCheckbox.checked = true;
+
+        document
+          .querySelectorAll(
+            "#tag-list input.tag-option:not([data-value='all'])"
+          )
+          .forEach((checkbox) => (checkbox.checked = false));
+
+        const tagBtnLabel = document.querySelector("#tag-filter-btn span");
+        if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+
+        window.dispatchEvent(
+          new CustomEvent("tagsChanged", { detail: { selectedTags: ["all"] } })
+        );
+
+        renderContent(events, allEventsContainer);
+      });
+    }
+  });
+
+  window.addEventListener("tagsChanged", (e) => {
+    if (!allEventsContainer) return;
+    const selectedTags = e.detail.selectedTags || [];
+
+    const filteredEvents = selectedTags.includes("all")
+      ? events
+      : events.filter((ev) =>
+          (ev.event_tags || []).some((tag) =>
+            selectedTags.includes(tag.toLowerCase())
+          )
+        );
+
+    renderContent(filteredEvents, allEventsContainer);
   });
 });
 
@@ -83,19 +131,16 @@ async function loadData(container) {
   }
 }
 
-function getEventById(id) {
-  return events.find((event) => event.event_id === id);
-}
-
 function renderContent(eventsToRender, container) {
   if (!container) return;
   container.innerHTML = "";
   for (let event of eventsToRender) {
-    const eventDetails = getEventById(event.event_id);
-    const eventContainerElement = createEventContainer(eventDetails);
+    const eventContainerElement = createEventContainer(event);
     container.appendChild(eventContainerElement);
   }
 }
+
+// Slideshow functionality
 
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
@@ -104,8 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next");
 
   if (slides.length > 0 && prevBtn && nextBtn) {
-    let slideIndex = 0;
-
     function showSlide(index) {
       slides.forEach((slide) => {
         slide.style.display = "none";
