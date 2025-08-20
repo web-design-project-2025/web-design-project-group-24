@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (resetFilterButton && allEventsContainer) {
       resetFilterButton.addEventListener("click", () => {
-        const filterInput = document.getElementById("search-filter");
         if (filterInput) filterInput.value = "";
 
         const allCheckbox = document.querySelector(
