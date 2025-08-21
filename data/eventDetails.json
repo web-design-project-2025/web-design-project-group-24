@@ -11,7 +11,7 @@
       "detail_time": "15.00",
       "detail_participants": "10 out of 20 places filled",
       "detail_event_tags": ["Games", "Board games"],
-      "detail_organizer_profile_img": "img/chess_event.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-1.jpg",
       "detail_organizer_name": "Sophie Lin",
       "detail_organizer_email": "sophie.lin@artmail.com",
       "detail_organizer_rating": "5"
@@ -27,7 +27,7 @@
       "detail_time": "19.00",
       "detail_participants": "28 out of 30 places filled",
       "detail_event_tags": ["Poetry", "Music"],
-      "detail_organizer_profile_img": "img/Open mic poetry night 11723.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-2.jpg",
       "detail_organizer_name": "Leo Márquez",
       "detail_organizer_email": "leo.m@creativehub.org",
       "detail_organizer_rating": "3.8"
@@ -43,7 +43,7 @@
       "detail_time": "20.00",
       "detail_participants": "23 out of 30 places filled",
       "detail_event_tags": ["Movie", "Cinema"],
-      "detail_organizer_profile_img": "img/Film screening event 229178.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-3.jpg",
       "detail_organizer_name": "Helena Vogel",
       "detail_organizer_email": "helena.v@filmclub.de",
       "detail_organizer_rating": "4.2"
@@ -59,7 +59,7 @@
       "detail_time": "18.30",
       "detail_participants": "25 out of 30 places filled",
       "detail_event_tags": ["Music", "Concert"],
-      "detail_organizer_profile_img": "img/Indie band concert 548132.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-4.jpg",
       "detail_organizer_name": "Jonas Ekström",
       "detail_organizer_email": "jonas.e@skyscene.se",
       "detail_organizer_rating": "4.9"
@@ -75,7 +75,7 @@
       "detail_time": "17.00",
       "detail_participants": "21 out of 30 places filled",
       "detail_event_tags": ["Dance", "Workshop"],
-      "detail_organizer_profile_img": "img/K-pop dance workshop 901231.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-5.jpg",
       "detail_organizer_name": "Min Ji Park",
       "detail_organizer_email": "minji.p@kbeatclub.fr",
       "detail_organizer_rating": "4.8"
@@ -91,7 +91,7 @@
       "detail_time": "16.00",
       "detail_participants": "29 out of 30 places filled",
       "detail_event_tags": ["Anime", "Trivia"],
-      "detail_organizer_profile_img": "img/Anime trivia night 912837.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-6.jpg",
       "detail_organizer_name": "Marco Tanaka",
       "detail_organizer_email": "marco.t@otakulounge.it",
       "detail_organizer_rating": "2.6"
@@ -107,7 +107,7 @@
       "detail_time": "21.00",
       "detail_participants": "29 out of 30 places filled",
       "detail_event_tags": ["Movie", "Outdoor"],
-      "detail_organizer_profile_img": "img/Outdoor movie night 112738.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-7.jpg",
       "detail_organizer_name": "Klara Novak",
       "detail_organizer_email": "klara.n@cinemoon.cz",
       "detail_organizer_rating": "4.9"
@@ -123,7 +123,7 @@
       "detail_time": "13.00",
       "detail_participants": "27 out of 30 places filled",
       "detail_event_tags": ["Writing", "Workshop"],
-      "detail_organizer_profile_img": "img/Creative writing workshop 442829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-8.jpg",
       "detail_organizer_name": "Ailsa Campbell",
       "detail_organizer_email": "ailsa.c@writehub.uk",
       "detail_organizer_rating": "4.8"
@@ -139,7 +139,7 @@
       "detail_time": "19.00",
       "detail_participants": "29 out of 30 places filled",
       "detail_event_tags": ["Music", "Singing"],
-      "detail_organizer_profile_img": "img/Karaoke party 834827.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-9.jpg",
       "detail_organizer_name": "Dominik Nowak",
       "detail_organizer_email": "dominik.n@echoclub.pl",
       "detail_organizer_rating": "3.7"
@@ -155,7 +155,7 @@
       "detail_time": "18.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Games", "Board games"],
-      "detail_organizer_profile_img": "img/Board game night 374891.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-10.jpg",
       "detail_organizer_name": "Eva Lang",
       "detail_organizer_email": "eva.l@spielzeit.at",
       "detail_organizer_rating": "4.9"
@@ -171,7 +171,7 @@
       "detail_time": "10.00",
       "detail_participants": "22 out of 30 places filled",
       "detail_event_tags": ["Photography", "Outdoor"],
-      "detail_organizer_profile_img": "img/Photography walk 192738.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-11.jpg",
       "detail_organizer_name": "Liv Eriksen",
       "detail_organizer_email": "liv.e@oslopix.no",
       "detail_organizer_rating": "4.7"
@@ -187,7 +187,7 @@
       "detail_time": "17.00",
       "detail_participants": "27 out of 30 places filled",
       "detail_event_tags": ["Art", "Exhibition"],
-      "detail_organizer_profile_img": "img/Art exhibition opening 293847.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-12.jpg",
       "detail_organizer_name": "Anu Saar",
       "detail_organizer_email": "anu.s@arthouse.ee",
       "detail_organizer_rating": "4.8"
@@ -203,7 +203,7 @@
       "detail_time": "15.30",
       "detail_participants": "26 out of 30 places filled",
       "detail_event_tags": ["Art", "Live show"],
-      "detail_organizer_profile_img": "img/Live painting show 385728.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-13.jpg",
       "detail_organizer_name": "Sean O’Connor",
       "detail_organizer_email": "sean.o@canvascollective.ie",
       "detail_organizer_rating": "3.7"
@@ -219,7 +219,7 @@
       "detail_time": "12.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Food", "Festival"],
-      "detail_organizer_profile_img": "img/Street food fest 573829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-14.jpg",
       "detail_organizer_name": "Lili Nagy",
       "detail_organizer_email": "lili.n@tastebud.hu",
       "detail_organizer_rating": "4.9"
@@ -235,7 +235,7 @@
       "detail_time": "14.00",
       "detail_participants": "24 out of 30 places filled",
       "detail_event_tags": ["Sustainability", "Panel"],
-      "detail_organizer_profile_img": "img/Sustainability panel 193847.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-15.jpg",
       "detail_organizer_name": "Noora Lehtinen",
       "detail_organizer_email": "noora.l@greentalk.fi",
       "detail_organizer_rating": "4.8"
@@ -251,7 +251,7 @@
       "detail_time": "11.00",
       "detail_participants": "20 out of 30 places filled",
       "detail_event_tags": ["Digital art", "Class"],
-      "detail_organizer_profile_img": "img/Digital art class 374857.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-16.jpg",
       "detail_organizer_name": "Rosa van Dijk",
       "detail_organizer_email": "rosa.v@artbyte.nl",
       "detail_organizer_rating": "4.7"
@@ -267,7 +267,7 @@
       "detail_time": "10.00",
       "detail_participants": "23 out of 30 places filled",
       "detail_event_tags": ["Programming", "Workshop"],
-      "detail_organizer_profile_img": "img/Game dev workshop 472839.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-17.jpg",
       "detail_organizer_name": "Sven Dupont",
       "detail_organizer_email": "sven.d@gamestudio.be",
       "detail_organizer_rating": "4.8"
@@ -283,7 +283,7 @@
       "detail_time": "16.00",
       "detail_participants": "19 out of 30 places filled",
       "detail_event_tags": ["Culture", "Ceremony"],
-      "detail_organizer_profile_img": "img/Tea ceremony 182736.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-18.jpg",
       "detail_organizer_name": "Yuki Nakamura",
       "detail_organizer_email": "yuki.n@culturecircle.si",
       "detail_organizer_rating": "4.9"
@@ -299,7 +299,7 @@
       "detail_time": "18.00",
       "detail_participants": "22 out of 30 places filled",
       "detail_event_tags": ["Writing", "Art"],
-      "detail_organizer_profile_img": "img/Calligraphy night 475829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-19.jpg",
       "detail_organizer_name": "Maja Petrovic",
       "detail_organizer_email": "maja.p@studioink.hr",
       "detail_organizer_rating": "4.8"
@@ -315,7 +315,7 @@
       "detail_time": "13.00",
       "detail_participants": "28 out of 30 places filled",
       "detail_event_tags": ["Crafts", "DIY"],
-      "detail_organizer_profile_img": "img/DIY crafts workshop 384750.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-20.jpg",
       "detail_organizer_name": "Anna Müller",
       "detail_organizer_email": "anna.m@makerspace.de",
       "detail_organizer_rating": "3.9"
@@ -331,7 +331,7 @@
       "detail_time": "15.00",
       "detail_participants": "18 out of 30 places filled",
       "detail_event_tags": ["Knitting", "Crafts"],
-      "detail_organizer_profile_img": "img/Knitting club 384750.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-21.jpg",
       "detail_organizer_name": "Giulia Romano",
       "detail_organizer_email": "giulia.r@woolcircle.it",
       "detail_organizer_rating": "4.7"
@@ -347,7 +347,7 @@
       "detail_time": "14.00",
       "detail_participants": "22 out of 30 places filled",
       "detail_event_tags": ["Plants", "Class"],
-      "detail_organizer_profile_img": "img/Bonsai intro class 293847.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-22.jpg",
       "detail_organizer_name": "Niko Marinov",
       "detail_organizer_email": "niko.m@bonsaiclub.bg",
       "detail_organizer_rating": "2.8"
@@ -363,7 +363,7 @@
       "detail_time": "18.30",
       "detail_participants": "20 out of 30 places filled",
       "detail_event_tags": ["Movie", "Cinema"],
-      "detail_organizer_profile_img": "img/Foreign film club 582749.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-23.jpg",
       "detail_organizer_name": "Elena Stan",
       "detail_organizer_email": "elena.s@cineclub.ro",
       "detail_organizer_rating": "4.6"
@@ -379,7 +379,7 @@
       "detail_time": "17.00",
       "detail_participants": "24 out of 30 places filled",
       "detail_event_tags": ["Music", "Production"],
-      "detail_organizer_profile_img": "img/Beat making lab 109384.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-24.jpg",
       "detail_organizer_name": "Kārlis Ozols",
       "detail_organizer_email": "karlis.o@soundlab.lv",
       "detail_organizer_rating": "4.8"
@@ -395,7 +395,7 @@
       "detail_time": "19.00",
       "detail_participants": "28 out of 30 places filled",
       "detail_event_tags": ["Music", "Chill"],
-      "detail_organizer_profile_img": "img/Lofi chill party 829173.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-25.jpg",
       "detail_organizer_name": "Marek Dvořák",
       "detail_organizer_email": "marek.d@chillscene.sk",
       "detail_organizer_rating": "4.9"
@@ -411,7 +411,7 @@
       "detail_time": "16.00",
       "detail_participants": "25 out of 30 places filled",
       "detail_event_tags": ["Books", "Reading"],
-      "detail_organizer_profile_img": "img/Book club meetup 192837.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-26.jpg",
       "detail_organizer_name": "Claire Dupont",
       "detail_organizer_email": "claire.d@readerlife.ch",
       "detail_organizer_rating": "4.8"
@@ -427,7 +427,7 @@
       "detail_time": "14.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Language", "Culture"],
-      "detail_organizer_profile_img": "img/Language exchange 384857.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-27.jpg",
       "detail_organizer_name": "Natalia Kaczmarek",
       "detail_organizer_email": "natalia.k@lingomeet.pl",
       "detail_organizer_rating": "4.9"
@@ -443,7 +443,7 @@
       "detail_time": "18.00",
       "detail_participants": "26 out of 30 places filled",
       "detail_event_tags": ["Dance", "Movement"],
-      "detail_organizer_profile_img": "img/Modern dance class 837492.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-28.jpg",
       "detail_organizer_name": "Lucía Ortega",
       "detail_organizer_email": "lucia.o@valenciadance.es",
       "detail_organizer_rating": "4.7"
@@ -459,7 +459,7 @@
       "detail_time": "11.00",
       "detail_participants": "23 out of 30 places filled",
       "detail_event_tags": ["Tech", "Workshop"],
-      "detail_organizer_profile_img": "img/3D printing intro 748291.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-29.jpg",
       "detail_organizer_name": "Maxime Bernard",
       "detail_organizer_email": "maxime.b@techlab.lu",
       "detail_organizer_rating": "4.8"
@@ -475,7 +475,7 @@
       "detail_time": "15.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Outdoor", "Sports"],
-      "detail_organizer_profile_img": "img/Skate meet 473829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-30.jpg",
       "detail_organizer_name": "Andres Pärn",
       "detail_organizer_email": "andres.p@skatecollective.ee",
       "detail_organizer_rating": "3.9"
@@ -491,7 +491,7 @@
       "detail_time": "17.00",
       "detail_participants": "27 out of 30 places filled",
       "detail_event_tags": ["Cosplay", "Anime"],
-      "detail_organizer_profile_img": "img/Cosplay showcase 192837.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-31.jpg",
       "detail_organizer_name": "Camille Laurent",
       "detail_organizer_email": "camille.l@cosplayfr.org",
       "detail_organizer_rating": "4.8"
@@ -507,7 +507,7 @@
       "detail_time": "10.00",
       "detail_participants": "20 out of 30 places filled",
       "detail_event_tags": ["Wellness", "Mindfulness"],
-      "detail_organizer_profile_img": "img/Meditation session 385748.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-32.jpg",
       "detail_organizer_name": "Sofie Jensen",
       "detail_organizer_email": "sofie.j@zenflow.dk",
       "detail_organizer_rating": "4.9"
@@ -523,7 +523,7 @@
       "detail_time": "13.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Creative", "Fair"],
-      "detail_organizer_profile_img": "img/Indie zine fair 847293.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-33.jpg",
       "detail_organizer_name": "Lea Van Doren",
       "detail_organizer_email": "lea.v@printscene.be",
       "detail_organizer_rating": "3.9"
@@ -539,7 +539,7 @@
       "detail_time": "16.00",
       "detail_participants": "25 out of 30 places filled",
       "detail_event_tags": ["Tarot", "Spirituality"],
-      "detail_organizer_profile_img": "img/Tarot and tea 374829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-34.jpg",
       "detail_organizer_name": "Ingrid Nygaard",
       "detail_organizer_email": "ingrid.n@tarotcircle.no",
       "detail_organizer_rating": "4.8"
@@ -555,7 +555,7 @@
       "detail_time": "15.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Fashion", "Outdoor"],
-      "detail_organizer_profile_img": "img/Street fashion walk 847192.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-35.jpg",
       "detail_organizer_name": "Tiago Lopes",
       "detail_organizer_email": "tiago.l@urbanwalk.pt",
       "detail_organizer_rating": "4.7"
@@ -571,7 +571,7 @@
       "detail_time": "20.00",
       "detail_participants": "28 out of 30 places filled",
       "detail_event_tags": ["Quiz", "Pop culture"],
-      "detail_organizer_profile_img": "img/Pop culture quiz night 123984.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-36.jpg",
       "detail_organizer_name": "Luka Marković",
       "detail_organizer_email": "luka.m@quizplanet.rs",
       "detail_organizer_rating": "2.8"
@@ -587,7 +587,7 @@
       "detail_time": "18.30",
       "detail_participants": "29 out of 30 places filled",
       "detail_event_tags": ["Comedy", "Stand-up"],
-      "detail_organizer_profile_img": "img/Comedy night 847293.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-37.jpg",
       "detail_organizer_name": "Emina Hadžić",
       "detail_organizer_email": "emina.h@laughbosnia.ba",
       "detail_organizer_rating": "4.9"
@@ -603,7 +603,7 @@
       "detail_time": "09.00",
       "detail_participants": "24 out of 30 places filled",
       "detail_event_tags": ["Programming", "Community"],
-      "detail_organizer_profile_img": "img/Coding jam 938471.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-38.jpg",
       "detail_organizer_name": "Justinas Petrauskas",
       "detail_organizer_email": "justinas.p@devhub.lt",
       "detail_organizer_rating": "4.7"
@@ -619,7 +619,7 @@
       "detail_time": "07.30",
       "detail_participants": "21 out of 30 places filled",
       "detail_event_tags": ["Exercise", "Wellness"],
-      "detail_organizer_profile_img": "img/Fitness bootcamp 847392.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-39.jpg",
       "detail_organizer_name": "Nikos Georgiou",
       "detail_organizer_email": "nikos.g@fitmotion.gr",
       "detail_organizer_rating": "4.8"
@@ -635,7 +635,7 @@
       "detail_time": "17.00",
       "detail_participants": "30 out of 30 places filled",
       "detail_event_tags": ["Startup", "Business"],
-      "detail_organizer_profile_img": "img/Startup pitch night 384829.jpg",
+      "detail_organizer_profile_img": "img/profile/pexels-id-40.jpg",
       "detail_organizer_name": "Felix Richter",
       "detail_organizer_email": "felix.r@founderscircle.de",
       "detail_organizer_rating": "4.9"
