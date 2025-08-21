@@ -15,6 +15,20 @@ export function createEventContainer(event) {
   const favoriteBtn = createFavoriteButton(event.event_id);
   wrapperHeart.appendChild(favoriteBtn);
 
+  if (event.status) {
+    const statusMap = {
+      past: "Past",
+      today: "Today",
+      tomorrow: "Tomorrow",
+      "this-week": "This week",
+      "this-month": "This month",
+    };
+    const statusElement = document.createElement("span");
+    statusElement.classList.add("status-label");
+    statusElement.textContent = statusMap[event.status] || event.status;
+    eventContainerElement.appendChild(statusElement);
+  }
+
   const eventName = document.createElement("h1");
   eventName.classList.add("event-name");
   eventName.textContent = event.event_name;

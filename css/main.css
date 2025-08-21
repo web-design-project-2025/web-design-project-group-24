@@ -358,6 +358,7 @@ header {
   gap: 10px;
   grid-column-gap: 2rem;
   margin-bottom: var(--spacing-standard);
+  align-items: stretch;
 }
 
 .event-container {
@@ -380,30 +381,31 @@ header {
   object-fit: cover;
 }
 
-.event-name,
-.event-tags,
-.event-ps {
+.event-name {
   padding: 10px;
+  margin-bottom: auto;
+  color: black;
+}
+
+.status-label,
+.place {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px 10px 0px 10px;
+}
+
+.date-time-place {
+  padding-left: 10px;
   margin-top: auto;
   margin-bottom: auto;
   color: black;
 }
 
-.place {
-  padding-left: 10px;
-  margin: 0;
+.event-tags {
+  padding: 10px 0 10px 10px;
+  margin-top: auto;
+  margin-bottom: auto;
   color: black;
-}
-
-.date-time-place {
-  padding-left: 10px;
-  margin: 0;
-  color: black;
-}
-
-.event-button {
-  margin: 10px;
-  align-self: flex-start;
 }
 
 .event-container img {
@@ -413,8 +415,16 @@ header {
   margin: 0;
 }
 
-.event-container p {
+/* .event-container p {
   margin: 0;
+} */
+
+.event-button {
+  margin-top: auto;
+  align-self: stretch;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .filter-search {
@@ -431,7 +441,7 @@ header {
   grid-template-rows: 3rem;
   gap: 10px;
   grid-column-gap: 2rem;
-  grid-template-areas: "search search tags tags . . reset reset ";
+  grid-template-areas: "search search tags tags sort sort . . reset reset reset ";
 }
 
 .search {

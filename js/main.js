@@ -5,6 +5,9 @@ import {
 } from "./functions.js";
 
 let events = [];
+let defaultSort = SORT_MODES.DATE; // Default sort by date
+let currentSort = defaultSort; // Default sort by date
+const applySort = (arr) => sortEvents(arr, currentSort);
 
 document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainer = document.getElementById("all-events-container");
@@ -12,6 +15,59 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoriteEvents = document.getElementById("favorite-events-container");
   const filterInput = document.getElementById("search-filter");
   const resetFilterButton = document.getElementById("reset-filter");
+  const sortFilter = document.getElementById("sort-filter");
+
+  if (sortFilter) {
+    // Set default sort mode
+    if (!sortFilter.value) sortFilter.value = defaultSort;
+    currentSort = sortFilter.value || defaultSort;
+
+    currentSort = sortFilter.value || defaultSort;
+    sortFilter.addEventListener("change", () => {
+      currentSort = sortFilter.value;
+
+      if (!allEventsContainer) return;
+
+      const selectedTags = [
+        ...document.querySelectorAll("#tag-list input.tag-option:checked"),
+      ].map((el) => el.dataset.value);
+
+      const base =
+        selectedTags.includes("all") || selectedTags.length === 0
+          ? events
+          : events.filter((ev) =>
+              (ev.event_tags || []).some((tag) =>
+                selectedTags.includes(tag.toLowerCase())
+              )
+            );
+
+      const query = (filterInput?.value || "").toLowerCase().trim();
+      const final = !query
+        ? base
+        : base.filter((event) => {
+            const meta = getEventMeta(event);
+            const eventName = event.event_name.toLowerCase();
+            const eventDate = event.event_date_display.toLowerCase();
+            const eventPlace = event.event_place.toLowerCase();
+            const eventTags = (event.event_tags || []).map((tag) =>
+              tag.toLowerCase()
+            );
+            const metaWeekday = meta.weekday ? meta.weekday.toLowerCase() : "";
+            const metaStatus = meta.status ? meta.status.toLowerCase() : "";
+
+            return (
+              eventName.includes(query) ||
+              eventDate.includes(query) ||
+              eventPlace.includes(query) ||
+              eventTags.some((tag) => tag.includes(query)) ||
+              metaWeekday.includes(query) ||
+              metaStatus.includes(query)
+            );
+          });
+
+      renderContent(applySort(final), allEventsContainer);
+    });
+  }
 
   loadData().then(() => {
     if (allEventsContainer) {
@@ -74,6 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const tagBtnLabel = document.querySelector("#tag-filter-btn span");
         if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+
+        currentSort = defaultSort;
+        const sortFilter = document.getElementById("sort-filter");
+        if (sortFilter) sortFilter.value = defaultSort;
 
         window.dispatchEvent(
           new CustomEvent("tagsChanged", { detail: { selectedTags: ["all"] } })
