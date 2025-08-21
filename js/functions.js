@@ -227,6 +227,10 @@ window.addEventListener("favoritesChanged", (e) => {
   updateHeaderHeartUI({ animate: !!favorited });
 });
 
+export const PHONE_Q = "(max-width: 527px)";
+export const getTagDefaultLabel = () =>
+  window.matchMedia(PHONE_Q).matches ? "Tags" : "Filter by tags";
+
 export async function tagDropdown(events) {
   const tagFilter = document.getElementById("tag-filter-btn");
   const tagList = document.getElementById("tag-list");
@@ -254,6 +258,9 @@ export async function tagDropdown(events) {
     label.appendChild(text);
     tagList.appendChild(label);
   });
+
+  const labelSpan = tagFilter.querySelector("span");
+  if (labelSpan) labelSpan.textContent = getTagDefaultLabel();
 
   tagFilter.addEventListener("click", (e) => {
     e.preventDefault();
@@ -293,7 +300,7 @@ export async function tagDropdown(events) {
       if (allCheckbox) allCheckbox.checked = true;
     }
 
-    let labelText = "Filter by tags";
+    let labelText = getTagDefaultLabel();
     if (!selectedTags.includes("all")) {
       if (selectedTags.length === 1) {
         labelText = selectedTags[0];
@@ -304,7 +311,7 @@ export async function tagDropdown(events) {
       }
     }
 
-    tagFilter.querySelector("span").textContent = labelText;
+    tagFilter.querySelector("span").textContent = getTagDefaultLabel();
 
     window.dispatchEvent(
       new CustomEvent("tagsChanged", {

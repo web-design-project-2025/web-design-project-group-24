@@ -2,6 +2,7 @@ import {
   createEventContainer,
   recentlyViewedButtons,
   tagDropdown,
+  getTagDefaultLabel,
   getEventMeta,
   SORT_MODES,
   sortEvents,
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .forEach((checkbox) => (checkbox.checked = false));
 
         const tagBtnLabel = document.querySelector("#tag-filter-btn span");
-        if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+        if (tagBtnLabel) tagBtnLabel.textContent = getTagDefaultLabel();
 
         currentSort = defaultSort;
         const sortFilter = document.getElementById("sort-filter");

@@ -163,6 +163,8 @@ header img {
   margin-right: auto;
 }
 
+/* header small */
+
 @media screen and (max-width: 613px) {
   .header-big {
     display: none;
@@ -226,121 +228,6 @@ header img {
     scale: 1.5;
   }
 }
-
-/* header small */
-
-/* @media screen and (max-width: 613px) {
-  .desktop-header {
-    display: none;
-  }
-
-  .small-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 var(--spacing-small) 0em var(--spacing-small);
-  }
-
-  .right-cont {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .heart {
-    scale: 1.5;
-    color: black;
-  }
-
-  .small-header img {
-    width: 6rem;
-    padding-left: 2rem;
-  }
-
-  /* this was found and used from
- * https://codepen.io/designcouch/pen/ExvwPY
- */
-
-/* #nav-icon1 {
-    scale: 0.4;
-    width: 60px;
-    height: 45px;
-    position: relative;
-    z-index: 1000;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-  }
-
-  #nav-icon1 span {
-    display: block;
-    position: absolute;
-    height: 9px;
-    width: 100%;
-    background: black;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
-  }
-
-  #nav-icon1 span:nth-child(1) {
-    top: 0px;
-  }
-
-  #nav-icon1 span:nth-child(2) {
-    top: 18px;
-  }
-
-  #nav-icon1 span:nth-child(3) {
-    top: 36px;
-  }
-
-  #nav-icon1.open span:nth-child(1) {
-    top: 18px;
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
-
-  #nav-icon1.open span:nth-child(2) {
-    opacity: 0;
-    left: -60px;
-  }
-
-  #nav-icon1.open span:nth-child(3) {
-    top: 18px;
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-  }
-
-  .number-items {
-    position: absolute;
-    top: 30px;
-    right: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-} */
 
 /* home page laptop*/
 
@@ -676,12 +563,13 @@ header img {
     width: 100%;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "search tags sort reset ";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 40px);
+    grid-template-areas:
+      "search search sort sort "
+      "tags tags reset reset ";
     gap: 5px;
   }
-
-  /* ev change phone version for tag list */
 
   #tag-list {
     width: min(300px, 50vw);
