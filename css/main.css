@@ -363,7 +363,6 @@ header {
   gap: 10px;
   grid-column-gap: 2rem;
   margin-bottom: var(--spacing-standard);
-  align-items: stretch;
 }
 
 .event-container {
@@ -387,43 +386,24 @@ header {
   margin: 0;
 }
 
-.event-name {
-  padding: 10px;
-  margin-bottom: auto;
-  color: black;
-}
-
+/* Title, place, date, tags: aligned with same padding */
+.event-name,
+.event-ps,
 .status-label,
-.place {
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 10px 10px 0px 10px;
-}
-
-.date-time-place {
-  padding-left: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: black;
-}
-
+.place,
+.date-time-place,
 .event-tags {
-  padding: 10px 0 10px 10px;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: 0;
+  padding: 0 10px; /* same horizontal padding */
   color: black;
 }
 
-.event-container img {
-  width: 100%;
-  height: 9rem;
-  object-fit: cover;
-  margin: 0;
+.event-name {
+  padding-top: 10px;
 }
-
-/* .event-container p {
-  margin: 0;
-} */
+.event-tags {
+  padding-bottom: 10px;
+}
 
 .event-button {
   margin-top: auto;
@@ -431,6 +411,23 @@ header {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
+
+  font-size: var(--font-size-small);
+}
+
+/* Clamp to avoid uneven heights */
+.event-name {
+  display: -webkit-box;
+  line-clamp: 2; /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-tags {
+  display: -webkit-box;
+  line-clamp: 1; /* keep tags to 1 line */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .filter-search {
@@ -447,7 +444,7 @@ header {
   grid-template-rows: 3rem;
   gap: 10px;
   grid-column-gap: 2rem;
-  grid-template-areas: "search search tags tags sort sort . . reset reset reset ";
+  grid-template-areas: "search search tags tags sort sort . . reset reset ";
 }
 
 .search {
@@ -536,7 +533,19 @@ header {
 
 .tag-filter-list .bi-chevron-down {
   margin-left: var(--spacing-standard);
-  font-size: 1rem;
+  font-size: 1rem; /* adjust arrow size */
+}
+
+/* .tag-filter-list.open #tag-filter-btn,
+.tag-filter-list.open #tag-filter-btn:hover {
+  transform: none !important;
+  pointer-events: none; 
+  z-index: 0; 
+} */
+
+.sort {
+  grid-area: sort;
+  margin: 0;
 }
 
 .reset-button {
