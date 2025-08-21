@@ -8,7 +8,8 @@ import {
 } from "./functions.js";
 
 let events = [];
-let currentSort = SORT_MODES.DATE; // Default sort by date
+let defaultSort = SORT_MODES.DATE; // Default sort by date
+let currentSort = defaultSort; // Default sort by date
 const applySort = (arr) => sortEvents(arr, currentSort);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,7 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortFilter = document.getElementById("sort-filter");
 
   if (sortFilter) {
-    currentSort = sortFilter.value || SORT_MODES.DATE;
+    // Set default sort mode
+    if (!sortFilter.value) sortFilter.value = defaultSort;
+    currentSort = sortFilter.value || defaultSort;
+
+    currentSort = sortFilter.value || defaultSort;
     sortFilter.addEventListener("change", () => {
       currentSort = sortFilter.value;
 
@@ -140,6 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const tagBtnLabel = document.querySelector("#tag-filter-btn span");
         if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+
+        currentSort = defaultSort;
+        const sortFilter = document.getElementById("sort-filter");
+        if (sortFilter) sortFilter.value = defaultSort;
 
         window.dispatchEvent(
           new CustomEvent("tagsChanged", { detail: { selectedTags: ["all"] } })
