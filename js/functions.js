@@ -28,7 +28,7 @@ export function createEventContainer(event) {
       "this-month": "This month",
     };
     const statusElement = document.createElement("span");
-    statusElement.classList.add(`status-$event.status)`);
+    statusElement.classList.add("status-label");
     statusElement.textContent = statusMap[event.status] || event.status;
     eventContainerElement.appendChild(statusElement);
   }
@@ -43,7 +43,7 @@ export function createEventContainer(event) {
   eventPlace.textContent = event.event_place;
   eventContainerElement.appendChild(eventPlace);
 
-  const eventDate = document.createElement("h2");
+  const eventDate = document.createElement("span");
   eventDate.classList.add("date-time-place");
   eventDate.textContent = event.event_date_display || event.event_date_time;
   eventContainerElement.appendChild(eventDate);
