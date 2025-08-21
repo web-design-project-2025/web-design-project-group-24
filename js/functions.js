@@ -133,11 +133,20 @@ export function createFavoriteButton(eventId) {
   favoriteBtn.addEventListener("click", async () => {
     const wasFav = isFavorited(eventId);
     addToFavorites(eventId);
+
+    const isNowFav = !wasFav;
+
     setIcon();
 
     document
       .querySelectorAll(`.favorite-btn[data-event-id="${eventId}"]`)
       .forEach((btn) => setIcon(btn));
+
+    window.dispatchEvent(
+      new CustomEvent("favoritesChanged", {
+        detail: { eventId, favorited: isNowFav },
+      })
+    );
 
     if (!window.location.pathname.includes("favorites.html")) return;
 
@@ -180,6 +189,43 @@ export function isFavorited(eventId) {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   return favorites.includes(eventId);
 }
+
+function getFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem("favorites")) || [];
+  } catch {
+    return [];
+  }
+}
+
+export function updateHeaderHeartUI({ animate = false } = {}) {
+  const icons = document.querySelectorAll(
+    'header a[href="favorites.html"] i.bi'
+  );
+  const hasFavs = getFavorites().length > 0;
+
+  icons.forEach((icon) => {
+    icon.classList.remove("bi-heart-fill", "bi-heart");
+    icon.classList.add(hasFavs ? "bi-heart-fill" : "bi-heart");
+
+    if (animate) {
+      icon.classList.remove("header-heart-animate");
+      icon.offsetWidth;
+      icon.classList.add("header-heart-animate");
+
+      setTimeout(() => icon.classList.remove("header-heart-animate"), 500);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateHeaderHeartUI({ animate: false });
+});
+
+window.addEventListener("favoritesChanged", (e) => {
+  const { favorited } = e.detail || {};
+  updateHeaderHeartUI({ animate: !!favorited });
+});
 
 export async function tagDropdown(events) {
   const tagFilter = document.getElementById("tag-filter-btn");

@@ -898,6 +898,43 @@ header {
   font-size: 1.5rem;
 }
 
+header a[href="favorites.html"] i.bi-heart {
+  color: var(--blue);
+} /* outline state */
+
+header a[href="favorites.html"] i.bi {
+  display: inline-block;
+  line-height: 1;
+  transform-origin: center;
+}
+header a[href="favorites.html"] i.bi {
+  color: var(--blue);
+  display: inline-block;
+  line-height: 1;
+  transform-origin: center;
+}
+
+@keyframes heart-pop-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  40% {
+    transform: rotate(360deg) scale(1.6);
+    color: var(--red);
+  }
+  60% {
+    transform: rotate(360deg) scale(0.9);
+    color: var(--red);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.header-heart-animate {
+  animation: heart-pop-spin 520ms ease;
+}
+
 /* favorites media tablet screen */
 @media screen and (max-width: 769px) {
   #favorite-events-container {
