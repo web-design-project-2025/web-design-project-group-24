@@ -119,6 +119,10 @@ main {
   transform: scale(1.02);
 }
 
+.header-small {
+  display: none;
+}
+
 header {
   margin-bottom: var(--spacing-big);
   border-bottom: #3e405b solid 1px;
@@ -160,6 +164,17 @@ header img {
 }
 
 @media screen and (max-width: 613px) {
+  .header-big {
+    display: none;
+  }
+
+  .header-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-small) 0em var(--spacing-small);
+  }
+
   header {
     display: flex;
     align-items: center;
