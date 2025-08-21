@@ -63,7 +63,8 @@ p {
   color: black;
 }
 
-.button-1 {
+.button-1,
+.button-2 {
   background-color: var(--green);
   border-width: 0;
   border-radius: var(--border-radius-btn);
@@ -90,6 +91,10 @@ main {
 
 .button-1:hover {
   transform: scale(1.05);
+  font-weight: var(--font-weight-semibold);
+}
+
+.button-2:hover {
   font-weight: var(--font-weight-semibold);
 }
 
@@ -375,10 +380,11 @@ header {
   overflow: hidden;
 }
 
-.event-img {
+.event-container img {
   width: 100%;
-  height: auto;
+  height: 9rem;
   object-fit: cover;
+  margin: 0;
 }
 
 .event-name {
@@ -437,7 +443,7 @@ header {
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 3rem;
   gap: 10px;
   grid-column-gap: 2rem;
@@ -453,6 +459,7 @@ header {
 
 #search-filter,
 #tag-filter-btn,
+#sort-filter,
 #reset-filter {
   display: flex;
 
@@ -539,6 +546,11 @@ header {
   z-index: 0; 
 } */
 
+.sort {
+  grid-area: sort;
+  margin: 0;
+}
+
 .reset-button {
   grid-area: reset;
   padding: 0;
@@ -565,7 +577,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    grid-template-areas: "search tags . reset ";
+    grid-template-areas: "search tags sort reset ";
   }
 
   #tag-list {
@@ -606,7 +618,7 @@ header {
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "search tags . reset ";
+    grid-template-areas: "search tags sort reset ";
     gap: 5px;
   }
 
