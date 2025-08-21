@@ -2,6 +2,7 @@ import {
   createEventContainer,
   recentlyViewedButtons,
   tagDropdown,
+  getEventMeta,
 } from "./functions.js";
 
 let events = [];
@@ -44,11 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
       filterInput.addEventListener("input", function () {
         const query = filterInput.value.toLowerCase();
         const filteredData = events.filter((event) => {
+          const meta = getEventMeta(event);
+          const eventName = event.event_name.toLowerCase();
+          const eventDate = event.event_date_display.toLowerCase();
+          const eventPlace = event.event_place.toLowerCase();
+          const eventTags = (event.event_tags || []).map((tag) =>
+            tag.toLowerCase()
+          );
+          const metaWeekday = meta.weekday ? meta.weekday.toLowerCase() : "";
+          const metaStatus = meta.status ? meta.status.toLowerCase() : "";
+
           return (
-            event.event_name.toLowerCase().includes(query) ||
-            event.event_date_time.toLowerCase().includes(query) ||
-            event.event_place.toLowerCase().includes(query) ||
-            event.event_tags.some((tag) => tag.toLowerCase().includes(query))
+            eventName.includes(query) ||
+            eventDate.includes(query) ||
+            eventPlace.includes(query) ||
+            eventTags.some((tag) => tag.includes(query)) ||
+            metaWeekday.includes(query) ||
+            metaStatus.includes(query)
           );
         });
         renderContent(filteredData, allEventsContainer);
@@ -135,7 +148,12 @@ function renderContent(eventsToRender, container) {
   if (!container) return;
   container.innerHTML = "";
   for (let event of eventsToRender) {
-    const eventContainerElement = createEventContainer(event);
+    const meta = getEventMeta(event);
+    const enrichedEvent = {
+      ...event,
+      ...meta,
+    };
+    const eventContainerElement = createEventContainer(enrichedEvent);
     container.appendChild(eventContainerElement);
   }
 }

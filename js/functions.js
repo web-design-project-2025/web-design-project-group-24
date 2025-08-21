@@ -3,6 +3,10 @@ export function createEventContainer(event) {
   eventContainerElement.classList.add("event-container");
   eventContainerElement.dataset.eventId = event.event_id;
 
+  if (event.status) {
+    eventContainerElement.dataset.status = event.status;
+  }
+
   const wrapperHeart = document.createElement("div");
   wrapperHeart.classList.add("event-wrapper-heart");
   eventContainerElement.appendChild(wrapperHeart);
@@ -14,6 +18,20 @@ export function createEventContainer(event) {
 
   const favoriteBtn = createFavoriteButton(event.event_id);
   wrapperHeart.appendChild(favoriteBtn);
+
+  if (event.status) {
+    const statusMap = {
+      past: "Past",
+      today: "Today",
+      tomorrow: "Tomorrow",
+      "this-week": "This week",
+      upcoming: "Upcoming",
+    };
+    const statusElement = document.createElement("span");
+    statusElement.classList.add(`status-$event.status)`);
+    statusElement.textContent = statusMap[event.status] || event.status;
+    eventContainerElement.appendChild(statusElement);
+  }
 
   const eventName = document.createElement("h1");
   eventName.classList.add("event-name");
@@ -27,7 +45,7 @@ export function createEventContainer(event) {
 
   const eventDate = document.createElement("h2");
   eventDate.classList.add("date-time-place");
-  eventDate.textContent = event.event_date_time;
+  eventDate.textContent = event.event_date_display || event.event_date_time;
   eventContainerElement.appendChild(eventDate);
 
   const eventTags = document.createElement("p");
@@ -250,4 +268,69 @@ export async function tagDropdown(events) {
 
     updateAndFilter();
   });
+}
+
+export function getEventMeta(
+  event,
+  { locale = "sv-SE", timeZone = "Europe/Stockholm" } = {}
+) {
+  const now = new Date();
+  const eventDate = new Date(event.event_date_time);
+
+  const upperFirst = (s) =>
+    s.replace(/^./u, (c) => c.toLocaleUpperCase(locale));
+
+  const displayRaw = new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    month: "short",
+    year: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone,
+  }).format(eventDate);
+
+  const event_date_display = upperFirst(displayRaw).replace(", ", " kl. ");
+
+  const weekdayRaw = new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    timeZone,
+  }).format(eventDate);
+
+  const weekday =
+    weekdayRaw.substring(0, 1).toLocaleUpperCase(locale) +
+    weekdayRaw.substring(1);
+
+  const toLocalMidnight = (date) => {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(date);
+    const year = parts.find((p) => p.type === "year").value;
+    const month = parts.find((p) => p.type === "month").value;
+    const day = parts.find((p) => p.type === "day").value;
+    return new Date(`${year}-${month}-${day}T00:00:00`);
+  };
+
+  const todayMidnight = toLocalMidnight(now);
+  const eventMidnight = toLocalMidnight(eventDate);
+  const diffDays = Math.round(
+    (eventMidnight - todayMidnight) / (1000 * 60 * 60 * 24)
+  );
+
+  let status;
+  if (event.past === true || diffDays < 0) status = "past";
+  else if (diffDays === 0) status = "today";
+  else if (diffDays === 1) status = "tomorrow";
+  else if (diffDays <= 7) status = "this-week";
+  else status = "upcoming";
+  {
+    return {
+      event_date_display,
+      weekday,
+      status,
+    };
+  }
 }
