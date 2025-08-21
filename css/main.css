@@ -229,6 +229,22 @@ header img {
   }
 }
 
+header nav a.is-active {
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+header nav a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+
 /* home page laptop*/
 
 .home-page {

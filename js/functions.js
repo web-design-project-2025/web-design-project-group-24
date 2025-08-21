@@ -435,3 +435,16 @@ export function sortEvents(list, mode = SORT_MODES.DATE) {
 
   return sorted.map((x) => ({ ...x.e, ...x.meta }));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let page = location.pathname.split("/").pop().toLowerCase();
+
+  if (!page || page === "home.html") return;
+
+  if (page === "event-detail.html") page = "all-events.html";
+
+  document.querySelectorAll("header nav a[href]").forEach((a) => {
+    const href = (a.getAttribute("href") || "").toLowerCase();
+    if (href === page) a.classList.add("is-active");
+  });
+});
