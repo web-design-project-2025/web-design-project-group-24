@@ -334,3 +334,32 @@ export function getEventMeta(
     };
   }
 }
+
+export const SORT_MODES = {
+  DATE: "date",
+  UPCOMING: "upcoming",
+  PASSED: "passed",
+  // PARTICIPANTS: "participants",
+};
+
+export function sortEvents(list, mode = SORT_MODES.DATE) {
+  const items = (list || []).map((e) => ({ e, meta: getEventMeta(e) }));
+
+  const byAsc = (a, b) =>
+    new Date(a.e.event_date_time) - new Date(b.e.event_date_time);
+
+  let sorted;
+  if (mode === SORT_MODES.UPCOMING) {
+    sorted = items.filter((x) => x.meta.status !== "past").sort(byAsc);
+  } else if (mode === SORT_MODES.PASSED) {
+    sorted = items
+      .filter((x) => x.meta.status === "past")
+      .sort(
+        (a, b) => new date(b.e.event_date_time) - new Date(a.e.event_date_time)
+      );
+  } else {
+    sorted = items.sort(byAsc);
+  }
+
+  return sorted.map((x) => ({ ...x.e, ...x.meta }));
+}
