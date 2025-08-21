@@ -262,6 +262,18 @@ export async function tagDropdown(events) {
   const labelSpan = tagFilter.querySelector("span");
   if (labelSpan) labelSpan.textContent = getTagDefaultLabel();
 
+  // Keep label in sync with viewport when only "All" is selected
+  const mql = window.matchMedia(PHONE_Q);
+  const syncLabelToViewport = () => {
+    // Only auto-switch to the default when "All" is the only selected option
+    const checked = tagList.querySelectorAll("input.tag-option:checked");
+    const onlyAll = checked.length === 1 && checked[0].dataset.value === "all";
+    if (onlyAll && labelSpan) labelSpan.textContent = getTagDefaultLabel();
+  };
+
+  // Listen for breakpoint changes (modern + Safari fallback)
+  if (mql.addEventListener) mql.addEventListener("change", syncLabelToViewport);
+
   tagFilter.addEventListener("click", (e) => {
     e.preventDefault();
     tagList.hidden = !tagList.hidden;
@@ -302,21 +314,14 @@ export async function tagDropdown(events) {
 
     let labelText = getTagDefaultLabel();
     if (!selectedTags.includes("all")) {
-      if (selectedTags.length === 1) {
-        labelText = selectedTags[0];
-      } else if (selectedTags.length === 2) {
-        labelText = selectedTags.join(", ");
-      } else {
-        labelText = `${selectedTags.length} tags selected`;
-      }
+      if (selectedTags.length === 1) labelText = selectedTags[0];
+      else if (selectedTags.length === 2) labelText = selectedTags.join(", ");
+      else labelText = `${selectedTags.length} tags selected`;
     }
-
-    tagFilter.querySelector("span").textContent = getTagDefaultLabel();
+    if (labelSpan) labelSpan.textContent = labelText;
 
     window.dispatchEvent(
-      new CustomEvent("tagsChanged", {
-        detail: { selectedTags },
-      })
+      new CustomEvent("tagsChanged", { detail: { selectedTags } })
     );
   };
 
@@ -401,8 +406,9 @@ export function getEventMeta(
 }
 
 export const SORT_MODES = {
-  DATE: "date",
-  PASSED: "passed",
+  UPCOMING: "upcoming",
+  ALL: "all",
+  PAST: "past",
   // PARTICIPANTS: "participants",
 };
 
@@ -412,17 +418,19 @@ export function sortEvents(list, mode = SORT_MODES.DATE) {
     new Date(a.e.event_date_time) - new Date(b.e.event_date_time);
 
   let sorted;
-  if (mode === SORT_MODES.DATE) {
+
+  if (mode === SORT_MODES.UPCOMING) {
     sorted = items.filter((x) => x.meta.status !== "past").sort(byAsc);
-  } else if (mode === SORT_MODES.PASSED) {
+  } else if (mode === SORT_MODES.PAST) {
     sorted = items
       .filter((x) => x.meta.status === "past")
       .sort(
         (a, b) => new Date(b.e.event_date_time) - new Date(a.e.event_date_time)
       );
+  } else if (mode === SORT_MODES.ALL) {
+    sorted = items.sort(byAsc);
   } else {
-    const past = items.filter((x) => x.meta.status === "past").sort(byAsc);
-    sorted = [...past];
+    sorted = items.sort(byAsc); // Default to upcoming if mode is unknown
   }
 
   return sorted.map((x) => ({ ...x.e, ...x.meta }));

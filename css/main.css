@@ -95,7 +95,7 @@ main {
 }
 
 .button-2:hover {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-regular);
 }
 
 .hover-1:hover {
@@ -412,7 +412,6 @@ header img {
   min-width: 0;
   padding: var(--spacing-small);
   margin: 0;
-  font-size: var(--font-size-medium);
   align-items: center;
   justify-content: space-between;
 
@@ -485,13 +484,6 @@ header img {
   font-size: 1rem; /* adjust arrow size */
 }
 
-/* .tag-filter-list.open #tag-filter-btn,
-.tag-filter-list.open #tag-filter-btn:hover {
-  transform: none !important;
-  pointer-events: none; 
-  z-index: 0; 
-} */
-
 .sort {
   grid-area: sort;
   margin: 0;
@@ -540,6 +532,21 @@ header img {
 
     padding: var(--spacing-small);
     font-size: var(--font-size-small);
+  }
+
+  #sort-filter {
+    display: block; /* not flex */
+    width: 100%;
+    height: 100%; /* match your buttons’ height */
+    box-sizing: border-box;
+    padding: 0 2.25rem 0 var(--spacing-small);
+    font-size: var(--font-size-small);
+    border: 0;
+    border-radius: var(--border-radius-btn);
+    background: var(--green);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 }
 
