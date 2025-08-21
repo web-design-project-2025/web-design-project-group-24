@@ -2,6 +2,7 @@ import {
   createEventContainer,
   recentlyViewedButtons,
   tagDropdown,
+  getTagDefaultLabel,
   getEventMeta,
   SORT_MODES,
   sortEvents,
@@ -21,11 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortFilter = document.getElementById("sort-filter");
 
   if (sortFilter) {
-    // Set default sort mode
-    if (!sortFilter.value) sortFilter.value = defaultSort;
+    if (!sortFilter.value) sortFilter.value = defaultSort; // reflect default in UI
     currentSort = sortFilter.value || defaultSort;
 
-    currentSort = sortFilter.value || defaultSort;
     sortFilter.addEventListener("change", () => {
       currentSort = sortFilter.value;
 
@@ -49,14 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ? base
         : base.filter((event) => {
             const meta = getEventMeta(event);
-            const eventName = event.event_name.toLowerCase();
-            const eventDate = event.event_date_display.toLowerCase();
-            const eventPlace = event.event_place.toLowerCase();
+            const eventName = (event.event_name || "").toLowerCase();
+            const eventDate = (
+              event.event_date_display ||
+              meta.event_date_display ||
+              ""
+            ).toLowerCase();
+            const eventPlace = (event.event_place || "").toLowerCase();
             const eventTags = (event.event_tags || []).map((tag) =>
-              tag.toLowerCase()
+              (tag || "").toLowerCase()
             );
-            const metaWeekday = meta.weekday ? meta.weekday.toLowerCase() : "";
-            const metaStatus = meta.status ? meta.status.toLowerCase() : "";
+            const metaWeekday = (meta.weekday || "").toLowerCase();
+            const metaStatus = (meta.status || "").toLowerCase();
 
             return (
               eventName.includes(query) ||
@@ -104,14 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const query = filterInput.value.toLowerCase();
         const filteredData = events.filter((event) => {
           const meta = getEventMeta(event);
-          const eventName = event.event_name.toLowerCase();
-          const eventDate = event.event_date_display.toLowerCase();
-          const eventPlace = event.event_place.toLowerCase();
+          const eventName = (event.event_name || "").toLowerCase();
+          const eventDate = (
+            event.event_date_display ||
+            meta.event_date_display ||
+            ""
+          ).toLowerCase();
+          const eventPlace = (event.event_place || "").toLowerCase();
           const eventTags = (event.event_tags || []).map((tag) =>
-            tag.toLowerCase()
+            (tag || "").toLowerCase()
           );
-          const metaWeekday = meta.weekday ? meta.weekday.toLowerCase() : "";
-          const metaStatus = meta.status ? meta.status.toLowerCase() : "";
+          const metaWeekday = (meta.weekday || "").toLowerCase();
+          const metaStatus = (meta.status || "").toLowerCase();
 
           return (
             eventName.includes(query) ||
@@ -144,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .forEach((checkbox) => (checkbox.checked = false));
 
         const tagBtnLabel = document.querySelector("#tag-filter-btn span");
-        if (tagBtnLabel) tagBtnLabel.textContent = "Filter by tags";
+        if (tagBtnLabel) tagBtnLabel.textContent = getTagDefaultLabel();
 
         currentSort = defaultSort;
         const sortFilter = document.getElementById("sort-filter");
