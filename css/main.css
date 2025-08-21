@@ -119,12 +119,6 @@ main {
   transform: scale(1.02);
 }
 
-/* Header Big */
-
-.small-header {
-  display: none;
-}
-
 header {
   margin-bottom: var(--spacing-big);
   border-bottom: #3e405b solid 1px;
@@ -136,14 +130,14 @@ header {
   grid-template-areas: " . nav nav nav nav nav nav nav nav . ";
 }
 
-.desktop-header nav {
+header nav {
   grid-area: nav;
   width: 100%;
   box-sizing: border-box;
   padding: var(--spacing-standard) 0 var(--spacing-standard) 0;
 }
 
-.desktop-header ul {
+header ul {
   display: flex;
   flex-direction: row;
   color: black;
@@ -153,21 +147,74 @@ header {
   align-items: center;
 }
 
-.desktop-header a {
+header a {
   text-decoration: none;
   color: var(--blue);
   font-size: 20;
 }
 
-.desktop-header img {
+header img {
   width: 8em;
   margin-left: auto;
   margin-right: auto;
 }
 
+@media screen and (max-width: 613px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background-color: #fff;
+  }
+
+  header nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-small) 0 var(--spacing-small) 0;
+  }
+
+  header ul {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-small);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    margin-top: var(--spacing-small);
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  header img {
+    width: 8em;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-bottom: #3e405b solid 1px;
+  }
+
+  .heart {
+    scale: 1.5;
+    color: black;
+  }
+
+  .bi-person {
+    color: black;
+    scale: 1.5;
+  }
+}
+
 /* header small */
 
-@media screen and (max-width: 613px) {
+/* @media screen and (max-width: 613px) {
   .desktop-header {
     display: none;
   }
@@ -200,7 +247,7 @@ header {
  * https://codepen.io/designcouch/pen/ExvwPY
  */
 
-  #nav-icon1 {
+/* #nav-icon1 {
     scale: 0.4;
     width: 60px;
     height: 45px;
@@ -278,7 +325,7 @@ header {
     align-items: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
-}
+} */
 
 /* home page laptop*/
 
@@ -498,7 +545,7 @@ header {
   z-index: 10000;
 
   width: min(420px, 80vw);
-  max-height: 300px;
+  max-height: 330px;
   overflow-y: auto;
 
   display: grid;
@@ -579,7 +626,7 @@ header {
 
   #tag-list {
     width: min(420px, 50vw);
-    max-height: 400px;
+    max-height: 420px;
 
     grid-template-columns: repeat(2, 1fr);
   }
