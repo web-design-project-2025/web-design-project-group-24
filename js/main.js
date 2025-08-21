@@ -47,14 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ? base
         : base.filter((event) => {
             const meta = getEventMeta(event);
-            const eventName = event.event_name.toLowerCase();
-            const eventDate = event.event_date_display.toLowerCase();
-            const eventPlace = event.event_place.toLowerCase();
+            const eventName = (event.event_name || "").toLowerCase();
+            const eventDate = (
+              event.event_date_display ||
+              meta.event_date_display ||
+              ""
+            ).toLowerCase();
+            const eventPlace = (event.event_place || "").toLowerCase();
             const eventTags = (event.event_tags || []).map((tag) =>
-              tag.toLowerCase()
+              (tag || "").toLowerCase()
             );
-            const metaWeekday = meta.weekday ? meta.weekday.toLowerCase() : "";
-            const metaStatus = meta.status ? meta.status.toLowerCase() : "";
+            const metaWeekday = (meta.weekday || "").toLowerCase();
+            const metaStatus = (meta.status || "").toLowerCase();
 
             return (
               eventName.includes(query) ||
