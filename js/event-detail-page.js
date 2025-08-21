@@ -1,4 +1,3 @@
-// js/event-detail-page.js
 import {
   createEventContainer,
   addToRecentlyViewed,
@@ -8,6 +7,18 @@ import {
 function getEventIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
+}
+
+function organizerRatings(event) {
+  const fields = ["detail_organizer_rating"];
+
+  for (const field of fields) {
+    const value = event[field];
+    if (value !== undefined && value !== null && !Number.isNaN(Number(value))) {
+      return Math.max(0, Math.min(5, Number(value)));
+    }
+  }
+  return 0; // Default rating if not found
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -123,16 +134,17 @@ function createDetailPage(event) {
     window.location.href = "profile-page.html";
   });
 
+  const ratingValue = organizerRatings(event);
   const ratings = document.createElement("section");
   ratings.classList.add("ratings");
-  for (let i = 0; i < 5; i++) {
+
+  const filled = Math.round(ratingValue);
+  for (let i = 1; i <= 5; i++) {
     const star = document.createElement("span");
-    star.classList.add("star");
-    star.innerHTML = "&#9734;";
+    star.className = i <= filled ? "star-filled" : "star-empty";
+    star.textContent = i <= filled ? "★" : "☆";
     ratings.appendChild(star);
   }
-
-  organizerDetails.appendChild(ratings);
 
   eventDetailPage.appendChild(titleBio);
   eventDetailPage.appendChild(detailDetails);
