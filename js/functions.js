@@ -14,7 +14,13 @@ export function createEventContainer(event) {
   const eventImg = document.createElement("img");
   eventImg.classList.add("event-img");
   eventImg.src = event.event_image;
+  eventImg.style.cursor = "pointer";
   wrapperHeart.appendChild(eventImg);
+
+  eventImg.addEventListener("click", () => {
+    addToRecentlyViewed(event.event_id);
+    window.location.href = `event-detail.html?id=${event.event_id}`;
+  });
 
   const favoriteBtn = createFavoriteButton(event.event_id);
   wrapperHeart.appendChild(favoriteBtn);
@@ -36,7 +42,13 @@ export function createEventContainer(event) {
   const eventName = document.createElement("h1");
   eventName.classList.add("event-name");
   eventName.textContent = event.event_name;
+  eventName.style.cursor = "pointer";
   eventContainerElement.appendChild(eventName);
+
+  eventName.addEventListener("click", () => {
+    addToRecentlyViewed(event.event_id);
+    window.location.href = `event-detail.html?id=${event.event_id}`;
+  });
 
   const eventPlace = document.createElement("h2");
   eventPlace.classList.add("place");
