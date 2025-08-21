@@ -25,7 +25,7 @@ export function createEventContainer(event) {
       today: "Today",
       tomorrow: "Tomorrow",
       "this-week": "This week",
-      upcoming: "Upcoming",
+      "this-month": "This month",
     };
     const statusElement = document.createElement("span");
     statusElement.classList.add(`status-$event.status)`);
@@ -325,7 +325,7 @@ export function getEventMeta(
   else if (diffDays === 0) status = "today";
   else if (diffDays === 1) status = "tomorrow";
   else if (diffDays <= 7) status = "this-week";
-  else status = "upcoming";
+  else if (diffDays <= 30) status = "this-month";
   {
     return {
       event_date_display,
@@ -337,28 +337,27 @@ export function getEventMeta(
 
 export const SORT_MODES = {
   DATE: "date",
-  UPCOMING: "upcoming",
   PASSED: "passed",
   // PARTICIPANTS: "participants",
 };
 
 export function sortEvents(list, mode = SORT_MODES.DATE) {
   const items = (list || []).map((e) => ({ e, meta: getEventMeta(e) }));
-
   const byAsc = (a, b) =>
     new Date(a.e.event_date_time) - new Date(b.e.event_date_time);
 
   let sorted;
-  if (mode === SORT_MODES.UPCOMING) {
+  if (mode === SORT_MODES.DATE) {
     sorted = items.filter((x) => x.meta.status !== "past").sort(byAsc);
   } else if (mode === SORT_MODES.PASSED) {
     sorted = items
       .filter((x) => x.meta.status === "past")
       .sort(
-        (a, b) => new date(b.e.event_date_time) - new Date(a.e.event_date_time)
+        (a, b) => new Date(b.e.event_date_time) - new Date(a.e.event_date_time)
       );
   } else {
-    sorted = items.sort(byAsc);
+    const past = items.filter((x) => x.meta.status === "past").sort(byAsc);
+    sorted = [...past];
   }
 
   return sorted.map((x) => ({ ...x.e, ...x.meta }));

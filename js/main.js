@@ -3,11 +3,12 @@ import {
   recentlyViewedButtons,
   tagDropdown,
   getEventMeta,
+  SORT_MODES,
   sortEvents,
 } from "./functions.js";
 
 let events = [];
-let currentSort = "upcoming"; // Default sort by date
+let currentSort = SORT_MODES.DATE; // Default sort by date
 const applySort = (arr) => sortEvents(arr, currentSort);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortFilter = document.getElementById("sort-filter");
 
   if (sortFilter) {
-    currentSort = sortFilter.value || "date";
+    currentSort = sortFilter.value || SORT_MODES.DATE;
     sortFilter.addEventListener("change", () => {
       currentSort = sortFilter.value;
 
