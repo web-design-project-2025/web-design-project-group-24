@@ -6,7 +6,7 @@
       "event_name": "Chess games",
       "event_date_time": "2025-11-04T15:00:00",
       "event_place": "Rio, Lisbon",
-      "event_tags": ["chess", "games", "board games"]
+      "event_tags": ["Games", "Board games"]
     },
     {
       "event_id": "2",
@@ -14,7 +14,7 @@
       "event_name": "Open Mic Night",
       "event_date_time": "2025-04-06T19:00:00",
       "event_place": "Luna Cafe, Barcelona",
-      "event_tags": ["poetry", "music", "performance"],
+      "event_tags": ["Poetry", "Music"],
       "past": true
     },
     {
@@ -23,7 +23,7 @@
       "event_name": "Classic Film Screening",
       "event_date_time": "2025-09-08T20:00:00",
       "event_place": "Green Room, Berlin",
-      "event_tags": ["film", "cinema", "screening"]
+      "event_tags": ["Movie", "Cinema"]
     },
     {
       "event_id": "4",
@@ -31,7 +31,7 @@
       "event_name": "Indie Band Live",
       "event_date_time": "2026-05-10T18:30:00",
       "event_place": "Sky Hall, Stockholm",
-      "event_tags": ["music", "concert", "indie"]
+      "event_tags": ["Music", "Concert"]
     },
     {
       "event_id": "5",
@@ -39,7 +39,7 @@
       "event_name": "K-Pop Dance Workshop",
       "event_date_time": "2025-03-12T17:00:00",
       "event_place": "Studio 8, Paris",
-      "event_tags": ["dance", "k-pop", "workshop"],
+      "event_tags": ["Dance", "Workshop"],
       "past": true
     },
     {
@@ -48,7 +48,7 @@
       "event_name": "Anime Trivia Night",
       "event_date_time": "2026-06-14T16:00:00",
       "event_place": "Otaku Lounge, Milan",
-      "event_tags": ["anime", "trivia", "fun"]
+      "event_tags": ["Anime", "Trivia"]
     },
     {
       "event_id": "7",
@@ -56,7 +56,7 @@
       "event_name": "Outdoor Movie Night",
       "event_date_time": "2026-06-16T21:00:00",
       "event_place": "Central Park, Prague",
-      "event_tags": ["movie", "outdoor", "community"]
+      "event_tags": ["Movie", "Outdoor"]
     },
     {
       "event_id": "8",
@@ -64,7 +64,7 @@
       "event_name": "Creative Writing Workshop",
       "event_date_time": "2025-01-17T13:00:00",
       "event_place": "Writers' Corner, Edinburgh",
-      "event_tags": ["writing", "workshop", "creative"],
+      "event_tags": ["Writing", "Workshop"],
       "past": true
     },
     {
@@ -73,7 +73,7 @@
       "event_name": "Karaoke Party",
       "event_date_time": "2026-04-18T19:00:00",
       "event_place": "Echo Room, Warsaw",
-      "event_tags": ["karaoke", "music", "singing"]
+      "event_tags": ["Music", "Singing"]
     },
     {
       "event_id": "10",
@@ -81,7 +81,7 @@
       "event_name": "Board Game Night",
       "event_date_time": "2025-10-20T18:00:00",
       "event_place": "Game Hub, Vienna",
-      "event_tags": ["games", "fun", "board games"]
+      "event_tags": ["Games", "Board games"]
     },
     {
       "event_id": "11",
@@ -89,7 +89,7 @@
       "event_name": "Photography Walk",
       "event_date_time": "2025-04-22T10:00:00",
       "event_place": "City Gate, Oslo",
-      "event_tags": ["photography", "walk", "art"],
+      "event_tags": ["Photography", "Outdoor"],
       "past": true
     },
     {
@@ -98,7 +98,7 @@
       "event_name": "Art Exhibition Opening",
       "event_date_time": "2026-06-23T17:00:00",
       "event_place": "ArtHouse, Tallinn",
-      "event_tags": ["art", "exhibition", "gallery"]
+      "event_tags": ["Art", "Exhibition"]
     },
     {
       "event_id": "13",
@@ -106,7 +106,7 @@
       "event_name": "Live Painting Show",
       "event_date_time": "2026-02-24T15:30:00",
       "event_place": "Canvas Hall, Dublin",
-      "event_tags": ["painting", "art", "live show"]
+      "event_tags": ["Art", "Live show"]
     },
     {
       "event_id": "14",
@@ -114,7 +114,7 @@
       "event_name": "Street Food Festival",
       "event_date_time": "2025-08-26T12:00:00",
       "event_place": "Main Square, Budapest",
-      "event_tags": ["food", "festival", "street food"]
+      "event_tags": ["Food", "Festival"]
     },
     {
       "event_id": "15",
@@ -122,7 +122,7 @@
       "event_name": "Sustainability Panel Talk",
       "event_date_time": "2025-11-18T14:00:00",
       "event_place": "Lecture Hall A, Helsinki",
-      "event_tags": ["eco", "panel", "discussion"]
+      "event_tags": ["Sustainability", "Panel"]
     },
     {
       "event_id": "16",
@@ -130,7 +130,7 @@
       "event_name": "Intro to Digital Art",
       "event_date_time": "2026-04-29T11:00:00",
       "event_place": "Media Lab, Amsterdam",
-      "event_tags": ["digital art", "class", "creativity"]
+      "event_tags": ["Digital art", "Class"]
     },
     {
       "event_id": "17",
@@ -138,7 +138,7 @@
       "event_name": "Game Dev Basics Workshop",
       "event_date_time": "2026-06-30T10:00:00",
       "event_place": "Coding Lab, Brussels",
-      "event_tags": ["game dev", "coding", "workshop"]
+      "event_tags": ["Programming", "Workshop"]
     },
     {
       "event_id": "18",
@@ -146,7 +146,7 @@
       "event_name": "Japanese Tea Ceremony",
       "event_date_time": "2026-07-02T16:00:00",
       "event_place": "Culture Room, Ljubljana",
-      "event_tags": ["tea", "culture", "ceremony"]
+      "event_tags": ["Culture", "Ceremony"]
     },
     {
       "event_id": "19",
@@ -154,7 +154,7 @@
       "event_name": "Calligraphy Night",
       "event_date_time": "2026-07-03T18:00:00",
       "event_place": "Studio Ink, Zagreb",
-      "event_tags": ["calligraphy", "writing", "art"]
+      "event_tags": ["Writing", "Art"]
     },
     {
       "event_id": "20",
@@ -162,7 +162,7 @@
       "event_name": "DIY Crafts Workshop",
       "event_date_time": "2026-07-05T13:00:00",
       "event_place": "MakerSpace, Munich",
-      "event_tags": ["crafts", "diy", "creative"]
+      "event_tags": ["Crafts", "DIY"]
     },
     {
       "event_id": "21",
@@ -170,7 +170,7 @@
       "event_name": "Knitting Club Meetup",
       "event_date_time": "2026-08-06T15:00:00",
       "event_place": "Lounge C, Florence",
-      "event_tags": ["knitting", "crafts", "relax"]
+      "event_tags": ["Knitting", "Crafts"]
     },
     {
       "event_id": "22",
@@ -178,7 +178,7 @@
       "event_name": "Bonsai Basics Class",
       "event_date_time": "2025-05-08T14:00:00",
       "event_place": "Greenhouse, Sofia",
-      "event_tags": ["bonsai", "plants", "class"],
+      "event_tags": ["Plants", "Class"],
       "past": true
     },
     {
@@ -187,7 +187,7 @@
       "event_name": "Foreign Film Club",
       "event_date_time": "2025-04-10T18:30:00",
       "event_place": "Room 9B, Bucharest",
-      "event_tags": ["film", "international", "cinema"],
+      "event_tags": ["Movie", "Cinema"],
       "past": true
     },
     {
@@ -196,7 +196,7 @@
       "event_name": "Beat-Making Lab",
       "event_date_time": "2025-10-12T17:00:00",
       "event_place": "Sound Lab, Riga",
-      "event_tags": ["music", "production", "beats"]
+      "event_tags": ["Music", "Production"]
     },
     {
       "event_id": "25",
@@ -204,7 +204,7 @@
       "event_name": "Lofi Chill Lounge",
       "event_date_time": "2026-07-13T19:00:00",
       "event_place": "Chill Room, Bratislava",
-      "event_tags": ["lofi", "music", "chill"]
+      "event_tags": ["Music", "Chill"]
     },
     {
       "event_id": "26",
@@ -212,7 +212,7 @@
       "event_name": "Book Club Meetup",
       "event_date_time": "2025-02-15T16:00:00",
       "event_place": "Library Nook, Geneva",
-      "event_tags": ["books", "reading", "discussion"],
+      "event_tags": ["Books", "Reading"],
       "past": true
     },
     {
@@ -221,7 +221,7 @@
       "event_name": "Language Exchange Cafe",
       "event_date_time": "2025-09-16T14:00:00",
       "event_place": "Global Lounge, Krakow",
-      "event_tags": ["language", "exchange", "culture"]
+      "event_tags": ["Language", "Culture"]
     },
     {
       "event_id": "28",
@@ -229,7 +229,7 @@
       "event_name": "Modern Dance Class",
       "event_date_time": "2025-03-17T18:00:00",
       "event_place": "Studio 4, Valencia",
-      "event_tags": ["dance", "modern", "movement"],
+      "event_tags": ["Dance", "Movement"],
       "past": true
     },
     {
@@ -238,7 +238,7 @@
       "event_name": "Intro to 3D Printing",
       "event_date_time": "2026-07-19T11:00:00",
       "event_place": "TechLab, Luxembourg City",
-      "event_tags": ["3d printing", "tech", "workshop"]
+      "event_tags": ["Tech", "Workshop"]
     },
     {
       "event_id": "30",
@@ -246,7 +246,7 @@
       "event_name": "Campus Skate Meetup",
       "event_date_time": "2026-05-20T15:00:00",
       "event_place": "Skate Park, Tallinn",
-      "event_tags": ["skate", "outdoor", "sports"]
+      "event_tags": ["Outdoor", "Sports"]
     },
     {
       "event_id": "31",
@@ -254,7 +254,7 @@
       "event_name": "Cosplay Showcase",
       "event_date_time": "2026-05-21T17:00:00",
       "event_place": "Hall Z, Marseille",
-      "event_tags": ["cosplay", "costumes", "anime"]
+      "event_tags": ["Cosplay", "Anime"]
     },
     {
       "event_id": "32",
@@ -262,7 +262,7 @@
       "event_name": "Guided Meditation",
       "event_date_time": "2025-08-23T10:00:00",
       "event_place": "Zen Room, Copenhagen",
-      "event_tags": ["meditation", "wellness", "mindfulness"]
+      "event_tags": ["Wellness", "Mindfulness"]
     },
     {
       "event_id": "33",
@@ -270,7 +270,7 @@
       "event_name": "Indie Zine Fair",
       "event_date_time": "2025-11-24T13:00:00",
       "event_place": "Indie Hall, Antwerp",
-      "event_tags": ["zines", "publishing", "indie"]
+      "event_tags": ["Creative", "Fair"]
     },
     {
       "event_id": "34",
@@ -278,7 +278,7 @@
       "event_name": "Tarot & Tea",
       "event_date_time": "2025-02-05T16:00:00",
       "event_place": "Mystic Nook, Bergen",
-      "event_tags": ["tarot", "spirituality", "relax"],
+      "event_tags": ["Tarot", "Spirituality"],
       "past": true
     },
     {
@@ -287,7 +287,7 @@
       "event_name": "Street Fashion Walk",
       "event_date_time": "2026-07-27T15:00:00",
       "event_place": "Fashion Alley, Porto",
-      "event_tags": ["fashion", "walk", "streetwear"]
+      "event_tags": ["Fashion", "Outdoor"]
     },
     {
       "event_id": "36",
@@ -295,7 +295,7 @@
       "event_name": "Pop Culture Quiz",
       "event_date_time": "2025-02-08T20:00:00",
       "event_place": "Lounge A, Belgrade",
-      "event_tags": ["quiz", "pop culture", "fun"],
+      "event_tags": ["Quiz", "Pop culture"],
       "past": true
     },
     {
@@ -304,7 +304,7 @@
       "event_name": "Stand-Up Comedy Night",
       "event_date_time": "2025-11-09T18:30:00",
       "event_place": "Laugh Club, Sarajevo",
-      "event_tags": ["comedy", "stand-up", "fun"]
+      "event_tags": ["Comedy", "Stand-up"]
     },
     {
       "event_id": "38",
@@ -312,7 +312,7 @@
       "event_name": "Coding Jam",
       "event_date_time": "2025-10-10T09:00:00",
       "event_place": "Tech Hub, Vilnius",
-      "event_tags": ["coding", "jam", "hackathon"]
+      "event_tags": ["Programming", "Community"]
     },
     {
       "event_id": "39",
@@ -320,7 +320,7 @@
       "event_name": "Fitness Bootcamp",
       "event_date_time": "2026-08-01T07:30:00",
       "event_place": "Gym A, Thessaloniki",
-      "event_tags": ["fitness", "exercise", "health"]
+      "event_tags": ["Exercise", "Wellness"]
     },
     {
       "event_id": "40",
@@ -328,7 +328,7 @@
       "event_name": "Startup Pitch Night",
       "event_date_time": "2026-08-02T17:00:00",
       "event_place": "Venture Hall, Hamburg",
-      "event_tags": ["startup", "business", "pitch"]
+      "event_tags": ["Startup", "Business"]
     }
   ]
 }
