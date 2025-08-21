@@ -892,11 +892,11 @@ header a[href="favorites.html"] i.bi {
     transform: rotate(0deg) scale(1);
   }
   40% {
-    transform: rotate(360deg) scale(1.6);
+    transform: rotate(360deg) scale(2);
     color: var(--red);
   }
   60% {
-    transform: rotate(360deg) scale(0.9);
+    transform: rotate(360deg) scale(1.6);
     color: var(--red);
   }
   100% {
@@ -905,7 +905,7 @@ header a[href="favorites.html"] i.bi {
 }
 
 .header-heart-animate {
-  animation: heart-pop-spin 520ms ease;
+  animation: heart-pop-spin 1020ms ease;
 }
 
 /* favorites media tablet screen */
