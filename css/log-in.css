@@ -1,0 +1,356 @@
+:root {
+  --green: #80b299;
+  --red: #e17a5f;
+  --blue: #3e405b;
+  --cream: #f4f1e0;
+  color: black;
+
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-medium: 1rem; /* 16px */
+  --font-size-large: 1.125rem; /* 18px */
+  --font-size-Xlarge: 1.25rem; /* 20px */
+  --font-size-XXlarge: 1.5rem; /* 24px */
+
+  --font-weight-thin: 100;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --spacing-small: 1rem;
+  --spacing-standard: 2rem;
+  --spacing-big: 5rem;
+
+  --border-radius-btn: 5px;
+  --border-radius-box: 10px;
+}
+
+* {
+  font-family: "omnes";
+}
+
+body {
+  margin: 0 0 0 0;
+}
+
+h1 {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  color: black;
+}
+
+h2 {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  color: black;
+}
+
+h4 {
+  font-size: var(--font-size-XXlarge);
+  font-weight: var(--font-weight-bold);
+  color: #3e405b;
+  padding-bottom: var(--spacing-standard);
+}
+
+p {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
+  color: black;
+}
+
+.small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thin);
+  color: black;
+}
+
+.button-1,
+.button-2 {
+  background-color: var(--green);
+  border-width: 0;
+  border-radius: var(--border-radius-btn);
+  width: 6rem;
+  height: 2.3rem;
+}
+
+.input-1 {
+  padding: 0;
+  border-radius: var(--border-radius-btn);
+  width: auto;
+  height: auto;
+}
+
+main {
+  margin: var(--spacing-standard) 0 var(--spacing-standard) 0;
+}
+
+.hover-1 {
+  transition: font-size 0.3s ease, font-weight 0.3s ease;
+}
+
+/* HOVER */
+
+.button-1:hover {
+  transform: scale(1.05);
+  font-weight: var(--font-weight-semibold);
+}
+
+.button-2:hover {
+  font-weight: var(--font-weight-regular);
+}
+
+.hover-1:hover {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hover-2:hover {
+  transform: scale(1.05);
+  font-weight: var(--font-weight-semibold);
+}
+
+.event-card:hover,
+.event-container:hover {
+  transform: scale(1.02);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0.3em 0.3em 1em grey;
+}
+
+.slide-show button:hover {
+  transform: scale(1.02);
+}
+
+.header-small {
+  display: none;
+}
+
+header {
+  margin-bottom: var(--spacing-big);
+  border-bottom: #3e405b solid 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  grid-template-areas: " . nav nav nav nav nav nav nav nav . ";
+}
+
+header nav {
+  grid-area: nav;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-standard) 0 var(--spacing-standard) 0;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  list-style: none;
+  padding: 0%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 20;
+}
+
+header img {
+  width: 8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* header small */
+
+@media screen and (max-width: 613px) {
+  .header-big {
+    display: none;
+  }
+
+  .header-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-small) 0em var(--spacing-small);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background-color: #fff;
+  }
+
+  header nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-small) 0 var(--spacing-small) 0;
+  }
+
+  header ul {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-small);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    margin-top: var(--spacing-small);
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  header img {
+    width: 8em;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-bottom: #3e405b solid 1px;
+  }
+
+  .heart {
+    scale: 1.5;
+    color: black;
+  }
+
+  .bi-person {
+    color: black;
+    scale: 1.5;
+  }
+}
+
+header nav a.is-active {
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+header nav a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+
+.profile-page {
+  display: grid;
+  margin: 0;
+  justify-items: end;
+  align-items: center;
+  height: 100vh;
+
+  background: var(--cream);
+  background-image: url("../img/300ppi/Asset 6.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-page h2 {
+  font-size: 40pt;
+  font-weight: var(--font-weight-bold);
+  color: var(--blue);
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.profile-page p {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--blue);
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.profile-page a {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.no-account,
+.forgot-password {
+  padding: var(--spacing-small);
+  margin: 0;
+}
+
+#log-in {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-color: var(--green);
+
+  width: 60%;
+  height: 100%;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--spacing-small);
+  background-color: var(--green);
+  margin-top: var(--spacing-standard);
+  margin-bottom: var(--spacing-small);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.email-container,
+.password-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.checkbox-container {
+  padding: var(--spacing-small);
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+}
+
+#log-in-btn {
+  background-color: var(--cream);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page label {
+  width: 100%;
+  padding-bottom: 0.5rem;
+  padding-top: var(--font-size-medium);
+  border: none;
+  border-radius: var(--border-radius-btn);
+}
+
+.profile-page input {
+  padding: var(--spacing-small);
+  border: none;
+}
+
+@media screen and (max-width: 713px) {
+  .log-In {
+    width: 70%;
+    height: auto;
+  }
+}
