@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainer = document.getElementById("all-events-container");
   const recentlyViewed = document.getElementById("recently-viewed");
   const favoriteEvents = document.getElementById("favorite-events-container");
+  const signedUpEvents = document.getElementById("signed-up-events-container");
   const filterInput = document.getElementById("search-filter");
   const resetFilterButton = document.getElementById("reset-filter");
   const sortFilter = document.getElementById("sort-filter");
@@ -128,6 +129,23 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter((e) => e);
 
       renderContent(applySort(favoriteEventsList), favoriteEvents);
+    }
+
+    if (signedUpEvents) {
+      const renderSignedUps = () => {
+        const signedUpIds = JSON.parse(localStorage.getItem("signed-up")) || [];
+        const signedUpEventsList = signedUpIds
+          .map((id) => events.find((e) => e.event_id === id))
+          .filter((e) => e);
+
+        renderContent(applySort(signedUpEventsList), signedUpEvents);
+
+        if (signedUpEventsList.length === 0) {
+          signedUpEvents.innerHTML = "<p>No signed-up events yet!</p>";
+        }
+      };
+      renderSignedUps();
+      window.addEventListener("signupsChanged", renderSignedUps);
     }
 
     if (filterInput && allEventsContainer) {

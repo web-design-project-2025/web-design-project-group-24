@@ -198,6 +198,86 @@ function getFavorites() {
   }
 }
 
+export function createSignUpButton(eventId) {
+  const signedUpBtn = document.createElement("button");
+  signedUpBtn.classList.add("sign-me-up");
+  signedUpBtn.dataset.eventId = eventId;
+
+  // const setIcon = (btn = signedUpBtn) => {
+  //   const fav = isSignedUp(eventId);
+  //   btn.innerHTML = `<i class="bi ${fav ? "bi-heart-fill" : "bi-heart"}"></i>`;
+  // };
+
+  // setIcon();
+
+  signedUpBtn.addEventListener("click", async () => {
+    const wasSigned = isSignedUp(eventId);
+    addToSignedUp(eventId);
+
+    const isNowSigned = !wasSigned;
+
+    setIcon();
+
+    document
+      .querySelectorAll(`.sign-me-up[data-event-id="${eventId}"]`)
+      .forEach((btn) => setIcon(btn));
+
+    window.dispatchEvent(
+      new CustomEvent("signedChange", {
+        detail: { eventId, signedUp: isNowSigned },
+      })
+    );
+
+    if (!window.location.pathname.includes("favorites.html")) return;
+
+    const list = document.getElementById("signed-up-events-container");
+    if (!list) return;
+
+    if (wasSigned) {
+      const signedUpCard = list.querySelector(
+        `.event-container[data-event-id="${eventId}"]`
+      );
+      if (signedUpCard) signedUpCard.remove();
+    } else if (list) {
+      const res = await fetch("data/events.json");
+      const { events = [] } = await res.json();
+      const ev = events.find((e) => e.event_id === eventId);
+      if (ev) {
+        list.prepend(createEventContainer(ev));
+      }
+    }
+  });
+
+  return signedUpBtn;
+}
+
+export function addToSignedUp(eventId) {
+  let signedUp = JSON.parse(localStorage.getItem("signed-up")) || [];
+
+  if (signedUp.includes(eventId)) {
+    // Remove from favorites
+    signedUp = signedUp.filter((id) => id !== eventId);
+  } else {
+    // Add to favorites
+    signedUp.unshift(eventId);
+  }
+
+  localStorage.setItem("signed-up", JSON.stringify(signedUp));
+}
+
+export function isSignedUp(eventId) {
+  const signedUp = JSON.parse(localStorage.getItem("signed-up")) || [];
+  return signedUp.includes(eventId);
+}
+
+function getSignedUp() {
+  try {
+    return JSON.parse(localStorage.getItem("signed-up")) || [];
+  } catch {
+    return [];
+  }
+}
+
 export function updateHeaderHeartUI({ animate = false } = {}) {
   const icons = document.querySelectorAll(
     'header a[href="favorites.html"] i.bi'

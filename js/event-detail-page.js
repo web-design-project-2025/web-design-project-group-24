@@ -2,7 +2,14 @@ import {
   createEventContainer,
   addToRecentlyViewed,
   recentlyViewedButtons,
+  addToSignedUp,
+  isSignedUp,
 } from "./functions.js";
+
+const LOGGED_IN_KEY = "loggedIn";
+const isAuthed = () =>
+  localStorage.getItem(LOGGED_IN_KEY) === "true" ||
+  sessionStorage.getItem(LOGGED_IN_KEY) === "true";
 
 function getEventIdFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -122,16 +129,34 @@ function createDetailPage(event) {
   organizerEmail.textContent = event.detail_organizer_email;
 
   const signMeUp = document.createElement("button");
-  signMeUp.classList.add("button-1");
+  signMeUp.classList.add("button-1", "sign-me-up");
   signMeUp.textContent = "Sign me up";
 
-  signMeUp.addEventListener("click", () => {
-    // alert("Please log in to sign up for events.");
-    // save current page before redirecting
-    localStorage.setItem("redirectAfterLogin", window.location.href);
+  const updateBtn = () => {
+    const on = isSignedUp(event.event_id);
+    signMeUp.textContent = on ? "Signed up" : "Sign me up";
+    signMeUp.classList.toggle("is-signed", on);
+  };
+  updateBtn();
 
-    // go to login page
-    window.location.href = "profile-page.html";
+  signMeUp.addEventListener("click", () => {
+    if (!isAuthed()) {
+      localStorage.setItem("redirectAfterLogin", window.location.href);
+      window.location.href = "login.html";
+      return;
+    }
+
+    addToSignedUp(event.event_id);
+    updateBtn();
+
+    window.dispatchEvent(
+      new CustomEvent("signupsChanged", {
+        detail: {
+          eventId: event.event_id,
+          signedUp: isSignedUp(event.event_id),
+        },
+      })
+    );
   });
 
   const ratingValue = organizerRatings(event);
