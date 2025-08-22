@@ -1076,3 +1076,165 @@ footer img {
     padding-left: var(--spacing-big);
   }
 }
+
+header nav a.is-active {
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+header nav a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+
+.profile-page {
+  display: grid;
+  margin: 0;
+  justify-items: end;
+  align-items: center;
+  height: 100vh;
+
+  background: var(--cream);
+  background-image: url("../img/300ppi/Asset 6.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-page h2 {
+  font-size: 40pt;
+  font-weight: var(--font-weight-bold);
+  color: var(--blue);
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.profile-page p {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--blue);
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.profile-page a {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.no-account,
+.forgot-password {
+  padding: var(--spacing-small);
+  margin: 0;
+}
+
+#log-in {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-color: var(--green);
+
+  width: 60%;
+  height: 100%;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--spacing-small);
+  background-color: var(--green);
+  margin-top: var(--spacing-standard);
+  margin-bottom: var(--spacing-small);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.email-container,
+.password-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.checkbox-container {
+  padding: var(--spacing-small);
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+}
+
+#log-in-btn {
+  background-color: var(--cream);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page label {
+  width: 100%;
+  padding-bottom: 0.5rem;
+  padding-top: var(--font-size-medium);
+  border: none;
+  border-radius: var(--border-radius-btn);
+}
+
+.profile-page input {
+  padding: var(--spacing-small);
+  border: none;
+}
+
+.login-msg {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--blue);
+  padding: var(--spacing-small);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media screen and (max-width: 713px) {
+  .profile-page h2 {
+    font-size: 20pt;
+  }
+
+  #log-in {
+    width: 80%;
+    height: 100%;
+  }
+
+  .email-container,
+  .password-container {
+    font-size: var(--font-size-small);
+    width: 80%;
+    height: auto;
+  }
+
+  .checkbox-container {
+    padding: 0.5rem;
+    width: 80%;
+  }
+
+  .profile-page p,
+  .forgot-password {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .profile-page input {
+    padding: 0.5rem;
+  }
+}
