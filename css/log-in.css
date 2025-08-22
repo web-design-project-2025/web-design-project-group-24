@@ -355,9 +355,19 @@ header nav a.is-active::after {
   padding: var(--spacing-small);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 @media screen and (max-width: 713px) {
   .log-In {
     width: 70%;
     height: auto;
   }
+}
+
+.profile-info {
+  height: auto;
+  padding: var(--spacing-standard);
+  background-image: none;
 }

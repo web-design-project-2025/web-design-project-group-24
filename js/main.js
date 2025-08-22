@@ -13,6 +13,34 @@ let defaultSort = SORT_MODES.DATE; // Default sort by date
 let currentSort = defaultSort; // Default sort by date
 const applySort = (arr) => sortEvents(arr, currentSort);
 
+const LOGGED_IN_KEY = "loggedIn";
+
+function isAuthenticated() {
+  return (
+    localStorage.getItem(LOGGED_IN_KEY) === "true" ||
+    sessionStorage.getItem(LOGGED_IN_KEY) === "true"
+  );
+}
+
+function logoutAndRedirect() {
+  localStorage.removeItem(LOGGED_IN_KEY);
+  sessionStorage.removeItem(LOGGED_IN_KEY);
+  window.location.href = "home.html";
+}
+
+(function guard() {
+  const requiresAuth =
+    (document.body && document.body.dataset.requiresAuth === "true") ||
+    !!document.getElementById("profile-page");
+
+  if (!requiresAuth) return;
+
+  if (!isAuthenticated()) {
+    localStorage.setItem("redirectAfterLogin", window.location.href);
+    window.location.href = "login.html"; // Redirect to login page
+  }
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const allEventsContainer = document.getElementById("all-events-container");
   const recentlyViewed = document.getElementById("recently-viewed");
@@ -162,6 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         renderContent(applySort(events), allEventsContainer);
+      });
+    }
+
+    const logoutButton = document.getElementById("logout-btn");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", () => {
+        logoutAndRedirect();
       });
     }
   });

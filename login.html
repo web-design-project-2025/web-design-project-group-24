@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.typekit.net/uwd6tqq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="module" src="js/log-in.js" defer></script>
+  </head>
+  <body>
+    <main class="login-page">
+      <div id="log-in">
+        <h2>Welcome</h2>
+        <p>Please log in to continue</p>
+
+        <form id="login-form" autocomplete="on">
+          <div class="email-container">
+            <label for="email">Email adress</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              class="input-1"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <div class="password-container">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              class="input-1"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <div class="checkbox-container">
+            <input
+              id="remember-me"
+              type="checkbox"
+              name="remember-me"
+              class="checkbox-1"
+            />
+            <label for="remember-me">Remember me</label>
+          </div>
+
+          <button id="log-in-btn" type="submit" class="button-1 hover-2">
+            Log in
+          </button>
+        </form>
+
+        <p class="no-account">
+          Don't have an account? <a href="sign-up.html">Sign up</a>
+        </p>
+        <p class="forgot-password">
+          <a href="forgot-password.html">Forgot password?</a>
+        </p>
+
+        <p id="login-msg" class="small"></p>
+      </div>
+    </main>
+  </body>
+</html>
