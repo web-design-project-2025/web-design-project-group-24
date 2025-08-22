@@ -1328,6 +1328,16 @@ header nav a.is-active::after {
   font-size: var(--font-size-medium);
 }
 
+#signed-up-events-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  grid-template-areas:
+    " . signed signed signed signed signed signed signed signed . "
+    " . signed signed signed signed signed signed signed signed . ";
+}
+
 .signed-up {
   margin-bottom: var(--spacing-standard);
 }
