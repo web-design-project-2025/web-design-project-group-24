@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.removeItem("redirectAfterLogin"); // cleanup
           window.location.href = redirectUrl;
         } else {
-          window.location.href = "home.html"; // default
+          window.location.href = "index.html"; // default
         }
       }, 400);
     } else {
