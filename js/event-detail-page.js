@@ -50,7 +50,7 @@ function createDetailPage(event) {
   const eventDetailPage = document.createElement("section");
   eventDetailPage.classList.add("event-detail-page");
 
-  const detailTitleSmall = document.createElement("h4");
+  const detailTitleSmall = document.createElement("h1");
   detailTitleSmall.classList.add("detail-title-small");
   detailTitleSmall.textContent = event.detail_event_name;
   eventDetailPage.appendChild(detailTitleSmall);
@@ -63,7 +63,7 @@ function createDetailPage(event) {
   const titleBio = document.createElement("section");
   titleBio.classList.add("title-bio");
 
-  const detailTitleBig = document.createElement("h4");
+  const detailTitleBig = document.createElement("h1");
   detailTitleBig.classList.add("detail-title-big");
   detailTitleBig.textContent = event.detail_event_name;
   titleBio.appendChild(detailTitleBig);

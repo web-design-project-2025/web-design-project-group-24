@@ -203,13 +203,6 @@ export function createSignUpButton(eventId) {
   signedUpBtn.classList.add("sign-me-up");
   signedUpBtn.dataset.eventId = eventId;
 
-  // const setIcon = (btn = signedUpBtn) => {
-  //   const fav = isSignedUp(eventId);
-  //   btn.innerHTML = `<i class="bi ${fav ? "bi-heart-fill" : "bi-heart"}"></i>`;
-  // };
-
-  // setIcon();
-
   signedUpBtn.addEventListener("click", async () => {
     const wasSigned = isSignedUp(eventId);
     addToSignedUp(eventId);
