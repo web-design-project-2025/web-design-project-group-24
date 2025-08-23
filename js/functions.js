@@ -335,6 +335,9 @@ export async function tagDropdown(events) {
   const labelSpan = tagFilter.querySelector("span");
   if (labelSpan) labelSpan.textContent = getTagDefaultLabel();
 
+  // help getting it to work
+  // https://chatgpt.com/share/68aa2411-3504-8005-8298-0fa6c5189bc1
+
   // Keep label in sync with viewport when only "All" is selected
   const mql = window.matchMedia(PHONE_Q);
   const syncLabelToViewport = () => {
@@ -477,12 +480,13 @@ export function getEventMeta(
     };
   }
 }
+// Inspiration for sorting function
+// https://chatgpt.com/share/68aa20a7-0064-8005-880a-1e2f62324d3c
 
 export const SORT_MODES = {
   UPCOMING: "upcoming",
   ALL: "all",
   PAST: "past",
-  // PARTICIPANTS: "participants",
 };
 
 export function sortEvents(list, mode = SORT_MODES.DATE) {
