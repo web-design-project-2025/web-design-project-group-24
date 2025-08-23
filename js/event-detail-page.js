@@ -25,7 +25,7 @@ function organizerRatings(event) {
       return Math.max(0, Math.min(5, Number(value)));
     }
   }
-  return 0; // Default rating if not found
+  return 0;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

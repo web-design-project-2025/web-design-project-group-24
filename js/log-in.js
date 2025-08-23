@@ -30,8 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         const url =
           localStorage.getItem("redirectAfterLogin") || "profile-page.html";
-        localStorage.removeItem("redirectAfterLogin");
+        localStorage.removeItem("redirectAfterLogin"); // cleanup
         window.location.replace(url);
+        if (redirectUrl) {
+          localStorage.removeItem("redirectAfterLogin"); // cleanup
+          window.location.href = redirectUrl;
+        } else {
+          window.location.href = "home.html"; // default
+        }
       }, 400);
     } else {
       setMsg("❌ Invalid email or password.", false);
