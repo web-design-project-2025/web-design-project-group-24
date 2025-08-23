@@ -28,6 +28,9 @@
   --border-radius-standard: 5px;
   --border-radius-box: 10px;
   --border-radius-circle: 50%;
+
+  --box-shadow-standard: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --box-shadow-secondary: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -102,7 +105,7 @@ main {
 }
 
 .button-2:hover {
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-semibold);
 }
 
 .hover-1:hover {
@@ -119,7 +122,7 @@ main {
 .event-container:hover {
   transform: scale(1.02);
   font-weight: var(--font-weight-semibold);
-  box-shadow: 0.3em 0.3em 1em grey;
+  box-shadow: var(--box-shadow-standard);
 }
 
 .slide-show button:hover {
@@ -134,7 +137,7 @@ main {
 
 header {
   border-bottom: var(--blue) solid 1px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-secondary);
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 10px;
@@ -337,7 +340,7 @@ header nav a.is-active::after {
   margin-bottom: var(--spacing-standard);
   background: white;
   border-radius: var(--border-radius-box);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-standard);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -437,7 +440,7 @@ header nav a.is-active::after {
   left: 0;
   background: #fff;
   padding: var(--spacing-standard);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-standard);
   z-index: 10000;
   width: min(420px, 80vw);
   max-height: 330px;
@@ -1026,7 +1029,7 @@ header a[href="favorites.html"] i.bi {
   background-color: var(--green);
   width: 80%;
   height: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-standard);
   align-items: center;
   justify-content: center;
 }
@@ -1057,9 +1060,16 @@ header a[href="favorites.html"] i.bi {
   width: 100%;
 }
 
+input#remember-me[type="checkbox"] {
+  accent-color: var(--blue);
+  width: 1rem;
+  height: 1rem;
+  margin-right: var(--spacimg-mini);
+}
+
 #log-in-btn {
   background-color: var(--cream);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-standard);
 }
 
 .login-page label {
@@ -1163,7 +1173,7 @@ header a[href="favorites.html"] i.bi {
   padding: var(--spacing-standard);
   box-sizing: border-box;
   border-radius: var(--border-radius-box);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-standard);
   margin-top: var(--spacing-standard);
   margin-bottom: var(--spacing-standard);
 }
