@@ -25,7 +25,7 @@ function isAuthenticated() {
 function logoutAndRedirect() {
   localStorage.removeItem(LOGGED_IN_KEY);
   sessionStorage.removeItem(LOGGED_IN_KEY);
-  window.location.href = "home.html";
+  window.location.href = "index.html";
 }
 
 (function guard() {
@@ -255,7 +255,6 @@ async function loadData(container) {
       .map((id) => events.find((e) => e.event_id === id))
       .filter((e) => e);
 
-    // Make sure to only render if there are any favorite events
     if (favoriteEvents.length > 0) {
       renderContent(applySort(favoriteEvents), container);
     } else {

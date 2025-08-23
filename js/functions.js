@@ -516,7 +516,7 @@ export function sortEvents(list, mode = SORT_MODES.DATE) {
 document.addEventListener("DOMContentLoaded", () => {
   let page = location.pathname.split("/").pop().toLowerCase();
 
-  if (!page || page === "home.html") return;
+  if (!page || page === "index.html") return;
 
   if (page === "event-detail.html") page = "all-events.html";
 
